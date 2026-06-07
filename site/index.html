@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko" data-type="sans" data-theme="warm" data-scale="compact">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>건폐율 변화에 따른 공동주택 가로공간 성능 분석 — 2026 졸업설계</title>
+<meta name="description" content="고정 용적률(250%)하 건폐율 변화에 따른 공동주택 배치안의 가로공간 성능 분석. 실제 아파트 21단지 AI 분석 + 파라메트릭 자동배치.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-cover">
+
+<!-- ===== HEADER (full-bleed) ===== -->
+<header class="hdr" id="hdr">
+  <div class="hdr__inner">
+    <button class="hdr__menu" id="menuToggle" aria-expanded="false" aria-controls="menu">
+      <span class="hdr__burger" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="hdr__menulabel" id="menuLabel">2026 Graduation Project</span>
+    </button>
+    <div class="hdr__logo" aria-hidden="true"></div>
+    <div class="hdr__right">
+      <div class="langtoggle" id="langToggle" role="group" aria-label="언어 전환">
+        <button type="button" class="langtoggle__btn is-active" data-lang="ko">한글</button>
+        <button type="button" class="langtoggle__btn" data-lang="en">ENG</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MENU — 좌측 드로어 (GNB + 펼침 소분류) ===== -->
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="gnb" id="gnb" aria-label="콘텐츠 목록"></nav>
+</div>
+
+<!-- ===== COVER (single screen, no scroll) ===== -->
+<main class="cover">
+  <canvas id="skyline" class="cover__canvas" aria-hidden="true"></canvas>
+
+  <div class="cover__foot">
+    <div class="cover__col">
+      <span class="cover__label">Title</span>
+      <p class="cover__text" data-ko="고정 용적률(250%)하 건폐율 변화에 따른 공동주택 배치안의 가로공간 성능 분석" data-en="Streetscape Performance of Apartment Layouts under Varying BCR at Fixed FAR 250%">고정 용적률(250%)하 건폐율 변화에 따른 공동주택 배치안의 가로공간 성능 분석</p>
+    </div>
+    <div class="cover__col">
+      <span class="cover__label">Site</span>
+      <p class="cover__text">서울특별시 송파구 올림픽로 333, 잠실르엘아파트</p>
+    </div>
+    <div class="cover__col">
+      <span class="cover__label">Tools</span>
+      <p class="cover__text">Rhino · Grasshopper · Python · Florence-2 · SAM2</p>
+    </div>
+  </div>
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/skyline.js"></script>
+</body>
+</html>

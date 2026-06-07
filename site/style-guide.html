@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko" data-type="sans" data-theme="warm" data-scale="compact">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>스타일 가이드 — 타이포 · 색 · 스케일</title>
+<link rel="stylesheet" href="css/style.css">
+<script>
+  /* FOUC 방지: 저장된 설정을 렌더 전에 적용 */
+  (function () {
+    try {
+      var r = document.documentElement;
+      ["type", "theme", "scale"].forEach(function (k) {
+        var v = localStorage.getItem("sg-" + k); if (v) r.setAttribute("data-" + k, v);
+      });
+    } catch (e) {}
+  })();
+</script>
+<style>
+  body.is-guide { height: auto; overflow: auto; background: var(--paper); color: var(--ink); }
+  .sg-bar { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .sg-bar__inner { display: flex; flex-wrap: wrap; gap: clamp(16px, 3vw, 48px); align-items: center; padding-block: 14px; }
+  .sg-back { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.12em; color: var(--ink-40); }
+  .sg-group { display: flex; align-items: center; gap: 8px; }
+  .sg-group > span { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); margin-right: 4px; }
+  .sg-btn { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.04em; padding: 6px 11px; border: 1px solid var(--line); background: transparent; color: var(--ink-70); cursor: pointer; transition: all .2s var(--ease); }
+  .sg-btn:hover { border-color: var(--ink-40); color: var(--ink); }
+  .sg-btn.is-active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .sg-main { padding-block: var(--space-lg) var(--space-xl); }
+  .sg-block { padding-block: var(--space-lg); border-top: 1px solid var(--line); }
+  .sg-block:first-child { border-top: 0; }
+  .sg-block__h { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-40); margin-bottom: var(--space-md); }
+
+  /* 색 스와치 */
+  .sw-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--space-sm); }
+  .sw { border: 1px solid var(--line); }
+  .sw__c { aspect-ratio: 3/2; }
+  .sw__m { padding: 8px 10px; font-family: var(--mono); font-size: var(--fs-label); }
+  .sw__m b { display: block; color: var(--ink); font-weight: 500; letter-spacing: 0.04em; }
+  .sw__m span { color: var(--ink-40); }
+
+  /* 타입 래더 */
+  .ladder { display: grid; }
+  .lad { display: grid; grid-template-columns: 1fr auto; gap: var(--space-md); align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .lad__meta { font-family: var(--mono); font-size: var(--fs-label); color: var(--ink-40); text-align: right; white-space: nowrap; }
+  .lad__meta b { color: var(--ink-70); font-weight: 500; }
+  .t-display { font-family: var(--serif-kr); font-weight: var(--w-display); font-size: var(--fs-display); line-height: 1.04; letter-spacing: -0.025em; }
+  .t-h1 { font-family: var(--serif-kr); font-weight: var(--w-display); font-size: var(--fs-h1); letter-spacing: -0.02em; }
+  .t-h2 { font-family: var(--serif-kr); font-weight: var(--w-display); font-size: var(--fs-h2); letter-spacing: -0.02em; }
+  .t-lead { font-family: var(--serif-en); font-style: italic; font-weight: 300; font-size: var(--fs-lead); color: var(--ink-70); }
+  .t-body { font-family: var(--sans); font-size: var(--fs-body); line-height: 1.75; max-width: 52ch; }
+  .t-small { font-family: var(--sans); font-size: var(--fs-small); color: var(--ink-70); }
+  .t-label { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-40); }
+
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); }
+  .preview-cover { border: 1px solid var(--line); padding: clamp(24px, 4vw, 56px); background: var(--paper-pure); }
+  @media (max-width: 768px) { .sw-grid { grid-template-columns: repeat(3, 1fr); } .pair { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="is-guide">
+
+<!-- 컨트롤 바 -->
+<div class="sg-bar">
+  <div class="container sg-bar__inner">
+    <a class="sg-back" href="index.html">← Cover</a>
+    <div class="sg-group" data-group="type">
+      <span>Type</span>
+      <button class="sg-btn" data-val="editorial">명조+Fraunces</button>
+      <button class="sg-btn" data-val="sans">올 산세리프</button>
+      <button class="sg-btn" data-val="myeongjo">명조 강조</button>
+      <button class="sg-btn" data-val="tech">테크·모노</button>
+    </div>
+    <div class="sg-group" data-group="theme">
+      <span>Theme</span>
+      <button class="sg-btn" data-val="warm">따뜻한 종이</button>
+      <button class="sg-btn" data-val="mono">순백·순흑</button>
+      <button class="sg-btn" data-val="grey">그레이</button>
+    </div>
+    <div class="sg-group" data-group="scale">
+      <span>Scale</span>
+      <button class="sg-btn" data-val="dramatic">드라마틱</button>
+      <button class="sg-btn" data-val="moderate">절제</button>
+      <button class="sg-btn" data-val="compact">콤팩트</button>
+    </div>
+  </div>
+</div>
+
+<main class="container sg-main">
+
+  <!-- 색 -->
+  <section class="sg-block">
+    <div class="sg-block__h">01 — Color Palette</div>
+    <div class="sw-grid">
+      <div class="sw"><div class="sw__c" data-bg="--paper"></div><div class="sw__m"><b data-hex="--paper">—</b><span>paper · 배경</span></div></div>
+      <div class="sw"><div class="sw__c" data-bg="--ink"></div><div class="sw__m"><b data-hex="--ink">—</b><span>ink · 본문</span></div></div>
+      <div class="sw"><div class="sw__c" data-bg="--ink-70"></div><div class="sw__m"><b data-hex="--ink-70">—</b><span>ink-70 · 보조</span></div></div>
+      <div class="sw"><div class="sw__c" data-bg="--ink-40"></div><div class="sw__m"><b data-hex="--ink-40">—</b><span>ink-40 · 캡션</span></div></div>
+      <div class="sw"><div class="sw__c" data-bg="--ink-20"></div><div class="sw__m"><b data-hex="--ink-20">—</b><span>ink-20 · 약</span></div></div>
+      <div class="sw"><div class="sw__c" data-bg="--line"></div><div class="sw__m"><b data-hex="--line">—</b><span>line · 선</span></div></div>
+    </div>
+  </section>
+
+  <!-- 타입 래더 -->
+  <section class="sg-block">
+    <div class="sg-block__h">02 — Type Scale</div>
+    <div class="ladder">
+      <div class="lad"><div class="t-display">가로의 Scale</div><div class="lad__meta" data-px=".t-display"><b>Display</b><br>—</div></div>
+      <div class="lad"><div class="t-h1">건폐율이 바꾸는 가로</div><div class="lad__meta" data-px=".t-h1"><b>H1</b><br>—</div></div>
+      <div class="lad"><div class="t-h2">같은 밀도, 다른 외부공간</div><div class="lad__meta" data-px=".t-h2"><b>H2</b><br>—</div></div>
+      <div class="lad"><div class="t-lead">Streetscape performance under varying BCR.</div><div class="lad__meta" data-px=".t-lead"><b>Lead</b><br>—</div></div>
+      <div class="lad"><div class="t-body">방 안에서 내다보는 일조가 아니라, 단지 밖 가로를 걷는 보행자를 위한 배치. 향과 법규를 일부 양보하면 같은 밀도에서도 가로가 걷기 좋아진다.</div><div class="lad__meta" data-px=".t-body"><b>Body</b><br>—</div></div>
+      <div class="lad"><div class="t-small">관측점 보도선 5m 간격 · FOV 120°×60° · 보행자 눈높이 1.6m</div><div class="lad__meta" data-px=".t-small"><b>Small</b><br>—</div></div>
+      <div class="lad"><div class="t-label">2026 Graduation Design</div><div class="lad__meta" data-px=".t-label"><b>Label</b><br>—</div></div>
+    </div>
+  </section>
+
+  <!-- 서체 페어링 -->
+  <section class="sg-block">
+    <div class="sg-block__h">03 — Typeface Pairing</div>
+    <div class="pair">
+      <div>
+        <div class="t-label" style="margin-bottom:10px">Heading — 한글</div>
+        <div class="t-h1">고정 용적률 250%하<br>건폐율 변화 분석</div>
+        <div class="t-lead" style="margin-top:16px">— Martin &amp; March, 1972</div>
+      </div>
+      <div>
+        <div class="t-label" style="margin-bottom:10px">Body &amp; Data</div>
+        <p class="t-body">기존 한국 아파트 단지는 ‘방 안의 일조와 프라이버시’만 챙기느라 ‘단지 밖 가로를 걷는 보행자의 스케일과 심리’를 망쳐왔다.</p>
+        <p class="readout" style="margin-top:12px">BCR <b>17.3%</b> · FAR <b>250%</b> · α <b>45°</b> · SVF <b>15%</b> · D/H <b>1.2</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 컴포넌트 미리보기 -->
+  <section class="sg-block">
+    <div class="sg-block__h">04 — In Context</div>
+    <div class="preview-cover">
+      <span class="section__index">03b — Empirical · AI</span>
+      <h2 class="section__title" style="margin:8px 0 16px">실제 아파트 21단지, <em>AI</em>로 읽다</h2>
+      <p class="pull" style="margin:24px 0">향과 법규를 일부 양보하면, <em>같은 밀도</em>에서도<br>가로가 걷기 좋아진다.</p>
+      <div style="display:flex;gap:10px;margin:20px 0">
+        <span class="scn scn--a">A</span><span class="scn scn--b">B</span><span class="scn scn--c">C</span>
+        <span class="track" style="margin-left:12px">B — 보행자 인지</span>
+      </div>
+      <dl class="kv" style="max-width:520px">
+        <div><dt>조작변인</dt><dd>건폐율 5 / 10 / 20 / 30 / 40 / 50 %</dd></div>
+        <div><dt>통제변인</dt><dd>FAR 250%, 유닛 16종, 층고 3,000mm</dd></div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var DEFAULTS = { type: "sans", theme: "warm", scale: "compact" };
+
+  function current(group) {
+    return root.getAttribute("data-" + group) || DEFAULTS[group];
+  }
+  function setActive() {
+    document.querySelectorAll(".sg-group").forEach(function (g) {
+      var group = g.getAttribute("data-group");
+      var val = current(group);
+      g.querySelectorAll(".sg-btn").forEach(function (b) {
+        b.classList.toggle("is-active", b.getAttribute("data-val") === val);
+      });
+    });
+  }
+  function readouts() {
+    var cs = getComputedStyle(root);
+    document.querySelectorAll("[data-hex]").forEach(function (el) {
+      el.textContent = cs.getPropertyValue(el.getAttribute("data-hex")).trim().toUpperCase();
+    });
+    document.querySelectorAll("[data-bg]").forEach(function (el) {
+      el.style.background = cs.getPropertyValue(el.getAttribute("data-bg")).trim();
+    });
+    document.querySelectorAll("[data-px]").forEach(function (el) {
+      var s = document.querySelector(el.getAttribute("data-px"));
+      if (s) {
+        var px = Math.round(parseFloat(getComputedStyle(s).fontSize));
+        el.innerHTML = el.innerHTML.replace(/<br>.*$/, "<br>" + px + " px");
+      }
+    });
+  }
+  function refresh() { setActive(); readouts(); }
+
+  document.querySelectorAll(".sg-group").forEach(function (g) {
+    var group = g.getAttribute("data-group");
+    g.querySelectorAll(".sg-btn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var val = b.getAttribute("data-val");
+        root.setAttribute("data-" + group, val);
+        try { localStorage.setItem("sg-" + group, val); } catch (e) {}
+        refresh();
+      });
+    });
+  });
+
+  // 폰트 로드 후 px 재측정
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(readouts);
+  window.addEventListener("resize", readouts);
+  refresh();
+})();
+</script>
+</body>
+</html>
