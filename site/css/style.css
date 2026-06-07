@@ -180,7 +180,7 @@ body.is-cover { height: 100svh; overflow: hidden; }
 
 /* 표지 하단 — 풀폭 3등분 (Title/Site/Tools), 하단 고정, 검은 배경 반전 */
 .cover__foot { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; width: 100%; height: var(--nav-h); background: var(--ink); color: var(--paper); padding-block: 0; padding-inline: clamp(20px, 3.5vw, 44px); display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 64px); align-items: center; }
-.cover__col { display: flex; align-items: baseline; gap: 14px; min-width: 0; }
+.cover__col { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .cover__col:nth-child(2) { justify-content: center; text-align: center; }  /* Site — 중앙 */
 .cover__col:last-child { justify-content: flex-end; text-align: right; }   /* Tools — 우측 끝 (양끝 정렬 3등분) */
 .cover__label { flex: none; white-space: nowrap; font-family: "Space Grotesk", var(--sans); font-weight: 500; font-size: var(--fs-label); letter-spacing: 0.18em; text-transform: uppercase; color: var(--paper); }
