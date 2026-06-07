@@ -47,10 +47,25 @@
       [.78,.86,.62,0],[.75,.83,.72,2] ] }
   ];
 
-  var WORDS = ["아파트","주동","세대","발코니","베란다","거실","안방","입면","채광","조망",
+  var WORDS_KO = ["아파트","주동","세대","발코니","베란다","거실","안방","입면","채광","조망",
     "일조","단지","필로티","코어","복도","현관","주차장","조경","중정","놀이터",
     "커뮤니티","분양","재건축","용적률","건폐율","인동간격","남향","판상형","탑상형","베이",
     "평면","전용","공용","옥상","단열","창호","새시","수납","팬트리","알파룸"];
+  var WORDS_EN = ["Apartment","Tower","Unit","Balcony","Terrace","Living","Bedroom","Facade","Daylight","View",
+    "Sunlight","Complex","Piloti","Core","Corridor","Stair","Entrance","Parking","Landscape","Courtyard",
+    "Playground","Community","Rebuild","FAR","BCR","SVF","Spacing","South","Slab","Bay",
+    "Plan","Area","Rooftop","Insulation","Window","Storage","Pantry","Walkable","Density","Mass"];
+  /* ---- (선택) 대본 모드 ----
+     SCRIPT.ko / SCRIPT.en 에 대본을 채우면 → 그 텍스트를 단어로 끊어 '읽는 순서대로' 건물을 채움.
+     비워두면 위 단어 풀(WORDS_KO/EN)에서 무작위. (지금은 비어 있어 껍데기 단어 풀 사용) */
+  var SCRIPT = { ko: "", en: "" };
+  function tokenize(s) { return s.split(/[\s,.;:!?·…"'’“”()\[\]{}\/\\\-—\n\r\t]+/).filter(Boolean); }
+  function wordSource() {
+    var lang = (document.documentElement.lang === "en") ? "en" : "ko";
+    var sc = tokenize(SCRIPT[lang] || "");
+    if (sc.length) return { words: sc, seq: true };                 // 대본 있으면 순서대로
+    return { words: (lang === "en") ? WORDS_EN : WORDS_KO, seq: false };  // 없으면 풀에서 무작위
+  }
 
   var SPEED = 0.34, OUT_MULT = 2.4;
 
@@ -85,7 +100,7 @@
   function buildTiles(si) {
     var site = SITES[si], rng = mulberry32(8000 + si * 167);
     groups = []; var flat = [], spawnDist = H + 70;
-    var fallMs = spawnDist / SPEED;
+    var fallMs = spawnDist / SPEED, src = wordSource(), pool = src.words, seqIdx = 0;   // 대본 있으면 순서대로, 없으면 풀 무작위
     var TOWER_STEP = fallMs * 0.22;               // 건물(타워) 간 시차 — 앞 건물 ~1/4 내려오면 다음 건물
     var WORD_SPREAD = fallMs * 0.50;              // 한 건물 안 단어들 펼침(예측 어렵게)
     var minX = 1, maxX = 0;                       // 전체 바운더리 → 화면 중앙 정렬
@@ -116,7 +131,7 @@
       for (var ry = H - bFS - 2; ry >= t.bTop; ry -= bLine) {
         var cx = t.bx, guard = 0;
         while (cx < t.bx + t.bw && guard++ < 60) {
-          var word = WORDS[Math.floor(rng() * WORDS.length)];
+          var word = src.seq ? pool[seqIdx++ % pool.length] : pool[Math.floor(rng() * pool.length)];
           var tfs = Math.max(8, Math.round(bFS * (0.86 + rng() * 0.30)));
           ctx.font = fontStr(tfs);
           var twd = ctx.measureText(word).width;
@@ -197,4 +212,7 @@
   if (!reduce) raf = requestAnimationFrame(step);
   window.addEventListener("resize", debounce(resize, 200));
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+  // 언어 토글(한/영) → 단어 풀 바꿔 다시 빌드
+  if (window.MutationObserver) new MutationObserver(function () { build(siteIndex, reduce); })
+    .observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
 })();
