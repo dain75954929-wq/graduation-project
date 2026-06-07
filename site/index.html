@@ -12,10 +12,12 @@
 <!-- ===== HEADER (full-bleed) ===== -->
 <header class="hdr" id="hdr">
   <div class="hdr__inner">
-    <button class="hdr__menu" id="menuToggle" aria-expanded="false" aria-controls="menu">
-      <span class="hdr__burger" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="hdr__menulabel" id="menuLabel">2026 Graduation Project</span>
-    </button>
+    <div class="hdr__menu">
+      <button class="hdr__burgerbtn" id="menuToggle" aria-label="메뉴" aria-expanded="false" aria-controls="menu">
+        <span class="hdr__burger" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <a class="hdr__menulabel" id="menuLabel" href="index.html">2026 Graduation Project</a>
+    </div>
     <div class="hdr__logo" aria-hidden="true"></div>
     <div class="hdr__right">
       <div class="langtoggle" id="langToggle" role="group" aria-label="언어 전환">
@@ -35,6 +37,8 @@
 <main class="cover">
   <canvas id="skyline" class="cover__canvas" aria-hidden="true"></canvas>
 
+  <a class="cover-cta" id="coverCta" href="page.html?id=overview" data-ko="연구 개요 보기 →" data-en="View Research Overview →">연구 개요 보기 →</a>
+
   <div class="cover__foot">
     <div class="cover__col">
       <span class="cover__label">Title</span>
@@ -42,7 +46,7 @@
     </div>
     <div class="cover__col">
       <span class="cover__label">Site</span>
-      <p class="cover__text">서울특별시 송파구 올림픽로 333, 잠실르엘아파트</p>
+      <p class="cover__text" data-ko="서울특별시 송파구 올림픽로 333, 잠실르엘아파트" data-en="333 Olympic-ro, Songpa-gu, Seoul · Jamsil Le-el">서울특별시 송파구 올림픽로 333, 잠실르엘아파트</p>
     </div>
     <div class="cover__col">
       <span class="cover__label">Tools</span>

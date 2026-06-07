@@ -300,7 +300,7 @@ Apartment Streetscape Analysis  ← 영문 부제 (ink-40)
 - 좌: **햄버거(가로 3선, 두께 2px 균일, 색 ink-70)** + 라벨 **"2026 GRADUATION PROJECT"** (Space Grotesk 500 · 대문자 · 자간 0.2em · ink-70). 햄버거–라벨 간격 14px(= 푸터 라벨–내용 간격과 동일)
 - 중앙: 로고 자리 빈칸
 - 우: **언어 토글(한글 / ENG)** — 김다인 대신 상시 표시. 검은 테두리 세그먼트, CLOSE 위계, 활성 측 먹 채움
-- 메뉴 열리면 햄버거 → X, 라벨 → "Close"
+- 메뉴 열리면 햄버거 → X. **라벨 "2026 GRADUATION PROJECT"는 메인(index.html) 링크**(토글과 분리, 텍스트 고정)
 - **언어 토글(한글 / ENG)**: 우측에 상시 표시(김다인 대체). 검은 테두리 세그먼트, CLOSE와 동일 위계(Space Grotesk 500·대문자·자간 0.2em), 활성 측은 먹 채움
 - 전환은 `data-ko`/`data-en` 텍스트 스왑 + 메뉴 재빌드(MENU의 kr/en) + localStorage(`sg-lang`). 기본 ko
 
@@ -331,6 +331,8 @@ Apartment Streetscape Analysis  ← 영문 부제 (ink-40)
 - 텍스트 **세로 중앙 정렬**(`.cover__foot`·`.cover__col` align-items: center)
 - 타워마다 텍스트 크기 약간씩 다름(baseFS×0.85~1.25). 기본 폰트 = 헤더 라벨(index) 실측 px
 - **5개 단지** 자동 순환. 상단 라벨·하단 단지 선택 UI 없음. 형상/색 = 제공 PDF 근사 → `SITES`의 `towers`에서 조정
+- **CTA '연구 개요 보기'**: 첫 건물(rank 0 타워) 완성 시 등장(`#coverCta.is-shown`). 우측 하단(푸터 우측 정렬), 한/영 토글 톤(검은 테두리·hover 먹 채움), → `page.html?id=overview`. 한/영 data-ko/en 연동. **한 사이클 = 5개 그래픽 전체**. 첫 그래픽 첫 건물에 **팝업**(페이드+scale), 5번째 그래픽까지 끝나면 **팝다운**(페이드, 슬라이드 없음) → 다음 5-사이클 첫 건물에 재등장 (표지 전용)
+- 세부 페이지는 동일 디자인의 '다음 소제목' 버튼(`#pageCta.page-cta`, 고정 표시)
 
 ### 푸터 (풀폭 · 검은 배경 반전)
 - **높이 = 헤더와 동일**(`height: var(--nav-h)` 70px), 내용 세로 중앙. 하단 고정(absolute)

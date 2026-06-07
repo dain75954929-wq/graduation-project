@@ -16,27 +16,29 @@
 
   /* ---------- 콘텐츠 목록 (GNB) + 소분류 (LNB) ---------- */
   var MENU = [
-    { num: "00", id: "top",        kr: "개요",        en: "About",
-      sub: [["연구 개요", "Overview", "#top"], ["핵심 숫자", "Key Figures", "#top"]] },
-    { num: "01", id: "problem",    kr: "문제의식",     en: "Problem",
-      sub: [["기존 아파트의 한계", "Limits of Today's Apartments", "#problem"], ["연구 질문 · 가설", "Question & Hypothesis", "#problem"], ["연구 두 축", "Two Tracks", "#problem"]] },
-    { num: "03", id: "theory",     kr: "이론적 배경",   en: "Theory",
-      sub: [["Martin & March", "Martin & March", "#theory"], ["아시하라 — 앙각·D/H", "Ashihara — Angle · D/H", "#theory"], ["Jan Gehl — Walkable", "Jan Gehl — Walkable", "#theory"]] },
-    { num: "03b", id: "cases",     kr: "사례분석 · AI", en: "Cases · AI",
-      sub: [["AI 파이프라인", "AI Pipeline", "#cases"], ["분석 21개 단지", "21 Complexes", "#cases"], ["분류 5그룹", "Five Groups", "#cases"]] },
-    { num: "04", id: "site",       kr: "대상지",       en: "Site",
-      sub: [["위치 · 규모", "Location · Scale", "#site"], ["사이트 역사 1976–2024", "History 1976–2024", "#site"], ["현황 분석", "Context Analysis", "#site"]] },
-    { num: "05", id: "method",     kr: "연구방법",     en: "Method",
-      sub: [["3단계 흐름", "Three-Step Flow", "#method"], ["변인 설정", "Variables", "#method"]] },
-    { num: "07", id: "scenario",   kr: "시나리오",     en: "Scenario",
-      sub: [["A — 남향 + 인동", "A — South + Spacing", "#scenario"], ["B — 인동만", "B — Spacing Only", "#scenario"], ["C — 인동 무시", "C — No Spacing", "#scenario"]] },
-    { num: "09", id: "results",    kr: "결과",         en: "Results",
-      sub: [["전환임계점 3구간", "Three Threshold Zones", "#results"], ["건폐율별 배치안", "Layouts by BCR", "#results"], ["국내 · 국외 비교", "Domestic · Intl.", "#results"]] },
-    { num: "10", id: "metrics",    kr: "평가지표",     en: "Metrics",
-      sub: [["A — 물리적 형태", "A — Physical Form", "#metrics"], ["B — 보행자 인지", "B — Perception", "#metrics"], ["C — 내부 환경", "C — Internal Env.", "#metrics"]] },
-    { num: "11", id: "conclusion", kr: "결론",         en: "Conclusion",
-      sub: [["핵심 주장", "Key Claim", "#conclusion"], ["설계 제안", "Design Proposal", "#conclusion"], ["향후 과제", "Future Work", "#conclusion"]] }
+    { num: "00", id: "about", kr: "개요", en: "About",
+      sub: [["연구 개요","Overview","overview"], ["핵심 숫자","Key Figures","figures"]] },
+    { num: "01", id: "problem", kr: "문제의식", en: "Problem",
+      sub: [["기존 아파트의 한계","Limits of Today's Apartments","limits"], ["연구 질문 · 가설","Question & Hypothesis","question"], ["연구 두 축","Two Tracks","tracks"]] },
+    { num: "03", id: "theory", kr: "이론적 배경", en: "Theory",
+      sub: [["Martin & March","Martin & March","martin-march"], ["아시하라 — 앙각·D/H","Ashihara — Angle · D/H","ashihara"], ["Jan Gehl — Walkable","Jan Gehl — Walkable","gehl"]] },
+    { num: "03b", id: "cases", kr: "사례분석 · AI", en: "Cases · AI",
+      sub: [["AI 파이프라인","AI Pipeline","ai-pipeline"], ["분석 21개 단지","21 Complexes","complexes"], ["분류 5그룹","Five Groups","groups"]] },
+    { num: "04", id: "site", kr: "대상지", en: "Site",
+      sub: [["위치 · 규모","Location · Scale","location"], ["사이트 역사 1976–2024","History 1976–2024","history"], ["현황 분석","Context Analysis","context"]] },
+    { num: "05", id: "method", kr: "연구방법", en: "Method",
+      sub: [["3단계 흐름","Three-Step Flow","flow"], ["변인 설정","Variables","variables"]] },
+    { num: "07", id: "scenario", kr: "시나리오", en: "Scenario",
+      sub: [["A — 남향 + 인동","A — South + Spacing","scn-a"], ["B — 인동만","B — Spacing Only","scn-b"], ["C — 인동 무시","C — No Spacing","scn-c"]] },
+    { num: "09", id: "results", kr: "결과", en: "Results",
+      sub: [["전환임계점 3구간","Three Threshold Zones","zones"], ["건폐율별 배치안","Layouts by BCR","layouts"], ["국내 · 국외 비교","Domestic · Intl.","compare"]] },
+    { num: "10", id: "metrics", kr: "평가지표", en: "Metrics",
+      sub: [["A — 물리적 형태","A — Physical Form","metric-a"], ["B — 보행자 인지","B — Perception","metric-b"], ["C — 내부 환경","C — Internal Env.","metric-c"]] },
+    { num: "11", id: "conclusion", kr: "결론", en: "Conclusion",
+      sub: [["핵심 주장","Key Claim","claim"], ["설계 제안","Design Proposal","proposal"], ["향후 과제","Future Work","future"]] }
   ];
+  var SUBS = [];
+  MENU.forEach(function (item) { item.sub.forEach(function (s) { SUBS.push({ id: s[2], ko: s[0], en: s[1], num: item.num, gnbKo: item.kr, gnbEn: item.en }); }); });
 
   var gnb = document.getElementById("gnb");
   var menu = document.getElementById("menu");
@@ -49,14 +51,14 @@
 
   function subHTML(item, lg) {
     return item.sub.map(function (s) {
-      return '<a href="' + s[2] + '">' + (lg === "en" ? s[1] : s[0]) + "</a>";
+      return '<a href="page.html?id=' + s[2] + '">' + (lg === "en" ? s[1] : s[0]) + "</a>";
     }).join("");
   }
   function buildMenu(lg) {
     if (!gnb) return;
     gnb.innerHTML = MENU.map(function (item) {
       return '<div class="gnb__item">' +
-               '<a class="gnb__link" href="#' + item.id + '">' +
+               '<a class="gnb__link" href="page.html?id=' + item.sub[0][2] + '">' +
                  '<span class="gnb__num">' + item.num + '</span>' +
                  '<span class="gnb__t">' + (lg === "en" ? item.en : item.kr) + "</span>" +
                "</a>" +
@@ -65,6 +67,21 @@
     }).join("");
     bindClose(gnb.querySelectorAll("a"));
   }
+
+  /* ---------- 세부 페이지(page.html?id=) — 빈 페이지 + 우측 하단 '다음 소제목' 버튼 ---------- */
+  function renderDoc(lg) {
+    var doc = document.getElementById("doc");
+    if (!doc) return;                        // page.html 아니면 무시
+    var id = "", q = location.search.match(/[?&]id=([^&]+)/); if (q) id = decodeURIComponent(q[1]);
+    var idx = 0; for (var i = 0; i < SUBS.length; i++) if (SUBS[i].id === id) { idx = i; break; }
+    var cur = SUBS[idx], nx = SUBS[(idx + 1) % SUBS.length];
+    document.title = (lg === "en" ? cur.en : cur.ko) + " — 2026 졸업설계";
+    var cta = document.getElementById("pageCta");
+    if (!cta) { cta = document.createElement("a"); cta.id = "pageCta"; cta.className = "cover-cta page-cta is-shown"; document.body.appendChild(cta); }
+    cta.setAttribute("href", "page.html?id=" + nx.id);
+    cta.textContent = (lg === "en" ? nx.en : nx.ko) + " →";
+  }
+
   function applyLang(lg) {
     lang = lg;
     document.documentElement.setAttribute("lang", lg);
@@ -73,6 +90,7 @@
       if (t) el.textContent = t;
     });
     buildMenu(lg);
+    renderDoc(lg);
     if (langToggle) langToggle.querySelectorAll(".langtoggle__btn").forEach(function (b) {
       b.classList.toggle("is-active", b.getAttribute("data-lang") === lg);
     });
@@ -92,14 +110,12 @@
     document.documentElement.classList.add("is-menu-open");
     menu.setAttribute("aria-hidden", "false");
     toggle.setAttribute("aria-expanded", "true");
-    if (menuLabel) menuLabel.textContent = "Close";
   }
   function closeMenu() {
     isOpen = false;
     document.documentElement.classList.remove("is-menu-open");
     menu.setAttribute("aria-hidden", "true");
     toggle.setAttribute("aria-expanded", "false");
-    if (menuLabel) menuLabel.textContent = "2026 Graduation Project";
   }
   if (toggle) {
     toggle.addEventListener("click", function (e) { e.stopPropagation(); isOpen ? closeMenu() : openMenu(); });

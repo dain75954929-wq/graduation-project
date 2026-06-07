@@ -83,6 +83,7 @@
   var baseFS, W, H, dpr;
   var groups = [], tiles = [], siteIndex = 0, raf = 0, lastT = 0;
   var phase = "build", buildStart = 0, holdUntil = 0, outStart = 0;
+  var cta = document.getElementById("coverCta"), ctaShown = false;   // 첫 건물 후 등장
 
   function resize() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -135,7 +136,7 @@
           var tfs = Math.max(8, Math.round(bFS * (0.86 + rng() * 0.30)));
           ctx.font = fontStr(tfs);
           var twd = ctx.measureText(word).width;
-          var o = { x: cx, ty: ry, y: ry - spawnDist, word: word, c: t.c, fs: tfs,
+          var o = { x: cx, ty: ry, y: ry - spawnDist, word: word, c: t.c, fs: tfs, first: rankOf[ti] === 0,
             coverY: coverY(cx + twd / 2, t.c), settled: false, gone: false,
             delay: towerStart + rng() * WORD_SPREAD,
             outDelay: outRankOf[ti] * outTowerStep + rng() * outWordSpread };
@@ -186,6 +187,11 @@
         o.y += SPEED * (o.c === 0 ? 0.7 : 1) * dt;          // 처음(진한색) 조금 느리게
         if (o.y >= o.ty) { o.y = o.ty; o.settled = true; } else all = false;
       }
+      if (!ctaShown && cta) {                                  // 첫 건물(rank 0) 다 내려오면 CTA 등장
+        var fd = true;
+        for (var ci = 0; ci < tiles.length; ci++) if (tiles[ci].first && !tiles[ci].settled) { fd = false; break; }
+        if (fd) { ctaShown = true; cta.classList.add("is-shown"); }   // 첫 그래픽 첫 건물에 팝업
+      }
       if (all) { phase = "hold"; holdUntil = t + 2400; }
     } else if (phase === "hold") {
       if (t > holdUntil) {
@@ -201,7 +207,10 @@
         p.y += SPEED * OUT_MULT * (p.c === 0 ? 0.6 : 1) * dt;     // 마지막(진한색) 조금 느리게
         if (p.y > H + 120) p.gone = true; else done = false;
       }
-      if (done) build((siteIndex + 1) % SITES.length, false);
+      if (done) {
+        if (siteIndex === SITES.length - 1 && cta) { cta.classList.remove("is-shown"); ctaShown = false; }  // 5개 그래픽(=한 사이클) 끝 → 팝다운
+        build((siteIndex + 1) % SITES.length, false);
+      }
     }
     draw();
     raf = requestAnimationFrame(step);
