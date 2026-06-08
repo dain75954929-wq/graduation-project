@@ -68,18 +68,48 @@
     bindClose(gnb.querySelectorAll("a"));
   }
 
-  /* ---------- 세부 페이지(page.html?id=) — 빈 페이지 + 우측 하단 '다음 소제목' 버튼 ---------- */
+  /* ---------- 세부 페이지(page.html?id=) — 빈 페이지 + 좌·우 하단 버튼 ----------
+     좌측 하단: '처음으로 가기'(index.html) · 우측 하단: '다음 소제목으로 가기'(다음 소제목)
+     두 버튼 동일 디자인(cover-cta / page-cta) ------------------------------------- */
+  function makeCta(idAttr, extraClass) {
+    var el = document.getElementById(idAttr);
+    if (!el) {
+      el = document.createElement("a");
+      el.id = idAttr;
+      el.className = "cover-cta page-cta is-shown" + (extraClass ? " " + extraClass : "");
+      document.body.appendChild(el);
+    }
+    return el;
+  }
   function renderDoc(lg) {
     var doc = document.getElementById("doc");
     if (!doc) return;                        // page.html 아니면 무시
     var id = "", q = location.search.match(/[?&]id=([^&]+)/); if (q) id = decodeURIComponent(q[1]);
     var idx = 0; for (var i = 0; i < SUBS.length; i++) if (SUBS[i].id === id) { idx = i; break; }
     var cur = SUBS[idx], nx = SUBS[(idx + 1) % SUBS.length];
+    var isLast = (idx === SUBS.length - 1);   // 마지막 소제목 페이지
     document.title = (lg === "en" ? cur.en : cur.ko) + " — 2026 졸업설계";
-    var cta = document.getElementById("pageCta");
-    if (!cta) { cta = document.createElement("a"); cta.id = "pageCta"; cta.className = "cover-cta page-cta is-shown"; document.body.appendChild(cta); }
-    cta.setAttribute("href", "page.html?id=" + nx.id);
-    cta.textContent = (lg === "en" ? nx.en : nx.ko) + " →";
+    doc.innerHTML = "";                       // 소제목 페이지는 비워 둠
+
+    // 다음 소제목으로 가기 (우측 하단) — 마지막 페이지에선 숨김
+    var next = makeCta("pageCta");
+    if (isLast) {
+      next.style.display = "none";
+    } else {
+      next.style.display = "";
+      next.setAttribute("href", "page.html?id=" + nx.id);
+      next.setAttribute("data-ko", nx.ko + " 보기 →");
+      next.setAttribute("data-en", "View " + nx.en + " →");
+      next.textContent = (lg === "en" ? "View " + nx.en : nx.ko + " 보기") + " →";
+    }
+
+    // 처음으로 가기 (동일 디자인) — 보통은 좌측, 마지막 페이지에선 우측
+    var home = makeCta("homeCta", "page-cta--home");
+    home.setAttribute("href", "index.html");
+    home.setAttribute("data-ko", "← 처음으로 가기");
+    home.setAttribute("data-en", "← Home");
+    home.textContent = lg === "en" ? "← Home" : "← 처음으로 가기";
+    home.classList.toggle("page-cta--home", !isLast);   // 마지막이면 클래스 제거 → 우측 정렬
   }
 
   function applyLang(lg) {
@@ -146,18 +176,21 @@
   }
   /* GNB 링크 바인딩은 buildMenu() 내부에서 처리됨 */
 
-  /* ---------- Scroll reveal ---------- */
-  var reveals = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window && !reduce) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in-view"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("in-view"); });
+  /* ---------- Scroll reveal (정적 + 동적 주입 콘텐츠) ---------- */
+  function initReveals(root) {
+    var reveals = (root || document).querySelectorAll(".reveal:not(.in-view)");
+    if ("IntersectionObserver" in window && !reduce) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("in-view"); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+      reveals.forEach(function (el) { io.observe(el); });
+    } else {
+      reveals.forEach(function (el) { el.classList.add("in-view"); });
+    }
   }
+  initReveals(document);
 
   /* ---------- Count-up ---------- */
   function countUp(el) {
@@ -174,15 +207,19 @@
     }
     requestAnimationFrame(step);
   }
-  var counters = document.querySelectorAll("[data-count]");
-  if ("IntersectionObserver" in window && !reduce) {
-    var cio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); } });
-    }, { threshold: 0.6 });
-    counters.forEach(function (el) { cio.observe(el); });
-  } else {
-    counters.forEach(countUp);
+  function initCounters(root) {
+    var counters = (root || document).querySelectorAll("[data-count]:not(.counted)");
+    counters.forEach(function (el) { el.classList.add("counted"); });
+    if ("IntersectionObserver" in window && !reduce) {
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      counters.forEach(function (el) { cio.observe(el); });
+    } else {
+      counters.forEach(countUp);
+    }
   }
+  initCounters(document);
 
   /* ---------- 건폐율 슬라이더 ---------- */
   var STOPS = [
