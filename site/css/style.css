@@ -494,3 +494,29 @@ body.page { padding-top: var(--nav-h); background: var(--paper); color: var(--in
 .page-cta { position: fixed; right: clamp(20px, 3.5vw, 44px); bottom: clamp(20px, 4vh, 40px); top: auto; z-index: 50; }
 /* 좌측 하단: '처음으로 가기' (동일 디자인, 좌측 정렬) */
 .page-cta--home { right: auto; left: clamp(20px, 3.5vw, 44px); }
+
+/* =========================================================
+   세부 페이지 배경 그리드 (중간크리틱 도판 그리드)
+   — 풀폭 제도 격자선 + 교차점 등록 십자(+). 내용 없이 배경만.
+   ========================================================= */
+body.page { position: relative; }   /* ::before 그리드의 기준 */
+body.page::before {
+  content: "";
+  position: absolute;            /* 문서와 함께 스크롤되어 내려감(고정 아님) */
+  inset: var(--nav-h) 0 0 0;     /* 헤더 아래부터 문서 전체 높이(풀폭) */
+  z-index: 0;
+  pointer-events: none;
+  /* 연한 격자선(E7E3DA) + 타일 모서리 1/4 십자 → 교차점에서 온전한 + 형성(B7B2A7) */
+  /* 타일 중앙에 격자선 + 십자를 같이 그려 잘림 없이 정확히 정렬 (선 E7E3DA / 십자 918C84) */
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%3E%3Cpath%20d='M50%200V100M0%2050H100'%20stroke='%23E7E3DA'%20stroke-width='0.5'%20fill='none'/%3E%3Cpath%20d='M46%2050H54M50%2046V54'%20stroke='%23918C84'%20stroke-width='0.5'%20fill='none'/%3E%3C/svg%3E");
+  background-size: clamp(130px, 20vw, 280px) clamp(130px, 20vw, 280px);
+  background-position: center top;
+}
+/* 향후 내용이 들어가면 그리드 위로 올라오도록 + 빈 페이지도 스크롤 가능하도록 높이 확보 */
+body.page #doc { position: relative; z-index: 1; min-height: 200vh; }
+
+/* 세부 페이지 스크롤바 숨김 (스크롤 기능은 유지) */
+html:has(body.page) { scrollbar-width: none; -ms-overflow-style: none; }   /* Firefox/구 Edge */
+html:has(body.page)::-webkit-scrollbar { width: 0; height: 0; display: none; }   /* Chrome/Safari */
+body.page { scrollbar-width: none; -ms-overflow-style: none; }
+body.page::-webkit-scrollbar { width: 0; height: 0; display: none; }
