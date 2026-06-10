@@ -16,29 +16,26 @@
 
   /* ---------- 콘텐츠 목록 (GNB) + 소분류 (LNB) ---------- */
   var MENU = [
-    { num: "00", id: "about", kr: "개요", en: "About",
-      sub: [["연구 개요","Overview","overview"], ["핵심 숫자","Key Figures","figures"]] },
-    { num: "01", id: "problem", kr: "문제의식", en: "Problem",
-      sub: [["기존 아파트의 한계","Limits of Today's Apartments","limits"], ["연구 질문 · 가설","Question & Hypothesis","question"], ["연구 두 축","Two Tracks","tracks"]] },
-    { num: "03", id: "theory", kr: "이론적 배경", en: "Theory",
-      sub: [["Martin & March","Martin & March","martin-march"], ["아시하라 — 앙각·D/H","Ashihara — Angle · D/H","ashihara"], ["Jan Gehl — Walkable","Jan Gehl — Walkable","gehl"]] },
-    { num: "03b", id: "cases", kr: "사례분석 · AI", en: "Cases · AI",
-      sub: [["AI 파이프라인","AI Pipeline","ai-pipeline"], ["분석 21개 단지","21 Complexes","complexes"], ["분류 5그룹","Five Groups","groups"]] },
-    { num: "04", id: "site", kr: "대상지", en: "Site",
-      sub: [["위치 · 규모","Location · Scale","location"], ["사이트 역사 1976–2024","History 1976–2024","history"], ["현황 분석","Context Analysis","context"]] },
-    { num: "05", id: "method", kr: "연구방법", en: "Method",
-      sub: [["3단계 흐름","Three-Step Flow","flow"], ["변인 설정","Variables","variables"]] },
-    { num: "07", id: "scenario", kr: "시나리오", en: "Scenario",
-      sub: [["A — 남향 + 인동","A — South + Spacing","scn-a"], ["B — 인동만","B — Spacing Only","scn-b"], ["C — 인동 무시","C — No Spacing","scn-c"]] },
-    { num: "09", id: "results", kr: "결과", en: "Results",
-      sub: [["전환임계점 3구간","Three Threshold Zones","zones"], ["건폐율별 배치안","Layouts by BCR","layouts"], ["국내 · 국외 비교","Domestic · Intl.","compare"]] },
-    { num: "10", id: "metrics", kr: "평가지표", en: "Metrics",
-      sub: [["A — 물리적 형태","A — Physical Form","metric-a"], ["B — 보행자 인지","B — Perception","metric-b"], ["C — 내부 환경","C — Internal Env.","metric-c"]] },
-    { num: "11", id: "conclusion", kr: "결론", en: "Conclusion",
-      sub: [["핵심 주장","Key Claim","claim"], ["설계 제안","Design Proposal","proposal"], ["향후 과제","Future Work","future"]] }
+    { num: "01", id: "intro", kr: "서론", en: "Introduction",
+      sub: [["연구의 배경 및 필요성","Background & Need","1-1"], ["연구의 목적","Objectives","1-2"], ["연구의 범위 및 방법","Scope & Methods","1-3"], ["연구의 흐름 및 구성","Flow & Structure","1-4"]] },
+    { num: "02", id: "background", kr: "이론적 배경 및 선행 연구", en: "Background & Literature",
+      sub: [["관련 개념 및 이론적 고찰","Concepts & Theory","2-1"], ["선행 연구 검토","Literature Review","2-2"], ["선행 연구의 한계 및 본 연구의 차별성","Gap & Contribution","2-3"]] },
+    { num: "03", id: "framework", kr: "분석의 틀 및 연구 방법", en: "Framework & Methods",
+      sub: [["분석 대상 및 범위","Subject & Scope","3-1"], ["분석 기준 및 변수 설정","Criteria & Variables","3-2"], ["분석·설계 방법","Analysis & Design Methods","3-3"]] },
+    { num: "04", id: "design", kr: "분석 및 설계", en: "Analysis & Design",
+      sub: [["대상지 분석","Site Analysis","4-1"], ["유형 분석","Typology Analysis","4-2"], ["설계(생성) 과정 및 결과","Design (Generation)","4-3"]] },
+    { num: "05", id: "evaluation", kr: "평가 및 종합", en: "Evaluation & Synthesis",
+      sub: [["평가 기준","Evaluation Criteria","5-1"], ["평가 결과","Evaluation Results","5-2"], ["결과의 해석 및 논의","Interpretation & Discussion","5-3"]] },
+    { num: "06", id: "conclusion", kr: "결론", en: "Conclusion",
+      sub: [["연구 요약","Summary","6-1"], ["연구의 의의 및 한계","Significance & Limits","6-2"], ["향후 과제","Future Work","6-3"]] },
+    { num: "07", id: "references", kr: "참고문헌", en: "References", sub: [] },
+    { num: "08", id: "appendix", kr: "부록", en: "Appendix", sub: [] }
   ];
   var SUBS = [];
-  MENU.forEach(function (item) { item.sub.forEach(function (s) { SUBS.push({ id: s[2], ko: s[0], en: s[1], num: item.num, gnbKo: item.kr, gnbEn: item.en }); }); });
+  MENU.forEach(function (item) {
+    if (item.sub && item.sub.length) item.sub.forEach(function (s) { SUBS.push({ id: s[2], ko: s[0], en: s[1], num: item.num, gnbKo: item.kr, gnbEn: item.en }); });
+    else SUBS.push({ id: item.id, ko: item.kr, en: item.en, num: item.num, gnbKo: item.kr, gnbEn: item.en });
+  });
 
   var gnb = document.getElementById("gnb");
   var menu = document.getElementById("menu");
@@ -50,6 +47,7 @@
   try { lang = localStorage.getItem("sg-lang") || "ko"; } catch (e) {}
 
   function subHTML(item, lg) {
+    if (!item.sub || !item.sub.length) return "";
     return item.sub.map(function (s) {
       return '<a href="page.html?id=' + s[2] + '">' + (lg === "en" ? s[1] : s[0]) + "</a>";
     }).join("");
@@ -57,8 +55,9 @@
   function buildMenu(lg) {
     if (!gnb) return;
     gnb.innerHTML = MENU.map(function (item) {
+      var mainId = (item.sub && item.sub.length) ? item.sub[0][2] : item.id;
       return '<div class="gnb__item">' +
-               '<a class="gnb__link" href="page.html?id=' + item.sub[0][2] + '">' +
+               '<a class="gnb__link" href="page.html?id=' + mainId + '">' +
                  '<span class="gnb__num">' + item.num + '</span>' +
                  '<span class="gnb__t">' + (lg === "en" ? item.en : item.kr) + "</span>" +
                "</a>" +
@@ -103,13 +102,17 @@
       next.textContent = (lg === "en" ? "View " + nx.en : nx.ko + " 보기") + " →";
     }
 
-    // 처음으로 가기 (동일 디자인) — 보통은 좌측, 마지막 페이지에선 우측
+    // 처음으로 가기 (동일 디자인) — 항상 좌측 하단 고정
     var home = makeCta("homeCta", "page-cta--home");
     home.setAttribute("href", "index.html");
     home.setAttribute("data-ko", "← 처음으로 가기");
     home.setAttribute("data-en", "← Home");
     home.textContent = lg === "en" ? "← Home" : "← 처음으로 가기";
-    home.classList.toggle("page-cta--home", !isLast);   // 마지막이면 클래스 제거 → 우측 정렬
+    home.classList.add("page-cta--home");   // 마지막 페이지에서도 좌측 유지
+
+    // 동적 주입 콘텐츠(content.js)에도 리빌·카운터 적용 — 언어 토글 재주입 포함
+    initReveals(doc);
+    initCounters(doc);
   }
 
   function applyLang(lg) {
