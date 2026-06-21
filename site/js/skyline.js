@@ -53,7 +53,7 @@
     "평면","전용","공용","옥상","단열","창호","새시","수납","팬트리","알파룸"];
   var WORDS_EN = ["Apartment","Tower","Unit","Balcony","Terrace","Living","Bedroom","Facade","Daylight","View",
     "Sunlight","Complex","Piloti","Core","Corridor","Stair","Entrance","Parking","Landscape","Courtyard",
-    "Playground","Community","Rebuild","FAR","BCR","SVF","Spacing","South","Slab","Bay",
+    "Playground","Community","Rebuild","FAR","BCR","Frontage","Spacing","South","Slab","Bay",
     "Plan","Area","Rooftop","Insulation","Window","Storage","Pantry","Walkable","Density","Mass"];
   /* ---- (선택) 대본 모드 ----
      SCRIPT.ko / SCRIPT.en 에 대본을 채우면 → 그 텍스트를 단어로 끊어 '읽는 순서대로' 건물을 채움.

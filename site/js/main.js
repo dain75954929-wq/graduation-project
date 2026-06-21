@@ -17,19 +17,19 @@
   /* ---------- 콘텐츠 목록 (GNB) + 소분류 (LNB) ---------- */
   var MENU = [
     { num: "01", id: "intro", kr: "서론", en: "Introduction",
-      sub: [["연구의 배경 및 필요성","Background & Need","1-1"], ["연구의 목적","Objectives","1-2"], ["연구의 범위 및 방법","Scope & Methods","1-3"], ["연구의 흐름 및 구성","Flow & Structure","1-4"]] },
-    { num: "02", id: "background", kr: "이론적 배경 및 선행 연구", en: "Background & Literature",
-      sub: [["관련 개념 및 이론적 고찰","Concepts & Theory","2-1"], ["선행 연구 검토","Literature Review","2-2"], ["선행 연구의 한계 및 본 연구의 차별성","Gap & Contribution","2-3"]] },
-    { num: "03", id: "framework", kr: "분석의 틀 및 연구 방법", en: "Framework & Methods",
-      sub: [["분석 대상 및 범위","Subject & Scope","3-1"], ["분석 기준 및 변수 설정","Criteria & Variables","3-2"], ["분석·설계 방법","Analysis & Design Methods","3-3"]] },
-    { num: "04", id: "design", kr: "분석 및 설계", en: "Analysis & Design",
-      sub: [["대상지 분석","Site Analysis","4-1"], ["유형 분석","Typology Analysis","4-2"], ["설계(생성) 과정 및 결과","Design (Generation)","4-3"]] },
-    { num: "05", id: "evaluation", kr: "평가 및 종합", en: "Evaluation & Synthesis",
-      sub: [["평가 기준","Evaluation Criteria","5-1"], ["평가 결과","Evaluation Results","5-2"], ["결과의 해석 및 논의","Interpretation & Discussion","5-3"]] },
-    { num: "06", id: "conclusion", kr: "결론", en: "Conclusion",
-      sub: [["연구 요약","Summary","6-1"], ["연구의 의의 및 한계","Significance & Limits","6-2"], ["향후 과제","Future Work","6-3"]] },
-    { num: "07", id: "references", kr: "참고문헌", en: "References", sub: [] },
-    { num: "08", id: "appendix", kr: "부록", en: "Appendix", sub: [] }
+      sub: [["프로젝트 배경","Background","1-1"], ["프로젝트 목적","Objective","1-2"]] },
+    { num: "02", id: "background", kr: "이론적 배경", en: "Theoretical Background",
+      sub: [["관련 법규 및 제도","Laws & Regulations","2-1"], ["선행 연구","Literature Review","2-2"], ["사전 분석","Preliminary Analysis","2-3"]] },
+    { num: "03", id: "subject", kr: "분석 대상", en: "Subject",
+      sub: [["대상지 선정","Site Selection","3-1"], ["대상지 분석","Site Analysis","3-2"]] },
+    { num: "04", id: "method", kr: "분석 방법", en: "Method",
+      sub: [["분석 단계","Analysis Steps","4-1"], ["분석 도구","Tools","4-2"], ["분석 지표","Metrics","4-3"]] },
+    { num: "05", id: "analysis", kr: "분석", en: "Analysis",
+      sub: [["임계전환점 도출","Transition Point","5-1"], ["배치안 자동 생성","Auto-Layout","5-2"]] },
+    { num: "06", id: "results", kr: "분석 결과", en: "Results",
+      sub: [["배치안별 분석 결과","Results by Layout","6-1"], ["배치안별 이미지","Layout Images","6-2"]] },
+    { num: "07", id: "conclusion", kr: "결론 및 한계", en: "Conclusion & Limits", sub: [] },
+    { num: "08", id: "references", kr: "참고문헌", en: "References", sub: [] }
   ];
   var SUBS = [];
   MENU.forEach(function (item) {
@@ -224,33 +224,39 @@
   }
   initCounters(document);
 
-  /* ---------- 건폐율 슬라이더 ---------- */
+  /* ---------- 건폐율 슬라이더 ----------
+     지표 체계: 노션 `지표별 평가 기준`·`지표별 가설`.
+     - 기술·조작 변수: bcr(독립변수) · floors/height(평균높이, FAR250%÷BCR) · dong(동수)
+     - 판정 지표(단지 외부 보행자 시지각): ang(조망앙각°) · solid(입체각 %FOV) · front(전면점유율 %)
+       · 임계: 앙각 27°거리≤100m / 입체각 7.1%FOV / 전면점유 ≥50%
+       · 가설: 앙각 단조↓ · 입체각 역U(중간 BCR 최소) · 전면점유 단조↑ → BCR 15~30% 최적 구간
+     ※ 수치는 가설 방향에 맞춘 illustrative 값. 확정 시 `4. 배치 분석/2. 지표별/` 산출값으로 교체. */
   var STOPS = [
-    { bcr: 5,  floors: 49, dong: 26,  ang: 58, svf: 6,  dh: 0.6,
-      zone: "1구간 · Optimal Zone — 남향·인동 모두 만족",
-      note: "초고층·저밀 — 거대하고 황량한 광장형 오픈스페이스." },
-    { bcr: 10, floors: 24, dong: 47,  ang: 51, svf: 10, dh: 0.9,
-      zone: "1구간 · Optimal Zone — 남향·인동 모두 만족",
-      note: "현황대 — 남향·인동 모두 확보되는 안정 구간." },
-    { bcr: 20, floors: 17, dong: 68,  ang: 45, svf: 15, dh: 1.2,
-      zone: "2구간 · Compromise Zone — 남향 완화로 설계 타협",
-      note: "임계 17.3% 통과 — 남향을 양보하며 동수가 늘기 시작." },
-    { bcr: 30, floors: 12, dong: 90,  ang: 38, svf: 22, dh: 1.6,
-      zone: "2~3구간 — 남향 양보 가속, 가로 분절 시작",
-      note: "앙각 45° 이하로 — 보행자에게 편안한 범위 진입." },
-    { bcr: 40, floors: 9,  dong: 130, ang: 33, svf: 28, dh: 1.9,
-      zone: "3구간 · 인동간격 규제 압박 구간",
-      note: "저층고밀 — 매스가 가로 스케일로 분절." },
-    { bcr: 50, floors: 7,  dong: 170, ang: 29, svf: 34, dh: 2.2,
-      zone: "3구간 · Invalid Zone — 인동 규제 완화 임계(50.9%)",
-      note: "중정형 영역성 — 아늑한 가로, 보행 친화 완성." }
+    { bcr: 5,  floors: 50, height: 150, dong: 22,  ang: 58, solid: 9.4, front: 18,
+      zone: "초고층·저밀 — 수직 위압 구간",
+      note: "앙각·입체각 모두 임계 초과(27°거리 > 100m). 전면점유 낮아 가로 단절." },
+    { bcr: 10, floors: 25, height: 75,  dong: 40,  ang: 51, solid: 7.2, front: 28,
+      zone: "고층 — 앙각 합격 임계 부근",
+      note: "평균높이 ~75m. 27°거리 막 100m 진입, 입체각은 아직 위압(7.1%↑)." },
+    { bcr: 20, floors: 13, height: 38,  dong: 64,  ang: 45, solid: 5.6, front: 44,
+      zone: "최적 구간 진입 — 4지표 균형",
+      note: "평균높이 ~38m. 앙각·입체각 동시 합격 시작, 전면점유 50% 근접." },
+    { bcr: 30, floors: 8,  height: 25,  dong: 92,  ang: 38, solid: 5.3, front: 56,
+      zone: "최적 구간 — 외부 보행 친화",
+      note: "입체각 최저(역U 바닥). 전면점유 50% 돌파, 가로 접면 확보." },
+    { bcr: 40, floors: 6,  height: 19,  dong: 124, ang: 33, solid: 6.9, front: 70,
+      zone: "저층고밀 — 수평 위압 시작",
+      note: "광폭 footprint로 근경 입체각 재상승(역U 우측). 전면점유는 높음." },
+    { bcr: 50, floors: 5,  height: 15,  dong: 158, ang: 29, solid: 8.6, front: 82,
+      zone: "저층고밀 — 병풍(수평) 위압",
+      note: "앙각은 최저지만 입체각 7.1% 재초과 — 병풍 벽면이 근경 시야 점유." }
   ];
 
   var range = document.getElementById("bcrRange");
   if (range) {
     var elBcr = document.getElementById("rBcr"), elFloors = document.getElementById("rFloors"),
         elDong = document.getElementById("rDong"), elAng = document.getElementById("rAng"),
-        elSvf = document.getElementById("rSvf"), elDh = document.getElementById("rDh"),
+        elSolid = document.getElementById("rSolid"), elFront = document.getElementById("rFront"),
         elZone = document.getElementById("bcrZone"), elNote = document.getElementById("bcrNote"),
         elPlanN = document.getElementById("bcrPlanN"), unitsWrap = document.getElementById("bcrUnits"),
         sectionWrap = document.getElementById("bcrSection"), ticks = document.querySelectorAll("#bcrTicks button");
@@ -261,7 +267,7 @@
     function render(i) {
       var d = STOPS[i];
       elBcr.textContent = d.bcr; elFloors.textContent = d.floors; elDong.textContent = d.dong;
-      elAng.textContent = d.ang + "°"; elSvf.textContent = d.svf + "%"; elDh.textContent = d.dh.toFixed(1);
+      elAng.textContent = d.ang + "°"; elSolid.textContent = d.solid + "%"; elFront.textContent = d.front + "%";
       elZone.textContent = d.zone; elNote.textContent = d.note; elPlanN.textContent = d.dong;
 
       var n = Math.min(d.dong, 120);
@@ -270,7 +276,7 @@
       for (var k = 0; k < n; k++) html += '<div class="bcr__unit" style="width:' + size + 'px;height:' + Math.round(size * 0.6) + 'px"></div>';
       unitsWrap.innerHTML = html;
 
-      var hpct = d.floors / 49;
+      var hpct = d.floors / 50;
       bars.forEach(function (bar, idx) { bar.style.height = Math.round(100 * hpct * (1 - (idx % 3) * 0.05)) + "%"; });
 
       ticks.forEach(function (t) { t.classList.toggle("is-active", parseInt(t.getAttribute("data-i"), 10) === i); });
