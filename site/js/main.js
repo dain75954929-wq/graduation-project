@@ -15,25 +15,25 @@
   } catch (e) {}
 
   /* ---------- 콘텐츠 목록 (GNB) + 소분류 (LNB) ---------- */
+  /* 세부 구분 20개 — 책자(booklet_구성안_및_도입텍스트.md)와 공유하는 공통 구조.
+     1장·9장은 세부 구분 없음(하나의 흐름) → 대제목 클릭 시 바로 해당 페이지. */
   var MENU = [
-    { num: "01", id: "pedestrian", kr: "아파트와 도시 보행자", en: "Apartments and the Urban Pedestrian",
-      sub: [["배경","Background","1-1"], ["두 개의 시선","Two Gazes","1-2"], ["목적과 세 가지 질문","Aim & Three Questions","1-3"]] },
+    { num: "01", id: "pedestrian", kr: "아파트와 도시 보행자", en: "Apartments and the Urban Pedestrian", sub: [] },
     { num: "02", id: "regulation", kr: "아파트의 형태를 만들어온 법과 제도", en: "The Laws That Shaped the Form",
-      sub: [["형태를 규정하는 법규","Form-Defining Regulations","2-1"], ["시대별 변천","Regulatory Timeline","2-2"], ["폐지된 제도들","Repealed Rules","2-3"]] },
+      sub: [["형태를 규정하는 규정들","Form-Defining Regulations","2-1"], ["제도의 변천과 폐지된 규제","Change & Repealed Rules","2-2"]] },
     { num: "03", id: "theory", kr: "위압감을 이해하기 위한 이론들", en: "Theories for Understanding Oppressiveness",
-      sub: [["시지각과 휴먼스케일","Perception & Human Scale","3-1"], ["주동의 유형화","Building Typology","3-2"], ["위압감 지표의 계보","Lineage of Metrics","3-3"], ["컴퓨터 비전 연구 흐름","Computer Vision Research","3-4"]] },
+      sub: [["보행자의 시지각","Pedestrian Perception","3-1"], ["아파트 주동의 유형화","Building Typology","3-2"], ["위압감의 측정 지표","Metrics of Oppressiveness","3-3"]] },
     { num: "04", id: "observation", kr: "서울 아파트 단지 21곳의 관찰", en: "Observing 21 Seoul Complexes",
-      sub: [["21개 단지 기록","Field Records","4-1"], ["주관적 위압감 순위","Subjective Ranking","4-2"], ["현황 종합","Spectrum of Indicators","4-3"]] },
+      sub: [["21곳의 기록","Records of 21 Complexes","4-1"], ["주관적 순위와 종합","Ranking & Synthesis","4-2"]] },
     { num: "05", id: "measurement", kr: "느낌을 숫자로 옮기기", en: "Turning Feeling into Numbers",
-      sub: [["촬영 표준화","Capture Protocol","5-1"], ["시맨틱 세그멘테이션","Semantic Segmentation","5-2"], ["점유율과 무게중심","Ratios & Centroid","5-3"], ["데이터 마이닝","Data Mining","5-4"]] },
+      sub: [["데이터 수집과 촬영 기준","Collection & Capture Protocol","5-1"], ["세그멘테이션과 시각 지표","Segmentation & Visual Indicators","5-2"], ["데이터 마이닝","Data Mining","5-3"]] },
     { num: "06", id: "findings", kr: "위압감은 어디에서 오는가", en: "Where Oppressiveness Comes From",
-      sub: [["지표별 상관","Correlations","6-1"], ["종합 회귀 모형","Regression Model","6-2"], ["세 축의 해석","Density · Height · Dispersion","6-3"], ["대상지 선정","Site Selection","6-4"]] },
+      sub: [["상관과 회귀의 결과","Correlation & Regression","6-1"], ["해석: 밀도·높이·분산","Density · Height · Dispersion","6-2"], ["대상지 선정","Site Selection","6-3"]] },
     { num: "07", id: "experiment", kr: "96개의 배치", en: "96 Layouts",
-      sub: [["변인 설정","Variables","7-1"], ["16종 주동 유닛","16 Unit Types","7-2"], ["세 가지 시나리오","Three Scenarios","7-3"], ["평가 지점과 지표","Evaluation Points & Metrics","7-4"]] },
+      sub: [["실험 설계","Experiment Design","7-1"], ["16종 유닛과 세 시나리오","16 Units & Three Scenarios","7-2"], ["평가 방법","Evaluation Method","7-3"], ["96개 배치안","The 96 Layouts","7-4"]] },
     { num: "08", id: "balance", kr: "상충하는 지표와 균형점", en: "Conflicting Metrics, a Balance Point",
-      sub: [["건폐율별 변화","Change by BCR","8-1"], ["동간거리의 붕괴","Collapse of Spacing","8-2"], ["시각 위압 통과거리","Pass Distance","8-3"], ["매스 유형별 비교","Comparison by Mass Type","8-4"], ["클러스터형 매스","Cluster Mass","8-5"]] },
-    { num: "09", id: "conclusion", kr: "공공을 배려한 아파트 단지를 향하여", en: "Toward Publicly Considerate Housing",
-      sub: [["프로젝트의 의의","Contributions","9-1"], ["한계와 후속 과제","Limits & Future Work","9-2"], ["설계 방향","Design Directions","9-3"]] },
+      sub: [["건폐율에 따른 변화","Change by BCR","8-1"], ["지표별 상세","Metric Details","8-2"], ["매스 유형과 클러스터형","Mass Types & Clusters","8-3"]] },
+    { num: "09", id: "conclusion", kr: "공공을 배려한 아파트 단지를 향하여", en: "Toward Publicly Considerate Housing", sub: [] },
     { num: "10", id: "appendix", kr: "부록", en: "Appendix",
       sub: [["데이터","Data","10-1"], ["용어 정리","Glossary","10-2"], ["참고문헌","References","10-3"], ["이미지 크레딧","Image Credits","10-4"]] }
   ];
