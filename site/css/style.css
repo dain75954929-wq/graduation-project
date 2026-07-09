@@ -187,6 +187,9 @@ body.is-cover { height: 100svh; overflow: hidden; }
 .cover__col:last-child { justify-content: flex-end; text-align: right; }   /* Tools — 우측 끝 (양끝 정렬 3등분) */
 .cover__label { flex: none; white-space: nowrap; font-family: "Space Grotesk", var(--sans); font-weight: 500; font-size: var(--fs-label); letter-spacing: 0.18em; text-transform: uppercase; color: var(--paper); }
 .cover__text { min-width: 0; font-family: var(--sans); font-size: var(--fs-small); color: var(--paper); line-height: 1.6; margin: 0; }
+/* Title 칸만 제목 + 부제 2줄 — 합계 ≈40px로 푸터 70px 안에 들어감 */
+.cover__titleblock { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.cover__text--sub { font-size: var(--fs-label); line-height: 1.5; opacity: 0.7; }
 
 /* ---------- Section ---------- */
 .section { padding-block: var(--space-xl); position: relative; }

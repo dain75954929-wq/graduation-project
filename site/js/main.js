@@ -28,7 +28,7 @@
       sub: [["촬영 표준화","Capture Protocol","5-1"], ["시맨틱 세그멘테이션","Semantic Segmentation","5-2"], ["점유율과 무게중심","Ratios & Centroid","5-3"], ["데이터 마이닝","Data Mining","5-4"]] },
     { num: "06", id: "findings", kr: "위압감은 어디에서 오는가", en: "Where Oppressiveness Comes From",
       sub: [["지표별 상관","Correlations","6-1"], ["종합 회귀 모형","Regression Model","6-2"], ["세 축의 해석","Density · Height · Dispersion","6-3"], ["대상지 선정","Site Selection","6-4"]] },
-    { num: "07", id: "experiment", kr: "하나의 대지, 96개의 배치", en: "One Site, 96 Layouts",
+    { num: "07", id: "experiment", kr: "96개의 배치", en: "96 Layouts",
       sub: [["변인 설정","Variables","7-1"], ["16종 주동 유닛","16 Unit Types","7-2"], ["세 가지 시나리오","Three Scenarios","7-3"], ["평가 지점과 지표","Evaluation Points & Metrics","7-4"]] },
     { num: "08", id: "balance", kr: "상충하는 지표와 균형점", en: "Conflicting Metrics, a Balance Point",
       sub: [["건폐율별 변화","Change by BCR","8-1"], ["동간거리의 붕괴","Collapse of Spacing","8-2"], ["시각 위압 통과거리","Pass Distance","8-3"], ["매스 유형별 비교","Comparison by Mass Type","8-4"], ["클러스터형 매스","Cluster Mass","8-5"]] },
