@@ -11,7 +11,7 @@
 | 파일 | 웹 섹션/라우트 | 비고 |
 |---|---|---|
 | `01_개요.md` | HOME #intro | Hero |
-| `02_문제의식.md` | HOME #problem | 연구 두 축 명시 |
+| `02_문제의식.md` | HOME #problem | 프로젝트 두 축 명시 |
 | `03_이론적배경.md` | HOME #theory | |
 | `03b_아파트사례분석AI.md` | HOME #cases | **신규** — Florence-2+SAM2 21단지 AI 분석 |
 | `04_대상지.md` | HOME #site | 수치지도 모델링 추가 |

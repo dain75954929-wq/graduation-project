@@ -53,7 +53,7 @@ window.CONTENT = {
       <section class="section" id="question">
         <div class="section__head reveal">
           <span class="section__index">01.2</span>
-          <h2 class="section__title" data-ko="연구 질문 · 가설" data-en="Question &amp; Hypothesis">연구 질문 · 가설</h2>
+          <h2 class="section__title" data-ko="프로젝트 질문 · 가설" data-en="Question &amp; Hypothesis">프로젝트 질문 · 가설</h2>
         </div>
 
         <div class="cols">
@@ -68,7 +68,7 @@ window.CONTENT = {
       <section class="section" id="tracks">
         <div class="section__head reveal">
           <span class="section__index">01.3</span>
-          <h2 class="section__title" data-ko="연구의 두 축" data-en="Two Tracks of the Study">연구의 두 축</h2>
+          <h2 class="section__title" data-ko="프로젝트의 두 축" data-en="Two Tracks of the Project">프로젝트의 두 축</h2>
           <p class="section__sub" data-ko="현재 아파트의 가로 문제를 데이터로 진단하고, 그 해법을 자동배치로 제안한다" data-en="Diagnose today’s street problem with data, then propose a remedy through auto-layout">현재 아파트의 가로 문제를 데이터로 진단하고, 그 해법을 자동배치로 제안한다</p>
         </div>
 

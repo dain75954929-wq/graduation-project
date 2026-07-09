@@ -488,7 +488,7 @@ body.page { padding-top: var(--nav-h); background: var(--paper); color: var(--in
 .docnext:hover { color: var(--ink-70); }
 .docnext:hover .docnext__apt { transform: translateY(-8px); color: var(--ink); }
 
-/* ---- 표지 CTA '연구 개요 보기' (한/영 토글과 동일 톤, 첫 건물 후 등장) ---- */
+/* ---- 표지 CTA '프로젝트 보기' (한/영 토글과 동일 톤, 첫 건물 후 등장) ---- */
 .cover-cta {
   position: absolute; z-index: 3;
   right: clamp(20px, 3.5vw, 44px);                          /* 푸터 우측 정렬과 동일 */
