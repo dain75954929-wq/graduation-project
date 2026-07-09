@@ -346,6 +346,7 @@ Apartment Streetscape Analysis  ← 영문 부제 (ink-40)
 - **Title / Site / Tools** 영문 라벨(Space Grotesk 500 · 대문자) + 내용, **라벨·내용 한 줄(인라인)**
 - **양끝 정렬 3등분**: Title(좌) · Site(중앙) · Tools(우, 우측 끝)
 - 내용 = Pretendard fs-small. Site = `서울특별시 송파구 올림픽로 333, 잠실르엘아파트`
+- Tools = `Rhino · Grasshopper · Python · Claude Code` (2026-07-09). Florence-2·SAM2는 시맨틱 세그멘테이션으로 전환하며 제외
 - **Title 칸만 2줄**(`.cover__titleblock`): 제목 `보기 좋은 아파트에 대하여`(fs-small) + 부제 `도시 보행자의 시지각을 기준으로 한 아파트 배치의 정량 분석`(`.cover__text--sub` = fs-label · opacity 0.7). 합계 ≈40px로 푸터 70px 안에 들어감. Site·Tools는 한 줄 유지
 - 사이트 제목 = 책자 제목과 동일(`보기 좋은 아파트에 대하여`). 구 연구제목 "고정 용적률(250%)하 …"은 표지·`<title>`·meta에서 폐기
 - 모바일(≤600px)은 1열·높이 자동 예외
