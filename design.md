@@ -26,30 +26,37 @@
 **포인트 색 없음.** 강조는 색이 아니라 **명도·면(fill)·선·타이포 굵기**로만 만든다.
 → 가장 건축적이고 엄격한 톤. 도면·먹선의 정밀함.
 
+> **2026-07-09 — 쿨 뉴트럴(zinc)로 전환.** 웜 페이퍼(`#F4F3EF`)에서 zinc로 바꿨다.
+> `design-taste-frontend` 스킬의 원칙(순수 검정·흰색 회피, 액센트 최대 1개 → 여기선 0개)을 채택한 것.
+> **반경은 0px 유지** — 원문의 6px 대신 각진 모서리로 건축 도면 톤을 지킨다.
+> 구 웜 팔레트는 `html[data-theme="warm"]`로 보존(스타일 가이드에서 비교 가능).
+
 ```css
 :root {
-  /* Base — 종이/잉크 (무채색, 미세하게 따뜻한 그레이) */
-  --paper:      #F7F7F5;  /* 배경 (옅은 트레이싱지 화이트) */
+  /* Base — 쿨 뉴트럴 zinc. 순수 검정/흰색 회피 */
+  --paper:      #FAFAFA;  /* 배경 (off-white) */
   --paper-pure: #FFFFFF;  /* 카드·이미지 배경 */
-  --ink:        #141414;  /* 본문 텍스트 (순흑에 가까운 먹) */
-  --ink-70:     #474747;  /* 보조 텍스트 */
-  --ink-40:     #8C8C8C;  /* 캡션·메타 */
-  --line:       #D6D6D4;  /* 헤어라인·구분선 */
-  --line-soft:  #EAEAE8;  /* 그리드 배경선 */
+  --ink:        #18181B;  /* 본문 텍스트 (off-black) */
+  --ink-70:     #52525B;  /* 보조 텍스트 */
+  --ink-40:     #A1A1AA;  /* 캡션·메타 */
+  --ink-20:     #D4D4D8;  /* 약한 텍스트·비활성 */
+  --line:       #E4E4E7;  /* 헤어라인·구분선 */
+  --line-soft:  #F4F4F5;  /* 그리드 배경선 */
 
   /* Emphasis — 색 대신 '먹 면/먹 선'으로 강조 */
-  --fill-ink:   #141414;  /* 강조 블록 배경(글자는 paper색 반전) */
-  --fill-soft:  #ECECEA;  /* 강조 행·배지 옅은 배경 */
-  --rule-bold:  #141414;  /* 굵은 강조선 2px */
+  --fill-soft:  #F4F4F5;  /* 강조 행·배지 옅은 배경 */
 
-  /* 데이터 시각화 — 건폐율 단계 순차 그레이스케일 */
-  --seq-1: #1F1F1F;  /* 저건폐율(초고층) — 어둡고 무거움 */
-  --seq-2: #555555;
-  --seq-3: #888888;
-  --seq-4: #B5B5B5;
-  --seq-5: #DDDDDD;  /* 고건폐율(저층고밀) — 밝고 가벼움 */
+  /* 데이터 시각화 — 건폐율 단계 순차 그레이스케일 (현재 미사용) */
+  --seq-1: #18181B;  /* 저건폐율(초고층) — 어둡고 무거움 */
+  --seq-2: #52525B;
+  --seq-3: #A1A1AA;
+  --seq-4: #D4D4D8;
+  --seq-5: #F4F4F5;  /* 고건폐율(저층고밀) — 밝고 가벼움 */
 }
 ```
+
+**하드코딩 색도 함께 환산했다**: 모눈 배경 SVG(격자선 `#E4E4E7` · 교차 십자 `#A1A1AA`),
+`.section--dark` 6종, `skyline.js`의 3톤(`#52525B` / `#A1A1AA` / `#D4D4D8`).
 
 > **무채색 강조 규칙 (색이 없으니 더 엄격하게)**
 > - 위계는 오직 **크기·굵기·여백·라인**으로. 색으로 도망치지 않는다.
@@ -239,15 +246,16 @@ Apartment Streetscape Analysis  ← 영문 부제 (ink-40)
 |---|---|---|
 | 분위기 | **정적·미니멀 도면체** (+ 분석/코딩 레이어, §11) | 확정 |
 | 컬러 | **완전 무채색** — 포인트색 없음, 강조는 명도·먹면·먹선·타이포로 | 확정 |
-| **서체(Type)** | **올 산세리프** — 제목 Pretendard(600) · 본문 Pretendard · 데이터 JetBrains Mono · 영문 Space Grotesk | 잠정 |
-| **테마(Color)** | **따뜻한 종이** — paper `#F4F3EF` / ink `#16140F` | 잠정 |
+| **서체(Type)** | **올 산세리프** — 제목 Pretendard(500) · 본문 Pretendard · 데이터 JetBrains Mono · 영문 Space Grotesk | 확정 |
+| **테마(Color)** | **zinc(쿨 뉴트럴)** — paper `#FAFAFA` / ink `#18181B` | 확정 (2026-07-09) |
 | **타입 스케일** | **콤팩트** — Display 36–60px / Body 16px / Label 11px | 잠정 |
+| **반경** | **0px** — 각진 모서리 유지(도면 톤). dtf 원문의 6px는 미채택 | 확정 (2026-07-09) |
 | 모눈 배경 | 은은하게 적용 (시그니처) | 확정 |
 | 시그니처 인터랙션 | 표지 = **키네틱 스카이라인**(단어 낙하, skyline.js) · 결과 페이지 = 건폐율 슬라이더(예정) | 표지 구현 / 결과 예정 |
 
 > **토글 시스템**: 서체·테마·스케일은 `site/style-guide.html`에서 버튼으로 즉시 전환·비교 가능.
 > 선택값은 `<html data-type / data-theme / data-scale>` + localStorage 로 전 페이지에 적용.
-> 기본값 = `sans / warm / compact` (위 잠정값). 최종 확정 시 이 표를 갱신.
+> 기본값 = `sans / zinc / compact`. localStorage 키 접두사는 `sg2-`.
 
 ---
 
@@ -342,7 +350,7 @@ Apartment Streetscape Analysis  ← 영문 부제 (ink-40)
 
 ### 푸터 (풀폭 · 검은 배경 반전)
 - **높이 = 헤더와 동일**(`height: var(--nav-h)` 70px), 내용 세로 중앙. 하단 고정(absolute)
-- **검은 배경 반전**: `background: ink`, 글씨·라벨 = `paper`(따뜻한 종이 #F4F3EF, **순백 아님**)
+- **검은 배경 반전**: `background: ink`, 글씨·라벨 = `paper`(off-white #FAFAFA, **순백 아님**)
 - **Title / Site / Tools** 영문 라벨(Space Grotesk 500 · 대문자) + 내용, **라벨·내용 한 줄(인라인)**
 - **양끝 정렬 3등분**: Title(좌) · Site(중앙) · Tools(우, 우측 끝)
 - 내용 = Pretendard fs-small. Site = `서울특별시 송파구 올림픽로 333, 잠실르엘아파트`
@@ -352,15 +360,18 @@ Apartment Streetscape Analysis  ← 영문 부제 (ink-40)
 - 모바일(≤600px)은 1열·높이 자동 예외
 
 ### 서체·테마·스케일 (토글, 기본값)
-- 기본: **sans / warm / compact** (§10). `site/style-guide.html`에서 변경·저장
-- 폰트 위계: **Pretendard**(제목→본문) · **Space Grotesk**(시스템 라벨) · **JetBrains Mono**(데이터)
+- 기본: **sans / zinc / compact**. `site/style-guide.html`에서 변경·저장
+- 폰트 위계: **Pretendard**(제목→본문) · **Space Grotesk**(시스템 라벨·영문 디스플레이) · **JetBrains Mono**(데이터)
+- `data-type="sans"`가 `--serif-kr`을 Pretendard로 덮으므로 **국문 제목은 명조가 아니다**. `--w-display: 500`
+- 디스플레이·H1·H2 자간 **-0.045em / -0.04em** (dtf 채택 시 조임)
+- **localStorage 키 접두사 `sg2-`** — zinc 전환 시 구 `sg-` 값(웜)이 남아 새 기본값을 가리는 문제를 피하려 한 번 올렸다
 
-### Taste 미리보기 (style-guide.html 전용, 2026-07-09 추가)
-- 설치된 안티슬롭 스킬의 미감을 **토큰 수준에서 비교**하기 위한 네 번째 토글 그룹. `data-taste` = `base` / `minimal` / `dtf`
-- **격리**: 오버라이드 CSS와 복원 스크립트가 `style-guide.html` 안에만 있다. `main.js`는 `type/theme/scale`만 복원하므로 `index.html`·`page.html`에는 절대 적용되지 않는다
-- `minimal`(minimalist-ui): 웜 오프화이트 `#F7F6F3` · off-black `#111111` · 헤어라인 `#EAEAEA` · 반경 8~12px · 에디토리얼 세리프 헤딩. **원문의 파스텔 액센트는 무채색 원칙과 충돌하여 제외**
-- `dtf`(design-taste-frontend): 쿨 뉴트럴(zinc) · 순수 검정/흰색 회피 · 세리프 억제 → Space Grotesk 디스플레이 · 자간 타이트 · 반경 6px 통일. **원문 기본 다이얼(변량 8·모션 6)은 낮춰 흉내**
-- `data-taste`가 `data-theme`보다 뒤에 선언되어 **Taste 활성 시 Theme 토글은 무시**된다(캡션에 명시). 채택 시에는 `style.css`의 `:root` 토큰을 직접 고칠 것
+### Taste 미리보기 (style-guide.html 전용, 2026-07-09)
+- 설치된 안티슬롭 스킬의 미감을 **토큰 수준에서 비교**하기 위한 네 번째 토글 그룹. `data-taste` = `base` / `minimal`
+- **격리**: 오버라이드 CSS와 복원 스크립트가 `style-guide.html` 안에만 있다. `main.js`는 `type/theme/scale`만 복원하므로 `index.html`·`page.html`에는 적용되지 않는다
+- `minimal`(minimalist-ui): 웜 오프화이트 `#F7F6F3` · off-black `#111111` · 헤어라인 `#EAEAEA` · 반경 8~12px · 에디토리얼 세리프 헤딩. **원문의 파스텔 액센트는 무채색 원칙과 충돌하여 제외**. **미채택**
+- `dtf`(design-taste-frontend)는 **정식 채택**되어 `:root`로 이동했다(§1). 미리보기 목록에서 제거
+- `data-taste`가 `data-theme`보다 뒤에 선언되어 **Taste 활성 시 Theme 토글은 무시**된다(캡션에 명시)
 
 ### 파일 구조 / 빌드 방식 (현재)
 - **정적 HTML**(빌드 불필요). 페이지별 HTML + 공통 CSS/JS 재사용 구조

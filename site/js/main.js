@@ -9,7 +9,7 @@
   try {
     var root = document.documentElement;
     ["type", "theme", "scale"].forEach(function (k) {
-      var v = localStorage.getItem("sg-" + k);
+      var v = localStorage.getItem("sg2-" + k);
       if (v) root.setAttribute("data-" + k, v);
     });
   } catch (e) {}
@@ -50,7 +50,7 @@
   var langToggle = document.getElementById("langToggle");
   var isOpen = false;
   var lang = "ko";
-  try { lang = localStorage.getItem("sg-lang") || "ko"; } catch (e) {}
+  try { lang = localStorage.getItem("sg2-lang") || "ko"; } catch (e) {}
 
   function subHTML(item, lg) {
     if (!item.sub || !item.sub.length) return "";
@@ -133,7 +133,7 @@
     if (langToggle) langToggle.querySelectorAll(".langtoggle__btn").forEach(function (b) {
       b.classList.toggle("is-active", b.getAttribute("data-lang") === lg);
     });
-    try { localStorage.setItem("sg-lang", lg); } catch (e) {}
+    try { localStorage.setItem("sg2-lang", lg); } catch (e) {}
   }
   if (langToggle) {
     langToggle.addEventListener("click", function (e) {

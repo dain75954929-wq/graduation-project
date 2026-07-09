@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko" data-type="sans" data-theme="warm" data-scale="compact">
+<html lang="ko" data-type="sans" data-theme="zinc" data-scale="compact">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>스타일 가이드 — 타이포 · 색 · 스케일</title>
-<link rel="stylesheet" href="css/style.css?v=20260709">
+<link rel="stylesheet" href="css/style.css?v=20260709b">
 <script>
   /* FOUC 방지: 저장된 설정을 렌더 전에 적용 */
   (function () {
@@ -12,7 +12,7 @@
       var r = document.documentElement;
       /* taste는 이 페이지 전용 — main.js는 type/theme/scale만 복원한다 */
       ["type", "theme", "scale", "taste"].forEach(function (k) {
-        var v = localStorage.getItem("sg-" + k); if (v) r.setAttribute("data-" + k, v);
+        var v = localStorage.getItem("sg2-" + k); if (v) r.setAttribute("data-" + k, v);
       });
     } catch (e) {}
   })();
@@ -81,23 +81,8 @@
   :root[data-taste="minimal"] .t-h1,
   :root[data-taste="minimal"] .t-h2 { letter-spacing: -0.035em; }
 
-  /* --- design-taste-frontend: 쿨 뉴트럴 + 그로테스크 디스플레이 + 액센트 0개 --- */
-  :root[data-taste="dtf"] {
-    --paper: #FAFAFA; --paper-pure: #FFFFFF;
-    --ink: #18181B; --ink-70: #52525B; --ink-40: #A1A1AA; --ink-20: #D4D4D8;
-    --line: #E4E4E7; --line-soft: #F4F4F5; --fill-soft: #F4F4F5;
-    --serif-kr: "Space Grotesk", "Pretendard", sans-serif;   /* 세리프 억제 → 그로테스크 */
-    --serif-en: "Space Grotesk", "Pretendard", sans-serif;
-    --w-display: 500;
-    --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  :root[data-taste="dtf"] .sw,
-  :root[data-taste="dtf"] .preview-cover,
-  :root[data-taste="dtf"] .sg-btn { border-radius: 6px; }
-  :root[data-taste="dtf"] .t-display,
-  :root[data-taste="dtf"] .t-h1,
-  :root[data-taste="dtf"] .t-h2 { letter-spacing: -0.045em; line-height: 1.0; }
-  :root[data-taste="dtf"] .t-lead { font-style: normal; }
+  /* design-taste-frontend는 2026-07-09 정식 채택 → style.css의 :root로 이동했다.
+     반경 6px만 제외(각진 모서리 유지). 미리보기 블록은 제거. */
 </style>
 </head>
 <body class="is-guide">
@@ -115,7 +100,8 @@
     </div>
     <div class="sg-group" data-group="theme">
       <span>Theme</span>
-      <button class="sg-btn" data-val="warm">따뜻한 종이</button>
+      <button class="sg-btn" data-val="zinc">zinc · 기본</button>
+      <button class="sg-btn" data-val="warm">따뜻한 종이 (구)</button>
       <button class="sg-btn" data-val="mono">순백·순흑</button>
       <button class="sg-btn" data-val="grey">그레이</button>
     </div>
@@ -127,9 +113,8 @@
     </div>
     <div class="sg-group" data-group="taste">
       <span>Taste</span>
-      <button class="sg-btn" data-val="base">현행 · 도면 톤</button>
+      <button class="sg-btn" data-val="base">현행 (dtf 채택됨)</button>
       <button class="sg-btn" data-val="minimal">minimalist-ui</button>
-      <button class="sg-btn" data-val="dtf">design-taste-frontend</button>
     </div>
   </div>
   <div class="container"><p class="sg-note" id="sgNote"></p></div>
@@ -208,11 +193,10 @@
 
   /* Taste 미리보기 설명 — 스킬 원문에서 추린 특징. 이 페이지에서만 적용된다. */
   var NOTES = {
-    base:    "<b>현행 · 도면 톤</b> — 웜 페이퍼 #F4F3EF · 먹 #16140F · 얇은 룰 · 모눈 배경 · 액센트 없음. design.md가 정의한 기준값.",
+    base:    "<b>현행 — design-taste-frontend 채택 (2026-07-09)</b> — 쿨 뉴트럴 zinc(paper #FAFAFA · ink #18181B) · 순수 검정/흰색 회피 · 액센트 0개 · 자간 타이트(-0.04em) · 디스플레이 굵기 500. " +
+             "<b>반경은 0px 유지</b> — 원문의 6px 대신 각진 모서리로 건축 도면 톤을 지킨다(Shape Consistency Lock은 '하나로 통일'이지 '둥글게'가 아니다). 모눈 배경도 zinc로 환산해 존치.",
     minimal: "<b>minimalist-ui</b> — 웜 오프화이트 #F7F6F3 · off-black #111111 · 1px 헤어라인 #EAEAEA · 반경 8~12px · 섀도 거의 없음 · 에디토리얼 세리프 헤딩 · 넓은 여백. " +
-             "원문은 파스텔 액센트(#FDEBEC 등)와 이모지 금지를 규정하나, <b>파스텔 액센트는 무채색 원칙과 충돌하므로 제외</b>했다.",
-    dtf:     "<b>design-taste-frontend</b> — 쿨 뉴트럴(zinc) · 순수 검정/흰색 회피 · 액센트 최대 1개(여기선 0개) · 세리프 억제 → 그로테스크 디스플레이 · 자간 타이트 · 비대칭 레이아웃 · 반경 통일. " +
-             "원문 기본 다이얼은 화려한 편(변량 8 · 모션 6)이라 <b>모션·밀도는 낮춰 흉내</b>했다."
+             "원문은 파스텔 액센트(#FDEBEC 등)와 이모지 금지를 규정하나, <b>파스텔 액센트는 무채색 원칙과 충돌하므로 제외</b>했다. 미채택."
   };
 
   function current(group) {
@@ -258,7 +242,7 @@
       b.addEventListener("click", function () {
         var val = b.getAttribute("data-val");
         root.setAttribute("data-" + group, val);
-        try { localStorage.setItem("sg-" + group, val); } catch (e) {}
+        try { localStorage.setItem("sg2-" + group, val); } catch (e) {}
         refresh();
       });
     });

@@ -16,7 +16,7 @@
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---- 3톤: 0 진함 / 1 중간 / 2 연함 ---- */
-  var COLORS = ["#4d4d4d", "#9a9a9a", "#cfcfcf"];
+  var COLORS = ["#52525B", "#A1A1AA", "#D4D4D8"];
 
   /* ---- 5개 단지: towers [x0,x1,h,c] — 짙은(앞) + 왼쪽 오프셋된 옅은(뒤) 적층, 중앙 분포 ---- */
   var SITES = [
