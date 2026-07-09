@@ -12,3 +12,17 @@ desktop.ini
 *.bak
 *~
 *.tmp
+
+# ---- 에셋 ----
+# 원본은 저장소에 넣지 않는다. 20MB짜리 PNG가 한 번 커밋되면 히스토리에 영구히 남는다.
+# 변환본(webp/svg)만 site/assets/ 아래에 둔다. 규칙은 콘텐츠/_에셋매핑.md 참고.
+*.3dm
+*.drs
+*.psd
+*.mp4
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+!site/assets/**

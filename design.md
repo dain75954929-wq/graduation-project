@@ -203,6 +203,17 @@ Apartment Streetscape Analysis  ← 영문 부제 (ink-40)
 - 다이어그램(.ai→SVG): 배경 투명, 선 색을 `--ink` 단색 + 명도 단계(`--ink-70`/`--ink-40`)로 통일(원본 색 난립 방지)
 - 21단지 사진: 동일 비율(4:3) 크롭, 약한 톤 통일(채도 -10%) → 카드 일관성
 - AI 분석 이미지(세그멘테이션): 원본/마스크 나란히 비교(before/after 슬라이드)
+- 3D 렌더는 `Arctic` 또는 `Shaded` 룩으로 통일(무채색 도면 톤). `Rendered`는 색이 들어와 쓰지 않는다
+
+### 에셋 규약 (2026-07-09)
+
+- 경로: `site/assets/img/` · `site/assets/video/`. **저장소 이미지 총량 20MB 이하**(GitHub Pages 상한 1GB, 파일당 100MB)
+- 파일명: `{절번호}_{영문-슬러그}.{webp|svg}` (예 `5-2_segmentation-compare.webp`). 절 번호 = `page.html?id=` 라우트 키
+- 세부 구분 없는 1장·9장은 절 번호 대신 라우트 키를 접두사로: `pedestrian_` / `conclusion_`
+- 형식: 다이어그램 = **SVG**(색을 CSS 변수로 주입), 사진·렌더 = **WebP**(긴 변 1600px, 200KB 이하)
+- `<img>`에 `width`/`height`·`loading="lazy"`·`alt` 필수. 치수를 빼면 로딩 중 레이아웃이 튄다(CLS)
+- 원본(`.3dm`/`.psd`/`.png`/`.jpg`)은 `.gitignore`로 차단. 변환본만 커밋
+- 절별 도판 ↔ 원본 경로 대응표는 `콘텐츠/_에셋매핑.md`
 
 ---
 
