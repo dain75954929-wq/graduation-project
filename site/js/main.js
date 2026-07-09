@@ -16,20 +16,26 @@
 
   /* ---------- 콘텐츠 목록 (GNB) + 소분류 (LNB) ---------- */
   var MENU = [
-    { num: "01", id: "intro", kr: "서론", en: "Introduction",
-      sub: [["프로젝트 배경","Background","1-1"], ["프로젝트 목적","Objective","1-2"]] },
-    { num: "02", id: "background", kr: "이론적 배경", en: "Theoretical Background",
-      sub: [["관련 법규 및 제도","Laws & Regulations","2-1"], ["선행 연구","Literature Review","2-2"], ["사전 분석","Preliminary Analysis","2-3"]] },
-    { num: "03", id: "subject", kr: "분석 대상", en: "Subject",
-      sub: [["대상지 선정","Site Selection","3-1"], ["대상지 분석","Site Analysis","3-2"]] },
-    { num: "04", id: "method", kr: "분석 방법", en: "Method",
-      sub: [["분석 단계","Analysis Steps","4-1"], ["분석 도구","Tools","4-2"], ["분석 지표","Metrics","4-3"]] },
-    { num: "05", id: "analysis", kr: "분석", en: "Analysis",
-      sub: [["임계전환점 도출","Transition Point","5-1"], ["배치안 자동 생성","Auto-Layout","5-2"]] },
-    { num: "06", id: "results", kr: "분석 결과", en: "Results",
-      sub: [["배치안별 분석 결과","Results by Layout","6-1"], ["배치안별 이미지","Layout Images","6-2"]] },
-    { num: "07", id: "conclusion", kr: "결론 및 한계", en: "Conclusion & Limits", sub: [] },
-    { num: "08", id: "references", kr: "참고문헌", en: "References", sub: [] }
+    { num: "01", id: "pedestrian", kr: "아파트와 도시 보행자", en: "Apartments and the Urban Pedestrian",
+      sub: [["배경","Background","1-1"], ["두 개의 시선","Two Gazes","1-2"], ["목적과 세 가지 질문","Aim & Three Questions","1-3"]] },
+    { num: "02", id: "regulation", kr: "아파트의 형태를 만들어온 법과 제도", en: "The Laws That Shaped the Form",
+      sub: [["형태를 규정하는 법규","Form-Defining Regulations","2-1"], ["시대별 변천","Regulatory Timeline","2-2"], ["폐지된 제도들","Repealed Rules","2-3"]] },
+    { num: "03", id: "theory", kr: "위압감을 이해하기 위한 이론들", en: "Theories for Understanding Oppressiveness",
+      sub: [["시지각과 휴먼스케일","Perception & Human Scale","3-1"], ["주동의 유형화","Building Typology","3-2"], ["위압감 지표의 계보","Lineage of Metrics","3-3"], ["컴퓨터 비전 연구 흐름","Computer Vision Research","3-4"]] },
+    { num: "04", id: "observation", kr: "서울 아파트 단지 21곳의 관찰", en: "Observing 21 Seoul Complexes",
+      sub: [["21개 단지 기록","Field Records","4-1"], ["주관적 위압감 순위","Subjective Ranking","4-2"], ["현황 종합","Spectrum of Indicators","4-3"]] },
+    { num: "05", id: "measurement", kr: "느낌을 숫자로 옮기기", en: "Turning Feeling into Numbers",
+      sub: [["촬영 표준화","Capture Protocol","5-1"], ["시맨틱 세그멘테이션","Semantic Segmentation","5-2"], ["점유율과 무게중심","Ratios & Centroid","5-3"], ["데이터 마이닝","Data Mining","5-4"]] },
+    { num: "06", id: "findings", kr: "위압감은 어디에서 오는가", en: "Where Oppressiveness Comes From",
+      sub: [["지표별 상관","Correlations","6-1"], ["종합 회귀 모형","Regression Model","6-2"], ["세 축의 해석","Density · Height · Dispersion","6-3"], ["대상지 선정","Site Selection","6-4"]] },
+    { num: "07", id: "experiment", kr: "하나의 대지, 96개의 배치", en: "One Site, 96 Layouts",
+      sub: [["변인 설정","Variables","7-1"], ["16종 주동 유닛","16 Unit Types","7-2"], ["세 가지 시나리오","Three Scenarios","7-3"], ["평가 지점과 지표","Evaluation Points & Metrics","7-4"]] },
+    { num: "08", id: "balance", kr: "상충하는 지표와 균형점", en: "Conflicting Metrics, a Balance Point",
+      sub: [["건폐율별 변화","Change by BCR","8-1"], ["동간거리의 붕괴","Collapse of Spacing","8-2"], ["시각 위압 통과거리","Pass Distance","8-3"], ["매스 유형별 비교","Comparison by Mass Type","8-4"], ["클러스터형 매스","Cluster Mass","8-5"]] },
+    { num: "09", id: "conclusion", kr: "공공을 배려한 아파트 단지를 향하여", en: "Toward Publicly Considerate Housing",
+      sub: [["프로젝트의 의의","Contributions","9-1"], ["한계와 후속 과제","Limits & Future Work","9-2"], ["설계 방향","Design Directions","9-3"]] },
+    { num: "10", id: "appendix", kr: "부록", en: "Appendix",
+      sub: [["데이터","Data","10-1"], ["용어 정리","Glossary","10-2"], ["참고문헌","References","10-3"], ["이미지 크레딧","Image Credits","10-4"]] }
   ];
   var SUBS = [];
   MENU.forEach(function (item) {
@@ -225,31 +231,31 @@
   initCounters(document);
 
   /* ---------- 건폐율 슬라이더 ----------
-     지표 체계: 노션 `지표별 평가 기준`·`지표별 가설`.
-     - 기술·조작 변수: bcr(독립변수) · floors/height(평균높이, FAR250%÷BCR) · dong(동수)
-     - 판정 지표(단지 외부 보행자 시지각): ang(조망앙각°) · solid(입체각 %FOV) · front(전면점유율 %)
-       · 임계: 앙각 27°거리≤100m / 입체각 7.1%FOV / 전면점유 ≥50%
-       · 가설: 앙각 단조↓ · 입체각 역U(중간 BCR 최소) · 전면점유 단조↑ → BCR 15~30% 최적 구간
-     ※ 수치는 가설 방향에 맞춘 illustrative 값. 확정 시 `4. 배치 분석/2. 지표별/` 산출값으로 교체. */
+     지표 체계: 노션 `지표별 평가 기준`.
+     - 기술·조작 변수: bcr(독립변수) · floors/height(층수·평균높이) · dong(동수)
+     - 지표: ang(조망앙각 위압 점수) · solid(입체각 위압 점수) · front(전면점유율 %) · dongOk(동간 적절 유형/16)
+       · 위압 점수 = 위압거리(조망앙각 27°↓·입체각 7.1%↓)를 [7m=100점, 200m=0점] 정규화 — 클수록 위압 적음
+       · 실측 추세: 위압 점수 모두 단조↑(저층일수록 위압 해소) · 전면점유 단조↑ · 동간(§86) 적절은 단조↓ → 둘이 함께 양호한 BCR ~30%가 균형
+     ※ 값 = `4. 배치 분석/2. 지표별/` 건폐율별 평균 산출값(2026-06 갱신). */
   var STOPS = [
-    { bcr: 5,  floors: 50, height: 150, dong: 22,  ang: 58, solid: 9.4, front: 18,
-      zone: "초고층·저밀 — 수직 위압 구간",
-      note: "앙각·입체각 모두 임계 초과(27°거리 > 100m). 전면점유 낮아 가로 단절." },
-    { bcr: 10, floors: 25, height: 75,  dong: 40,  ang: 51, solid: 7.2, front: 28,
-      zone: "고층 — 앙각 합격 임계 부근",
-      note: "평균높이 ~75m. 27°거리 막 100m 진입, 입체각은 아직 위압(7.1%↑)." },
-    { bcr: 20, floors: 13, height: 38,  dong: 64,  ang: 45, solid: 5.6, front: 44,
-      zone: "최적 구간 진입 — 4지표 균형",
-      note: "평균높이 ~38m. 앙각·입체각 동시 합격 시작, 전면점유 50% 근접." },
-    { bcr: 30, floors: 8,  height: 25,  dong: 92,  ang: 38, solid: 5.3, front: 56,
-      zone: "최적 구간 — 외부 보행 친화",
-      note: "입체각 최저(역U 바닥). 전면점유 50% 돌파, 가로 접면 확보." },
-    { bcr: 40, floors: 6,  height: 19,  dong: 124, ang: 33, solid: 6.9, front: 70,
-      zone: "저층고밀 — 수평 위압 시작",
-      note: "광폭 footprint로 근경 입체각 재상승(역U 우측). 전면점유는 높음." },
-    { bcr: 50, floors: 5,  height: 15,  dong: 158, ang: 29, solid: 8.6, front: 82,
-      zone: "저층고밀 — 병풍(수평) 위압",
-      note: "앙각은 최저지만 입체각 7.1% 재초과 — 병풍 벽면이 근경 시야 점유." }
+    { bcr: 5,  floors: 48, height: 143, dong: 9,   ang: 16,  solid: 9,  front: 2,  dongOk: 16,
+      zone: "초고층·저밀 — 시각 위압 최대",
+      note: "위압 점수 최저(입체각 9·조망앙각 16) — 위압이 200 m 밖까지 미친다. 단 동간은 16/16 넉넉, 전면점유 거의 0." },
+    { bcr: 10, floors: 24, height: 73,  dong: 17,  ang: 64,  solid: 15, front: 6,  dongOk: 16,
+      zone: "고층 — 조망앙각 빠르게 해소",
+      note: "조망앙각 점수 급등(64), 입체각은 아직 낮음(15). 동간 16/16 유지." },
+    { bcr: 20, floors: 12, height: 37,  dong: 33,  ang: 89,  solid: 41, front: 5,  dongOk: 16,
+      zone: "중층 — 조망앙각 거의 해소",
+      note: "조망앙각 점수 89, 입체각 41로 상승. 동간 16/16. 전면점유는 여전히 낮음." },
+    { bcr: 30, floors: 8,  height: 25,  dong: 49,  ang: 94,  solid: 54, front: 27, dongOk: 12,
+      zone: "중밀 — 균형 구간",
+      note: "시각위압 점수 양호(입체각 54·조망앙각 94), 동간도 12/16로 아직 양호 — 시지각·법규가 함께 충족되는 균형점." },
+    { bcr: 40, floors: 6,  height: 19,  dong: 65,  ang: 97,  solid: 58, front: 34, dongOk: 7,
+      zone: "저층고밀 — 동간 무너지기 시작",
+      note: "위압 점수 더 오름(입체각 58·조망앙각 97)이나 동간 적절 7/16로 급락 — 인동간격 위반 증가." },
+    { bcr: 50, floors: 5,  height: 15,  dong: 81,  ang: 100, solid: 63, front: 39, dongOk: 2,
+      zone: "저층고밀 — 인동 한계",
+      note: "위압 점수 최고(입체각 63·조망앙각 100)이나 동간 2/16뿐 — 인동간격 위반으로 거주성 위협. 전면점유는 일부(4개)만 충족." }
   ];
 
   var range = document.getElementById("bcrRange");
@@ -267,7 +273,7 @@
     function render(i) {
       var d = STOPS[i];
       elBcr.textContent = d.bcr; elFloors.textContent = d.floors; elDong.textContent = d.dong;
-      elAng.textContent = d.ang + "°"; elSolid.textContent = d.solid + "%"; elFront.textContent = d.front + "%";
+      elAng.textContent = d.ang + "점"; elSolid.textContent = d.solid + "점"; elFront.textContent = d.front + "%";
       elZone.textContent = d.zone; elNote.textContent = d.note; elPlanN.textContent = d.dong;
 
       var n = Math.min(d.dong, 120);
