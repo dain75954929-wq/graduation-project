@@ -387,7 +387,9 @@ Apartment Streetscape Analysis  ← 영문 부제 (ink-40)
 - `data-taste`가 `data-theme`보다 뒤에 선언되어 **Taste 활성 시 Theme 토글은 무시**된다(캡션에 명시)
 
 ### 파일 구조 / 빌드 방식 (현재)
-- **정적 HTML**(빌드 불필요). 페이지별 HTML + 공통 CSS/JS 재사용 구조
+- **본체 = `site/` 정적 HTML** (2026-07-09 확정). 빌드 없음. 페이지별 HTML + 공통 CSS/JS 재사용 구조
+- Next.js + Vercel 버전은 `experiment/nextjs` 브랜치에 **보관만** 한다. 두 코드베이스를 동시에 끌고 가면 목차·토큰이 이중 관리된다
+- 반응형 전략은 `반응형_데스크탑_모바일_가이드.md` — 단일 URL 반응형(A) 채택, 내비·표·매트릭스만 구조 분기. **문서와 코드가 어긋난 지점은 그 문서 §8에 정리**
 ```
 site/
 ├─ index.html        표지(Cover)
