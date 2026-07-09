@@ -354,6 +354,13 @@ Apartment Streetscape Analysis  ← 영문 부제 (ink-40)
 - 기본: **sans / warm / compact** (§10). `site/style-guide.html`에서 변경·저장
 - 폰트 위계: **Pretendard**(제목→본문) · **Space Grotesk**(시스템 라벨) · **JetBrains Mono**(데이터)
 
+### Taste 미리보기 (style-guide.html 전용, 2026-07-09 추가)
+- 설치된 안티슬롭 스킬의 미감을 **토큰 수준에서 비교**하기 위한 네 번째 토글 그룹. `data-taste` = `base` / `minimal` / `dtf`
+- **격리**: 오버라이드 CSS와 복원 스크립트가 `style-guide.html` 안에만 있다. `main.js`는 `type/theme/scale`만 복원하므로 `index.html`·`page.html`에는 절대 적용되지 않는다
+- `minimal`(minimalist-ui): 웜 오프화이트 `#F7F6F3` · off-black `#111111` · 헤어라인 `#EAEAEA` · 반경 8~12px · 에디토리얼 세리프 헤딩. **원문의 파스텔 액센트는 무채색 원칙과 충돌하여 제외**
+- `dtf`(design-taste-frontend): 쿨 뉴트럴(zinc) · 순수 검정/흰색 회피 · 세리프 억제 → Space Grotesk 디스플레이 · 자간 타이트 · 반경 6px 통일. **원문 기본 다이얼(변량 8·모션 6)은 낮춰 흉내**
+- `data-taste`가 `data-theme`보다 뒤에 선언되어 **Taste 활성 시 Theme 토글은 무시**된다(캡션에 명시). 채택 시에는 `style.css`의 `:root` 토큰을 직접 고칠 것
+
 ### 파일 구조 / 빌드 방식 (현재)
 - **정적 HTML**(빌드 불필요). 페이지별 HTML + 공통 CSS/JS 재사용 구조
 ```

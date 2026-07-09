@@ -10,7 +10,8 @@
   (function () {
     try {
       var r = document.documentElement;
-      ["type", "theme", "scale"].forEach(function (k) {
+      /* taste는 이 페이지 전용 — main.js는 type/theme/scale만 복원한다 */
+      ["type", "theme", "scale", "taste"].forEach(function (k) {
         var v = localStorage.getItem("sg-" + k); if (v) r.setAttribute("data-" + k, v);
       });
     } catch (e) {}
@@ -56,6 +57,47 @@
   .pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); }
   .preview-cover { border: 1px solid var(--line); padding: clamp(24px, 4vw, 56px); background: var(--paper-pure); }
   @media (max-width: 768px) { .sw-grid { grid-template-columns: repeat(3, 1fr); } .pair { grid-template-columns: 1fr; } }
+
+  /* ==========================================================
+     Taste 미리보기 (이 페이지 전용 · data-taste)
+     설치된 스킬의 미감을 토큰 수준에서 흉내 낸 것. 실제 사이트에는 적용되지 않는다.
+     ========================================================== */
+  .sg-note { font-family: var(--mono); font-size: var(--fs-label); line-height: 1.7;
+             color: var(--ink-40); padding-block: 10px 14px; border-top: 1px solid var(--line-soft); }
+  .sg-note b { color: var(--ink-70); font-weight: 500; }
+
+  /* --- minimalist-ui: 웜 오프화이트 + 에디토리얼 세리프 + 1px 헤어라인 --- */
+  :root[data-taste="minimal"] {
+    --paper: #F7F6F3; --paper-pure: #FFFFFF;
+    --ink: #111111; --ink-70: #2F3437; --ink-40: #787774; --ink-20: #C9C8C4;
+    --line: #EAEAEA; --line-soft: #F1F1EF; --fill-soft: #F1F0ED;
+    --w-display: 400;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  :root[data-taste="minimal"] .sw,
+  :root[data-taste="minimal"] .preview-cover { border-radius: 10px; }
+  :root[data-taste="minimal"] .sg-btn { border-radius: 5px; }
+  :root[data-taste="minimal"] .t-display,
+  :root[data-taste="minimal"] .t-h1,
+  :root[data-taste="minimal"] .t-h2 { letter-spacing: -0.035em; }
+
+  /* --- design-taste-frontend: 쿨 뉴트럴 + 그로테스크 디스플레이 + 액센트 0개 --- */
+  :root[data-taste="dtf"] {
+    --paper: #FAFAFA; --paper-pure: #FFFFFF;
+    --ink: #18181B; --ink-70: #52525B; --ink-40: #A1A1AA; --ink-20: #D4D4D8;
+    --line: #E4E4E7; --line-soft: #F4F4F5; --fill-soft: #F4F4F5;
+    --serif-kr: "Space Grotesk", "Pretendard", sans-serif;   /* 세리프 억제 → 그로테스크 */
+    --serif-en: "Space Grotesk", "Pretendard", sans-serif;
+    --w-display: 500;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  :root[data-taste="dtf"] .sw,
+  :root[data-taste="dtf"] .preview-cover,
+  :root[data-taste="dtf"] .sg-btn { border-radius: 6px; }
+  :root[data-taste="dtf"] .t-display,
+  :root[data-taste="dtf"] .t-h1,
+  :root[data-taste="dtf"] .t-h2 { letter-spacing: -0.045em; line-height: 1.0; }
+  :root[data-taste="dtf"] .t-lead { font-style: normal; }
 </style>
 </head>
 <body class="is-guide">
@@ -83,7 +125,14 @@
       <button class="sg-btn" data-val="moderate">절제</button>
       <button class="sg-btn" data-val="compact">콤팩트</button>
     </div>
+    <div class="sg-group" data-group="taste">
+      <span>Taste</span>
+      <button class="sg-btn" data-val="base">현행 · 도면 톤</button>
+      <button class="sg-btn" data-val="minimal">minimalist-ui</button>
+      <button class="sg-btn" data-val="dtf">design-taste-frontend</button>
+    </div>
   </div>
+  <div class="container"><p class="sg-note" id="sgNote"></p></div>
 </div>
 
 <main class="container sg-main">
@@ -155,7 +204,16 @@
 <script>
 (function () {
   var root = document.documentElement;
-  var DEFAULTS = { type: "sans", theme: "warm", scale: "compact" };
+  var DEFAULTS = { type: "sans", theme: "warm", scale: "compact", taste: "base" };
+
+  /* Taste 미리보기 설명 — 스킬 원문에서 추린 특징. 이 페이지에서만 적용된다. */
+  var NOTES = {
+    base:    "<b>현행 · 도면 톤</b> — 웜 페이퍼 #F4F3EF · 먹 #16140F · 얇은 룰 · 모눈 배경 · 액센트 없음. design.md가 정의한 기준값.",
+    minimal: "<b>minimalist-ui</b> — 웜 오프화이트 #F7F6F3 · off-black #111111 · 1px 헤어라인 #EAEAEA · 반경 8~12px · 섀도 거의 없음 · 에디토리얼 세리프 헤딩 · 넓은 여백. " +
+             "원문은 파스텔 액센트(#FDEBEC 등)와 이모지 금지를 규정하나, <b>파스텔 액센트는 무채색 원칙과 충돌하므로 제외</b>했다.",
+    dtf:     "<b>design-taste-frontend</b> — 쿨 뉴트럴(zinc) · 순수 검정/흰색 회피 · 액센트 최대 1개(여기선 0개) · 세리프 억제 → 그로테스크 디스플레이 · 자간 타이트 · 비대칭 레이아웃 · 반경 통일. " +
+             "원문 기본 다이얼은 화려한 편(변량 8 · 모션 6)이라 <b>모션·밀도는 낮춰 흉내</b>했다."
+  };
 
   function current(group) {
     return root.getAttribute("data-" + group) || DEFAULTS[group];
@@ -185,7 +243,14 @@
       }
     });
   }
-  function refresh() { setActive(); readouts(); }
+  function note() {
+    var el = document.getElementById("sgNote");
+    if (!el) return;
+    var t = current("taste");
+    el.innerHTML = (NOTES[t] || "") +
+      (t === "base" ? "" : "<br>※ Taste가 켜져 있으면 <b>Theme 토글은 무시</b>된다(색 토큰을 덮어씀). 실제 사이트에는 적용되지 않는 미리보기다.");
+  }
+  function refresh() { setActive(); readouts(); note(); }
 
   document.querySelectorAll(".sg-group").forEach(function (g) {
     var group = g.getAttribute("data-group");
