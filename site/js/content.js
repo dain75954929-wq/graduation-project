@@ -1143,18 +1143,18 @@ window.CONTENT = {
     `
   },
 
-  /* ==================== 6-2 해석: 밀도·높이·분산 ==================== */
+  /* ==================== 6-2 해석: 용적률·높이·분산 ==================== */
   "6-2": {
-    titleKo: "밀도·높이·분산",
-    titleEn: "Density, Height, Dispersion",
+    titleKo: "용적률·높이·분산",
+    titleEn: "Floor Area Ratio, Height, Dispersion",
     body: `
-      <p class="lead reveal" data-ko="다섯 지표는 세 개의 축으로 묶인다. 얼마나 빽빽한가, 얼마나 높은가, 얼마나 나뉘어 있는가." data-en="The five metrics resolve into three axes: how dense, how tall, how divided.">다섯 지표는 세 개의 축으로 묶인다. 얼마나 빽빽한가, 얼마나 높은가, 얼마나 나뉘어 있는가.</p>
+      <p class="lead reveal" data-ko="유의했던 다섯 지표는 세 개의 축으로 묶인다. 얼마나 많이 얹었는가, 얼마나 높은가, 얼마나 나뉘어 있는가." data-en="The five significant metrics resolve into three axes: how much floor area, how tall, how divided.">유의했던 다섯 지표는 세 개의 축으로 묶인다. 얼마나 많이 얹었는가, 얼마나 높은가, 얼마나 나뉘어 있는가.</p>
 
       <div class="stepper stepper--3 reveal" data-d="1">
         <div class="step">
           <span class="step__n">01</span>
-          <h3 class="step__t" data-ko="밀도" data-en="Density">밀도</h3>
-          <p class="step__d" data-ko="용적률·건폐율. 같은 대지에 얼마나 많은 연면적을 얹었는가. 클수록 위압적이다." data-en="FAR and coverage. How much floor area sits on the site. More presses harder.">용적률·건폐율. 같은 대지에 얼마나 많은 연면적을 얹었는가. 클수록 위압적이다.</p>
+          <h3 class="step__t" data-ko="용적률" data-en="Floor area ratio">용적률</h3>
+          <p class="step__d" data-ko="같은 대지에 얼마나 많은 연면적을 얹었는가. 클수록 위압적이다(r −0.57)." data-en="How much floor area sits on the site. More presses harder (r −0.57).">같은 대지에 얼마나 많은 연면적을 얹었는가. 클수록 위압적이다(r −0.57).</p>
         </div>
         <div class="step">
           <span class="step__n">02</span>
@@ -1167,6 +1167,10 @@ window.CONTENT = {
           <p class="step__d" data-ko="동수·세대수. 유일하게 부호가 반대인 축이다. 같은 규모를 여러 동으로 나누면 매스 사이로 시야가 열린다." data-en="Building and household count, the one axis with the opposite sign. Split the same bulk into more masses and sight lines open between them.">동수·세대수. 유일하게 부호가 반대인 축이다. 같은 규모를 여러 동으로 나누면 매스 사이로 시야가 열린다.</p>
         </div>
       </div>
+
+      <p class="measure muted reveal" data-ko="다섯 번째 지표인 건폐율은 따로 떼어 놓아야 한다. 상관은 유의했다(r −0.45). 클수록 위압적이라는 뜻이다. 그러나 이 숫자를 그대로 읽으면 안 된다. 21곳에서 건폐율과 용적률의 상관은 0.88이다. 건폐율이 높은 단지는 예외 없이 용적률도 높은 상업지역 초고층 주상복합이었다. 청량리역 한양수자인은 건폐율 59퍼센트에 용적률 998퍼센트, 롯데캐슬 SKY-L65는 58퍼센트에 994퍼센트다. 건폐율이 위압감을 키운 것이 아니라, 용적률이 높은 곳의 건폐율도 덩달아 높았을 뿐이다." data-en="The fifth metric, coverage, must be set apart. Its correlation was significant (r −0.45), which reads as: more coverage, more pressure. But the number cannot be taken at face value. Across the twenty-one, coverage and floor area ratio correlate at 0.88. Every high-coverage estate was a commercial-zone tower complex that also carried a high ratio. Cheongnyangni Hanyang Sujain sits at 59% coverage and 998% ratio; Lotte Castle SKY-L65 at 58% and 994%. Coverage did not raise the pressure. It merely rose alongside the ratio that did.">다섯 번째 지표인 건폐율은 따로 떼어 놓아야 한다. 상관은 유의했다(r −0.45). 클수록 위압적이라는 뜻이다. 그러나 이 숫자를 그대로 읽으면 안 된다. 21곳에서 건폐율과 용적률의 상관은 0.88이다. 건폐율이 높은 단지는 예외 없이 용적률도 높은 상업지역 초고층 주상복합이었다. 청량리역 한양수자인은 건폐율 59퍼센트에 용적률 998퍼센트, 롯데캐슬 SKY-L65는 58퍼센트에 994퍼센트다. 건폐율이 위압감을 키운 것이 아니라, 용적률이 높은 곳의 건폐율도 덩달아 높았을 뿐이다.</p>
+
+      <p class="measure muted reveal" data-ko="용적률을 고정하고 건폐율만 움직이면 부호가 뒤집힌다. 같은 연면적을 더 넓은 바닥에 펴면 층수가 낮아지고 위압은 오히려 풀린다. 7장과 8장이 보여주는 것이 정확히 그것이다. 관찰만으로는 이 둘을 갈라낼 수 없었고, 그래서 실험이 필요했다." data-en="Hold the floor area ratio and move only the coverage, and the sign flips. Spread the same floor area across a wider footprint and the buildings come down; the pressure eases. That is exactly what Chapters 7 and 8 show. Observation alone could not separate the two, and that is why the experiment was needed.">용적률을 고정하고 건폐율만 움직이면 부호가 뒤집힌다. 같은 연면적을 더 넓은 바닥에 펴면 층수가 낮아지고 위압은 오히려 풀린다. 7장과 8장이 보여주는 것이 정확히 그것이다. 관찰만으로는 이 둘을 갈라낼 수 없었고, 그래서 실험이 필요했다.</p>
 
       <section class="section" id="dispersion">
         <div class="section__head reveal">

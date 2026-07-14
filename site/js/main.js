@@ -28,7 +28,7 @@
     { num: "05", id: "measurement", kr: "느낌을 숫자로 옮기기", en: "Turning Feeling into Numbers",
       sub: [["데이터 수집과 촬영 기준","Collection & Capture Protocol","5-1"], ["세그멘테이션과 시각 지표","Segmentation & Visual Indicators","5-2"], ["데이터 마이닝","Data Mining","5-3"]] },
     { num: "06", id: "findings", kr: "위압감은 어디에서 오는가", en: "Where Oppressiveness Comes From",
-      sub: [["상관과 회귀의 결과","Correlation & Regression","6-1"], ["해석: 밀도·높이·분산","Density · Height · Dispersion","6-2"], ["대상지 선정","Site Selection","6-3"]] },
+      sub: [["상관과 회귀의 결과","Correlation & Regression","6-1"], ["해석: 용적률·높이·분산","FAR · Height · Dispersion","6-2"], ["대상지 선정","Site Selection","6-3"]] },
     { num: "07", id: "experiment", kr: "96개의 배치", en: "96 Layouts",
       sub: [["실험 설계","Experiment Design","7-1"], ["16종 유닛과 세 시나리오","16 Units & Three Scenarios","7-2"], ["평가 방법","Evaluation Method","7-3"], ["자동 생성·평가","Automated Pipeline","7-4"], ["96개 배치안","The 96 Layouts","7-5"]] },
     { num: "08", id: "balance", kr: "상충하는 지표와 균형점", en: "Conflicting Metrics, a Balance Point",
