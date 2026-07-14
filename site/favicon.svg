@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="보기 좋은 아파트에 대하여">
+  <rect width="64" height="64" fill="#FAFAFA"/>
+  <g fill="#18181B">
+    <rect x="8"  y="30" width="10" height="26"/>
+    <rect x="22" y="14" width="10" height="42"/>
+    <rect x="36" y="24" width="10" height="32"/>
+    <rect x="50" y="38" width="6"  height="18"/>
+  </g>
+  <rect x="6" y="56" width="52" height="2" fill="#18181B"/>
+</svg>

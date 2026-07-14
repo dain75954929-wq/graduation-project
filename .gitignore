@@ -26,3 +26,8 @@ desktop.ini
 *.tif
 *.tiff
 !site/assets/**
+
+# ---- 의존성 ----
+# web/ 는 node_modules(1.4GB) 만 남은 옛 Next.js 잔재다. 저장소에 들어가면 안 된다.
+node_modules/
+web/

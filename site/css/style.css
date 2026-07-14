@@ -53,6 +53,10 @@
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --dur: 800ms;
+
+  /* Glassmorphism — 사이트 전역 공통 (헤더·메뉴·스티키·커버) */
+  --glass-bg:   color-mix(in srgb, var(--paper) 10%, transparent);
+  --glass-blur: blur(14px) saturate(120%);
 }
 
 /* ---------- Reset / Base ---------- */
@@ -87,13 +91,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 .measure { max-width: 60ch; }
 .muted { color: var(--ink-70); }
 .dim { color: var(--ink-40); }
-.italic { font-style: italic; }
+.italic { font-style: normal; }
 
 /* ---------- Header ---------- */
 .hdr {
   position: fixed; inset: 0 0 auto 0; z-index: 200; height: var(--nav-h);
-  background: color-mix(in srgb, var(--paper) 80%, transparent);
-  backdrop-filter: blur(10px);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
 }
 .hdr__inner { height: 100%; width: 100%; padding-inline: clamp(20px, 3.5vw, 44px); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
 
@@ -129,8 +134,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .menu {
   position: fixed; top: 0; left: 0; bottom: 0; z-index: 150;
   width: min(480px, 86vw);
-  background: color-mix(in srgb, var(--paper) 76%, transparent);
-  backdrop-filter: blur(8px);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border-right: 1px solid var(--line);
   padding-top: var(--nav-h); overflow-y: auto;
   transform: translateX(-100%); visibility: hidden;
@@ -167,9 +173,9 @@ body.is-cover { height: 100svh; overflow: hidden; }
   font-family: var(--serif-kr); font-weight: var(--w-display); font-size: var(--fs-display);
   line-height: 1.02; letter-spacing: -0.045em; margin-bottom: clamp(16px, 2.5vh, 32px);
 }
-.cover__title em { font-family: var(--serif-en); font-style: italic; font-weight: 400; }
+.cover__title em { font-family: var(--serif-en); font-style: normal; font-weight: 400; }
 .cover__concept {
-  font-family: var(--serif-en); font-style: italic; font-weight: 300;
+  font-family: var(--serif-en); font-style: normal; font-weight: 300;
   font-size: var(--fs-lead); color: var(--ink-70); max-width: 34ch; line-height: 1.45;
 }
 .cover__concept b { font-style: normal; font-weight: 500; color: var(--ink); }
@@ -197,19 +203,19 @@ body.is-cover { height: 100svh; overflow: hidden; }
 .section__head { margin-bottom: var(--space-lg); max-width: var(--maxw); }
 .section__index { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.22em; color: var(--ink-40); display: block; margin-bottom: var(--space-sm); }
 .section__title { font-family: var(--serif-kr); font-weight: var(--w-display); font-size: var(--fs-h1); letter-spacing: -0.04em; max-width: 20ch; }
-.section__title em { font-family: var(--serif-en); font-style: italic; }
-.section__sub { font-family: var(--serif-en); font-style: italic; color: var(--ink-40); font-size: 1.15rem; margin-top: var(--space-sm); }
+.section__title em { font-family: var(--serif-en); font-style: normal; }
+.section__sub { font-family: var(--serif-en); font-style: normal; color: var(--ink-40); font-size: 1.15rem; margin-top: var(--space-sm); }
 
 /* ---------- Editorial columns ---------- */
 .cols { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
 .cols--text-fig { grid-template-columns: 1fr 1fr; }
 .cols--wide-fig { grid-template-columns: 0.85fr 1.15fr; }
 
-.lead { font-family: var(--serif-en); font-style: italic; font-size: var(--fs-lead); line-height: 1.5; color: var(--ink-70); font-weight: 300; }
+.lead { font-family: var(--serif-en); font-style: normal; font-size: var(--fs-lead); line-height: 1.5; color: var(--ink-70); font-weight: 300; }
 
 /* Pull quote */
 .pull { font-family: var(--serif-kr); font-weight: var(--w-display); font-size: clamp(1.6rem, 3.6vw, 2.8rem); line-height: 1.3; letter-spacing: -0.04em; max-width: 22ch; }
-.pull em { font-family: var(--serif-en); font-style: italic; }
+.pull em { font-family: var(--serif-en); font-style: normal; }
 
 /* ---------- Figure (refined, frameless) ---------- */
 .figure { position: relative; }
@@ -221,11 +227,16 @@ body.is-cover { height: 100svh; overflow: hidden; }
   content: ""; position: absolute; inset: 0;
   background: radial-gradient(120% 120% at 50% 0%, transparent 60%, var(--line-soft) 100%);
 }
-.figure__ph span { font-family: var(--serif-en); font-style: italic; font-size: var(--fs-small); color: var(--ink-40); text-align: center; padding: 1.5em; position: relative; }
+.figure__ph span { font-family: var(--serif-en); font-style: normal; font-size: var(--fs-small); color: var(--ink-40); text-align: center; padding: 1.5em; position: relative; }
 .figure--tall .figure__ph { aspect-ratio: 3 / 4; }
 .figure--wide .figure__ph { aspect-ratio: 16 / 10; }
-.figure__cap { font-family: var(--serif-en); font-style: italic; font-size: var(--fs-small); color: var(--ink-40); padding-top: 10px; display: flex; gap: 10px; }
+.figure__cap { font-family: var(--serif-en); font-style: normal; font-size: var(--fs-small); color: var(--ink-40); padding-top: 10px; display: flex; gap: 10px; }
 .figure__cap b { font-family: var(--mono); font-style: normal; font-size: var(--fs-label); letter-spacing: 0.1em; color: var(--ink-70); padding-top: 3px; }
+
+/* 도판 이미지: 파일이 있으면 placeholder 위에 페이드인, 없으면 캡션 placeholder 유지 */
+.figure__ph img[data-fig] { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: var(--paper-pure); z-index: 2; opacity: 0; transition: opacity .5s var(--ease); }
+.card__img img[data-fig] { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; opacity: 0; transition: opacity .5s var(--ease); }
+.figure__ph img.is-loaded, .card__img img.is-loaded { opacity: 1; }
 
 /* readout (절제해서) */
 .readout { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.04em; color: var(--ink-40); line-height: 1.7; }
@@ -233,7 +244,8 @@ body.is-cover { height: 100svh; overflow: hidden; }
 
 /* ---------- Key-value (frameless, 리스트형) ---------- */
 .kv { margin-top: var(--space-md); }
-.kv div { display: grid; grid-template-columns: 8rem 1fr; gap: var(--space-md); padding: 14px 0; border-bottom: 1px solid var(--line); }
+/* 표(table.data)와 같은 좌우 이격 — 항목이 선 끝에 붙지 않게 */
+.kv div { display: grid; grid-template-columns: 8rem 1fr; gap: var(--space-md); padding: 14px 36px; border-bottom: 1px solid var(--line); }
 .kv div:first-child { border-top: 1px solid var(--ink); }
 .kv dt { font-family: var(--mono); font-size: var(--fs-small); color: var(--ink-40); letter-spacing: 0.04em; }
 .kv dd { margin: 0; }
@@ -242,7 +254,7 @@ body.is-cover { height: 100svh; overflow: hidden; }
 .flow { display: grid; }
 .flow li { display: grid; grid-template-columns: 2.5rem 1fr; gap: var(--space-sm); align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--line); }
 .flow li:first-child { border-top: 1px solid var(--line); }
-.flow li::before { content: attr(data-n); font-family: var(--serif-en); font-style: italic; font-size: 1.4rem; color: var(--ink-20); }
+.flow li::before { content: attr(data-n); font-family: var(--serif-en); font-style: normal; font-size: 1.4rem; color: var(--ink-20); }
 .flow b { font-weight: 600; }
 .flow--plain li { grid-template-columns: 1fr; }
 .flow--plain li::before { content: none; }
@@ -259,18 +271,17 @@ body.is-cover { height: 100svh; overflow: hidden; }
 .card__body { padding-top: 12px; }
 .card__region { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.14em; color: var(--ink-40); text-transform: uppercase; }
 .card__name { font-family: var(--serif-kr); font-weight: 400; font-size: var(--fs-h3); margin: 4px 0 8px; line-height: 1.2; }
-.card__tag { font-family: var(--serif-en); font-style: italic; font-size: var(--fs-small); color: var(--ink-70); }
+.card__tag { font-family: var(--serif-en); font-style: normal; font-size: var(--fs-small); color: var(--ink-70); }
 
 /* ---------- Table (editorial, minimal rule) ---------- */
 .tbl-wrap { overflow-x: auto; }
 table.data { width: 100%; border-collapse: collapse; font-size: var(--fs-small); min-width: 560px; }
-table.data th, table.data td { text-align: left; padding: 14px 16px 14px 0; border-bottom: 1px solid var(--line); }
+/* 셀 좌우에 같은 이격 — 특히 마지막 열이 오른쪽 끝에 붙지 않게 */
+table.data th, table.data td { text-align: left; padding: 14px 36px; border-bottom: 1px solid var(--line); }
 table.data thead th { border-bottom: 1px solid var(--ink); font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-40); font-weight: 400; }
 table.data td.num, table.data th.num { text-align: right; font-family: var(--mono); }
 table.data tbody tr { transition: background .2s var(--ease); }
 table.data tbody tr:hover { background: var(--fill-soft); }
-table.data tr.hl td { font-weight: 600; }
-table.data tr.hl td:first-child { box-shadow: inset 3px 0 0 var(--ink); padding-left: 12px; }
 
 /* Scenario tags */
 .scn { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; font-family: var(--mono); font-size: 11px; margin-right: 6px; }
@@ -284,7 +295,7 @@ table.data tr.hl td:first-child { box-shadow: inset 3px 0 0 var(--ink); padding-
 .diagram svg .ln { stroke: var(--ink); stroke-width: 1; fill: none; }
 .diagram svg .ln-soft { stroke: var(--ink-40); stroke-width: 1; fill: none; stroke-dasharray: 2 4; }
 .diagram svg text { font-family: var(--mono); font-size: 10px; fill: var(--ink-70); letter-spacing: 0.04em; }
-.diagram svg .ser { font-family: var(--serif-en); font-style: italic; font-size: 15px; fill: var(--ink); }
+.diagram svg .ser { font-family: var(--serif-en); font-style: normal; font-size: 15px; fill: var(--ink); }
 
 /* ---------- Dark section ---------- */
 .section--dark { background: var(--ink); color: var(--paper); }
@@ -306,18 +317,19 @@ table.data tr.hl td:first-child { box-shadow: inset 3px 0 0 var(--ink); padding-
 .bcr__viz { }
 .bcr__vlabel { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.12em; color: var(--ink-40); text-transform: uppercase; margin-bottom: 10px; }
 .bcr__plan { position: relative; min-height: 200px; max-height: 260px; overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; align-content: flex-start; gap: 4px; padding: 16px 0 16px; }
+.bcr__units { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 4px; width: 100%; }
 .bcr__unit { background: var(--ink); transition: all .5s var(--ease); }
-.bcr__planN { position: absolute; top: 12px; right: 0; font-family: var(--serif-en); font-style: italic; font-size: 1.1rem; color: var(--ink-40); }
+.bcr__planN { position: absolute; top: 12px; right: 0; font-family: var(--serif-en); font-style: normal; font-size: 1.1rem; color: var(--ink-40); }
 .bcr__planN b { font-style: normal; color: var(--ink); }
 .bcr__section { margin-top: var(--space-md); height: 110px; border-bottom: 1px solid var(--ink); display: flex; align-items: flex-end; gap: 5px; }
 .bcr__bar { flex: 1; background: var(--ink-20); transition: height .5s var(--ease); }
 
 .bcr__panel { }
-.bcr__zone { font-family: var(--serif-en); font-style: italic; font-size: 1.05rem; color: var(--ink-70); padding-bottom: var(--space-sm); border-bottom: 1px solid var(--line); margin-bottom: var(--space-md); }
+.bcr__zone { font-family: var(--serif-en); font-style: normal; font-size: 1.05rem; color: var(--ink-70); padding-bottom: var(--space-sm); border-bottom: 1px solid var(--line); margin-bottom: var(--space-md); }
 .bcr__readouts { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-md) var(--space-sm); margin-bottom: var(--space-md); }
 .bcr__stat b { font-family: var(--serif-en); font-weight: 400; font-size: 2rem; display: block; line-height: 1; }
 .bcr__stat span { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.08em; color: var(--ink-40); text-transform: uppercase; }
-.bcr__note { font-family: var(--serif-en); font-style: italic; color: var(--ink-70); font-size: 1.05rem; line-height: 1.5; }
+.bcr__note { font-family: var(--serif-en); font-style: normal; color: var(--ink-70); font-size: 1.05rem; line-height: 1.5; }
 
 .bcr__control { grid-column: 1 / -1; margin-top: var(--space-md); }
 .bcr__range { width: 100%; }
@@ -330,7 +342,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: 
 input[type=range]::-moz-range-thumb { width: 14px; height: 14px; background: var(--paper); border: 1.5px solid var(--ink); border-radius: 50%; cursor: pointer; }
 
 /* ---------- track marker ---------- */
-.track { font-family: var(--serif-en); font-style: italic; font-size: 1.1rem; color: var(--ink); padding-bottom: 8px; border-bottom: 1px solid var(--ink); display: inline-block; }
+.track { font-family: var(--serif-en); font-style: normal; font-size: 1.1rem; color: var(--ink); padding-bottom: 8px; border-bottom: 1px solid var(--ink); display: inline-block; }
 
 /* ---------- Reveal ---------- */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease); }
@@ -451,10 +463,169 @@ body.page { padding-top: var(--nav-h); background: var(--paper); color: var(--in
 .doc__head { padding-block: clamp(48px, 11vh, 128px) var(--space-lg); border-bottom: 1px solid var(--ink); }
 .doc__index { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-40); display: block; margin-bottom: var(--space-md); }
 .doc__title { font-family: var(--serif-kr); font-weight: 300; font-size: var(--fs-display); letter-spacing: -0.045em; line-height: 1.04; }
-.doc__title em { font-family: var(--serif-en); font-style: italic; }
+.doc__title em { font-family: var(--serif-en); font-style: normal; }
 .doc__sub { font-family: var(--sans); font-size: var(--fs-lead); color: var(--ink-70); margin-top: var(--space-md); max-width: 44ch; line-height: 1.5; }
 
+.doc__body { padding-top: 0; }
 .doc .section:first-of-type { border-top: 0; }
+
+/* 세부 페이지 — 내용물은 화면 정중앙, 절 제목은 화면 완전 왼쪽 스티키 */
+.doc.container { max-width: none; padding-inline: clamp(16px, 3vw, 40px); }
+.doc__head { max-width: 820px; margin-inline: auto; }
+
+/* ---------- 장 스크롤 섹션(소제목=절) ---------- */
+.chsec {
+  scroll-margin-top: calc(var(--nav-h) + 24px);
+  padding-block: var(--space-xl);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+.chsec:first-child { padding-top: var(--space-lg); }
+/* 절 구분선 — 스티키 제목에 붙어 있던 짧은 선을 화면 가로 전체로 늘려 절과 절을 가른다 */
+.chsec { position: relative; }
+.chsec::before {
+  content: ""; position: absolute; top: 0; height: 2px; background: var(--ink);
+  left: calc(-1 * clamp(16px, 3vw, 40px)); right: calc(-1 * clamp(16px, 3vw, 40px));
+}
+.chsec:first-child::before { display: none; }   /* 장 제목 밑줄과 겹치지 않게 */
+
+/* 본문(내용물) — 화면 가운데.
+   align-self: baseline → 첫 줄 베이스라인이 왼쪽 절 제목의 첫 줄과 맞는다 (위쪽 맞춤 X) */
+.chsec__main { grid-row: 1; grid-column: 1; max-width: 820px; margin-inline: auto; min-width: 0; align-self: baseline; }
+.chsec__main > .lead:first-child { max-width: 60ch; margin-top: 0; margin-bottom: var(--space-lg); }
+.chsec__main .section { padding-block: var(--space-lg); }
+/* 첫 세부 구분도 위 여백 유지 — 앞 도판 캡션과 붙지 않게 (선만 없앤다) */
+.chsec__main .section:first-of-type { border-top: 0; }
+.chsec__main .section__title { font-size: var(--fs-h2); }
+/* 본문 내부는 2단 금지 — 텍스트·표·도판을 위아래로 스택 */
+.chsec__main .cols { grid-template-columns: 1fr; gap: var(--space-lg); }
+.chsec__main .figure { max-width: 820px; }
+/* 본문 문단은 표 폭에 맞춰 텍스트박스 확장 + 양쪽 정렬 */
+.chsec__main .measure { max-width: none; text-align: justify; word-break: keep-all; }
+
+/* 이탤릭 제거 (2026-07-12) — 세부 페이지 전체 */
+.doc .lead, .doc .section__sub, .doc .figure__ph span, .doc .figure__cap,
+.doc .card__tag, .doc .bcr__planN, .doc .bcr__zone, .doc .bcr__note,
+.doc .step__n, .doc .track, .doc em, .doc i { font-style: normal; }
+
+/* 절 제목 — 화면 완전 왼쪽에 붙어 스티키(본문 왼쪽 여백에 겹쳐 배치) */
+.chsec__rail {
+  grid-row: 1; grid-column: 1;
+  justify-self: start;
+  width: max-content;
+  position: sticky; top: calc(var(--nav-h) + 32px);
+  /* baseline → 레일의 첫 베이스라인(=제목)이 본문 첫 줄과 같은 선에 놓인다.
+     절 번호는 흐름에서 빼(absolute) 제목이 첫 베이스라인이 되게 하고, 그만큼 위 여백으로 자리를 남긴다. */
+  align-self: baseline;
+  padding-top: 26px;
+}
+.chsec__idx { position: absolute; top: 0; left: 0; font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.22em; color: var(--ink-40); display: block; line-height: 1; margin-bottom: 0; }
+.chsec__title { font-family: var(--serif-kr); font-weight: var(--w-display); font-size: clamp(1.3rem, 1.9vw, 1.8rem); letter-spacing: -0.03em; line-height: 1.15; white-space: nowrap; }
+
+/* 순서(파이프라인) 스텝퍼 — 가로 배치 */
+.stepper { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 2vw, 44px); max-width: 900px; }
+.step { border-top: 2px solid var(--ink); padding-top: 16px; }
+.step__n { font-family: var(--serif-en); font-style: normal; font-size: 1.5rem; color: var(--ink-20); display: block; line-height: 1; }
+.step__t { font-family: var(--serif-kr); font-weight: 500; font-size: var(--fs-h3); letter-spacing: -0.02em; margin: 12px 0 8px; line-height: 1.2; }
+.step__d { font-family: var(--sans); font-size: var(--fs-small); color: var(--ink-70); line-height: 1.5; }
+
+/* 좁은 화면(왼쪽 여백 부족) — 절 제목을 상단 스티키 바로 스택 */
+@media (max-width: 1280px) {
+  /* 위아래로 쌓이므로 베이스라인 맞춤은 해제하고 절 번호도 흐름으로 되돌린다 */
+  .chsec__rail, .chsec__main { grid-row: auto; align-self: auto; }
+  .chsec__idx { position: static; margin-bottom: 8px; }
+  .chsec__rail {
+    justify-self: stretch; width: auto; max-width: none;
+    /* 컨테이너 좌우 패딩만큼 밖으로 빼서 화면 끝까지 배경이 덮이게 — 해당 높이를 전부 가림 */
+    margin-inline: calc(-1 * clamp(16px, 3vw, 40px));
+    /* 좌우 패딩은 헤더(.hdr__inner)와 동일 — 절 번호가 헤더 로고/라벨과 같은 선에서 시작 */
+    padding-inline: clamp(20px, 3.5vw, 44px);
+    text-align: left;                        /* 번호·제목을 좌측 상단으로 */
+    /* 헤더 바로 아래에 1px 겹쳐 붙여 이음매(블러 경계선)를 지운다 — 헤더와 한 덩어리 */
+    position: sticky; top: calc(var(--nav-h) - 1px); z-index: 20;
+    /* 글래스모픽 — 헤더·메뉴·커버와 동일한 10% 유리 */
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-top: 0;
+    padding-block: var(--space-sm) 12px; margin-bottom: var(--space-md);
+    border-bottom: 1px solid var(--line);    /* 유리판(헤더+바)의 유일한 마감선 */
+  }
+  .chsec__main > .lead:first-child { margin-top: 0; }
+}
+@media (max-width: 760px) {
+  .stepper { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+}
+
+/* ---------- 모바일 세로 최적화 (2026-07-13) ---------- */
+@media (max-width: 760px) {
+  /* 모바일에선 헤더·스티키바에 글래스모픽 미적용 — 불투명 종이 배경
+     (좁은 화면에서 블러 뒤로 본문이 비쳐 제목 가독성이 떨어지고, 성능 부담도 크다) */
+  .hdr, .chsec__rail {
+    background: var(--paper);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  /* 절 여백 축소 */
+  .chsec { padding-block: var(--space-lg); }
+  .chsec:first-child { padding-top: var(--space-md); }
+
+  /* 본문 — 좁은 폭에서 양쪽 정렬은 자간이 벌어져 가독성 저하 → 왼쪽 정렬 */
+  .chsec__main .measure { text-align: left; }
+
+  /* 표 — 옆으로 밀지 않고 화면 안에서 접히도록 (넘치면 .tbl-wrap 이 스크롤) */
+  table.data { min-width: 0; font-size: 0.8125rem; }
+  /* 모바일은 좌우 이격보다 줄바꿈 방지가 우선 — 패딩 최소화 */
+  table.data th, table.data td { padding: 10px 6px; vertical-align: top; }
+  table.data th:first-child, table.data td:first-child { padding-left: 2px; }
+  table.data th:last-child, table.data td:last-child { padding-right: 2px; }
+  table.data thead th { font-size: 0.62rem; letter-spacing: 0.06em; }
+
+  /* 키-값 목록 — 라벨 위 / 값 아래로 스택 */
+  .kv div { grid-template-columns: 1fr; gap: 4px; padding: 12px 2px; }
+
+  /* 하단 고정 버튼 — 좌우가 서로 부딪히지 않게 (말줄임은 기본 규칙에서 처리) */
+  .page-cta { font-size: 0.68rem; padding: 9px 12px; max-width: 42vw; }
+
+  /* 도판 캡션 — 세로로 접기 */
+  .figure__cap { flex-direction: column; gap: 4px; }
+}
+@media (max-width: 480px) {
+  .stepper { grid-template-columns: 1fr; }       /* 4단계 세로 스택 */
+  .doc__head { padding-block: var(--space-lg) var(--space-md); }
+}
+
+/* 표지 하단 — 모바일에선 TITLE / SITE / TOOLS 를 세로로 쌓아 정렬 */
+@media (max-width: 760px) {
+  .cover__foot {
+    height: auto;                                /* 70px 고정 해제 → 3줄만큼 늘어남 */
+    grid-template-columns: 1fr;                  /* 3등분 → 1열 세로 스택 */
+    gap: 10px;
+    padding-block: 16px;
+    align-items: start;
+  }
+  .cover__col { align-items: baseline; gap: 12px; }
+  /* 세로로 쌓이므로 가운데/우측 정렬 해제 → 전부 좌측 기준 정렬 */
+  .cover__col:nth-child(2),
+  .cover__col:last-child { justify-content: flex-start; text-align: left; }
+  .cover__label { min-width: 3.4rem; }           /* 라벨 폭을 맞춰 값의 좌측선을 정렬 */
+  .cover__text--sub { font-size: 0.75rem; }
+}
+
+/* ---------- 모바일 타입 스케일 — 화면 크기에 맞는 비율로 축소 ---------- */
+@media (max-width: 560px) {
+  :root {
+    --fs-display: 2.3rem;
+    --fs-h1:      1.75rem;
+    --fs-h2:      1.35rem;
+    --fs-h3:      1.1rem;
+    --fs-lead:    1.05rem;
+    --fs-body:    1rem;
+    --fs-small:   0.8125rem;
+    --fs-label:   0.66rem;
+  }
+}
 .doc .section__sub { font-family: var(--sans); font-style: normal; }
 
 /* 핵심 숫자 */
@@ -488,49 +659,366 @@ body.page { padding-top: var(--nav-h); background: var(--paper); color: var(--in
 .docnext:hover { color: var(--ink-70); }
 .docnext:hover .docnext__apt { transform: translateY(-8px); color: var(--ink); }
 
-/* ---- 표지 CTA '프로젝트 보기' (한/영 토글과 동일 톤, 첫 건물 후 등장) ---- */
+/* ---- 표지 CTA '프로젝트 보기' (한/영 토글과 동일 톤, 첫 건물 후 등장) ----
+   데스크탑 = 푸터 바로 위 우측 하단 (원래 자리) · 모바일 = 화면 정중앙 (아래 600px 블록).
+   푸터 높이(--foot-h)는 skyline.js 가 매 resize 마다 갱신 — 푸터가 2~3줄로 늘어나도 안 겹친다. */
 .cover-cta {
   position: absolute; z-index: 3;
-  right: clamp(20px, 3.5vw, 44px);                          /* 푸터 우측 정렬과 동일 */
-  bottom: calc(var(--nav-h) + clamp(14px, 2.5vh, 28px));   /* 푸터 바로 위 */
+  right: clamp(20px, 3.5vw, 44px);                                    /* 푸터 우측 정렬과 동일 */
+  bottom: calc(var(--foot-h, var(--nav-h)) + clamp(14px, 2.5vh, 28px));
   display: inline-flex; align-items: center; gap: 10px;
   border: 1px solid var(--ink); background: var(--paper); color: var(--ink);
   font-family: var(--sans); font-weight: 500; font-size: var(--fs-small); letter-spacing: 0.01em;
   padding: 10px 16px; text-decoration: none; white-space: nowrap;
-  opacity: 0; transform: scale(0.95); pointer-events: none;     /* 팝업/팝다운 (페이드만, 슬라이드 없음) */
+  opacity: 0; pointer-events: none;                             /* 팝업/팝다운 (페이드 + 살짝 스케일) */
+  transform: scale(0.95);
   transition: opacity .4s var(--ease), transform .4s var(--ease), background .2s var(--ease), color .2s var(--ease);
 }
 .cover-cta.is-shown { opacity: 1; transform: none; pointer-events: auto; }
 .cover-cta:hover { background: var(--ink); color: var(--paper); }
-@media (max-width: 600px) { .cover-cta { bottom: auto; top: calc(var(--nav-h) + 12px); } }
+/* 모바일 표지 — 버튼만이 아니라 '화면 자체'에 글래스모픽을 적용.
+   스카이라인(캔버스) 위에 전면 프로스티드 레이어를 깔고,
+   그 위로 버튼과 푸터가 또렷하게 올라온다. */
+@media (max-width: 600px) {
+  .cover::after {
+    content: "";
+    position: absolute; inset: 0; z-index: 2;
+    pointer-events: none;                       /* 버튼 클릭 방해 금지 */
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    opacity: 0;                                 /* 평소엔 없음 */
+    transition: opacity .5s var(--ease);
+  }
+  .cover.is-glass::after { opacity: 1; }        /* 버튼이 뜰 때만 글래스 등장 (JS가 동기화) */
+  .cover__foot { z-index: 3; }                  /* 글래스 위 — 또렷하게 */
+  /* 모바일에서만 버튼을 '푸터 제외한 화면'의 정중앙으로. 글래스는 화면이 담당하므로 버튼은 또렷한 배경. */
+  #coverCta {
+    z-index: 4; background: var(--paper);
+    right: auto; bottom: auto;
+    left: 50%; top: calc((100% - var(--foot-h, var(--nav-h))) / 2);
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  #coverCta.is-shown { transform: translate(-50%, -50%); }
+}
 
 /* 세부 페이지 버튼 — 표지 CTA와 동일 디자인, 하단 고정 */
 /* 우측 하단: '다음 소제목으로 가기' */
-.page-cta { position: fixed; right: clamp(20px, 3.5vw, 44px); bottom: clamp(20px, 4vh, 40px); top: auto; z-index: 50; }
+.page-cta {
+  position: fixed; right: clamp(20px, 3.5vw, 44px); bottom: clamp(20px, 4vh, 40px);
+  top: auto; left: auto; z-index: 50;                  /* 표지 CTA의 중앙 정렬(left/top)을 무효화 */
+  max-width: min(40ch, 38vw);
+  transform: scale(0.95);
+}
+.page-cta.is-shown { transform: none; }
+/* 버튼 폭보다 라벨이 길면 라벨만 말줄임(…) 되고, 화살표는 항상 보인다.
+   (버튼은 inline-flex 라 말줄임을 라벨 span 에 걸어야 먹는다 — min-width:0 필수) */
+.cta__t { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.cta__a { flex: none; }
 /* 좌측 하단: '처음으로 가기' (동일 디자인, 좌측 정렬) */
 .page-cta--home { right: auto; left: clamp(20px, 3.5vw, 44px); }
 
 /* =========================================================
-   세부 페이지 배경 그리드 (중간크리틱 도판 그리드)
-   — 풀폭 제도 격자선 + 교차점 등록 십자(+). 내용 없이 배경만.
+   세부 페이지 (배경 그리드 제거 2026-07-12 — 콘텐츠 중심)
    ========================================================= */
-body.page { position: relative; }   /* ::before 그리드의 기준 */
-body.page::before {
-  content: "";
-  position: absolute;            /* 문서와 함께 스크롤되어 내려감(고정 아님) */
-  inset: var(--nav-h) 0 0 0;     /* 헤더 아래부터 문서 전체 높이(풀폭) */
-  z-index: 0;
-  pointer-events: none;
-  /* 타일 중앙에 격자선 + 십자를 같이 그려 잘림 없이 정확히 정렬 (선 E4E4E7 / 십자 A1A1AA) */
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%3E%3Cpath%20d='M50%200V100M0%2050H100'%20stroke='%23E4E4E7'%20stroke-width='0.5'%20fill='none'/%3E%3Cpath%20d='M46%2050H54M50%2046V54'%20stroke='%23A1A1AA'%20stroke-width='0.5'%20fill='none'/%3E%3C/svg%3E");
-  background-size: clamp(130px, 20vw, 280px) clamp(130px, 20vw, 280px);
-  background-position: center top;
-}
-/* 향후 내용이 들어가면 그리드 위로 올라오도록 + 빈 페이지도 스크롤 가능하도록 높이 확보 */
-body.page #doc { position: relative; z-index: 1; min-height: 200vh; }
+body.page { position: relative; }
+body.page #doc { position: relative; z-index: 1; }
+body.page.is-empty-doc #doc { min-height: calc(100svh - var(--nav-h)); }
 
 /* 세부 페이지 스크롤바 숨김 (스크롤 기능은 유지) */
 html:has(body.page) { scrollbar-width: none; -ms-overflow-style: none; }   /* Firefox/구 Edge */
 html:has(body.page)::-webkit-scrollbar { width: 0; height: 0; display: none; }   /* Chrome/Safari */
 body.page { scrollbar-width: none; -ms-overflow-style: none; }
 body.page::-webkit-scrollbar { width: 0; height: 0; display: none; }
+
+/* =========================================================
+   모바일 크롬 자동 숨김 (2026-07-13)
+   헤더·하단 버튼은 평소 숨김 → 화면 터치 시 잠깐 등장 → 페이지 끝에선 계속 표시.
+   (상태 클래스 is-chrome-off 는 main.js 가 body 에 토글)
+   ========================================================= */
+@media (max-width: 760px) {
+  /* 등장·퇴장은 느긋하게 (0.35s → 0.7s) */
+  .hdr { transition: transform .7s var(--ease), opacity .6s var(--ease); }
+  .chsec__rail { transition: top .7s var(--ease); }
+  .page-cta { transition: opacity .6s var(--ease), transform .7s var(--ease), background .2s var(--ease), color .2s var(--ease); }
+
+  /* 헤더 — 위로 슬라이드 아웃 */
+  body.is-chrome-off .hdr { transform: translateY(-100%); opacity: 0; pointer-events: none; }
+  /* 헤더가 사라진 만큼 절 제목 스티키바를 화면 최상단으로 끌어올린다 (빈 띠 방지) */
+  body.is-chrome-off .chsec__rail { top: -1px; }
+  /* 하단 버튼 — 아래로 살짝 내려가며 페이드 아웃 */
+  body.is-chrome-off .page-cta,
+  body.is-chrome-off .page-cta.is-shown { opacity: 0; pointer-events: none; transform: translateY(14px) scale(.96); }
+}
+
+/* =========================================================
+   96개 배치안 탐색기 (.lx) — 건폐율 × 주동유형 → 아이소메트릭 + 산출값
+   ========================================================= */
+/* 위젯 안쪽 좌우 이격 — 내용이 테두리에 바짝 붙지 않게 */
+.lx { border: 1px solid var(--line); border-top: 2px solid var(--ink);
+      padding: var(--space-md) clamp(16px, 2.4vw, 32px) var(--space-md); }
+
+/* 선택 칩 */
+.lx__row { display: grid; grid-template-columns: 4.6rem 1fr; align-items: start; gap: 12px; padding-block: 10px; }
+.lx__row + .lx__row { border-top: 1px solid var(--line); }
+.lx__ctrl-label { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); padding-top: 6px; }
+.lx__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.lx__chip {
+  font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.02em; line-height: 1;
+  padding: 7px 10px; cursor: pointer;
+  border: 1px solid var(--line); background: none; color: var(--ink-70);
+  transition: border-color .18s var(--ease), background .18s var(--ease), color .18s var(--ease);
+}
+.lx__chip:hover { border-color: var(--ink); color: var(--ink); }
+.lx__chip.is-on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+
+/* 괄호·범위처럼 중간에서 끊기면 어색한 토막은 통째로 넘긴다.
+   (4–6장) 의 en-dash 는 줄바꿈 기회라서 "(4–" / "6장)" 으로 잘린다. */
+.nb { white-space: nowrap; }
+
+/* ---------- 5-2 세그멘테이션 대조쌍 ----------
+   단지 하나를 골라 원본 ↔ 오버레이를 나란히 본다. 21곳을 한 장에 늘어놓으면 아무것도 안 보인다.
+   사진은 1280×960(4:3) 이라 .figure__ph 기본 비율에 그대로 맞는다. */
+.segp__chips { margin-bottom: clamp(16px, 2.5vh, 28px); }
+.segp__view { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 28px); }
+.segp__view .figure { margin: 0; }
+@media (max-width: 760px) { .segp__view { grid-template-columns: 1fr; } }
+
+/* ---------- 표 셀 뒤의 상대 크기 막대 ----------
+   4장 표가 rank-bars 도판을 흡수했다. 열마다 min→max 로 정규화한 길이.
+   순위(rank)에는 막대를 그리지 않는다 — 정렬 기준이라 그냥 계단이 된다. */
+table.data td.bar { position: relative; }
+table.data td.bar > span { position: relative; z-index: 1; }
+.bar__f {
+  position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  height: 62%; z-index: 0; pointer-events: none;
+  background: color-mix(in srgb, var(--ink) 9%, transparent);
+}
+
+/* 아이소메트릭 → 그 아래에 수치가 가로로 길게 (형태 6칸 / 가로 성능 4칸) */
+.lx__view { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-md); }
+.lx__iso { aspect-ratio: 16 / 9; }
+.lx__id { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin: 0 0 16px; border-bottom: 1px solid var(--ink); padding-bottom: 10px; }
+.lx__id b { font-family: var(--serif-kr); font-weight: 500; font-size: 1.4rem; letter-spacing: -0.02em; }
+.lx__id span { font-family: var(--sans); font-size: var(--fs-label); color: var(--ink-40); }
+
+/* 수치 — 항목마다 같은 폭(등분), 사이 간격도 일정 */
+.lx__group + .lx__group { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+.lx__gt { grid-column: 1 / -1; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-40); margin: 0 0 10px; }
+.lx__group { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+.lx__group--perf { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.lx__stat b { display: block; font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 1.05rem; font-weight: 500; line-height: 1.15; }
+.lx__stat span { display: block; font-family: var(--sans); font-size: 0.66rem; color: var(--ink-40); line-height: 1.3; margin-top: 3px; }
+.lx__note { font-family: var(--sans); font-size: var(--fs-small); color: var(--ink-70); line-height: 1.5; margin: 16px 0 0; padding-top: 12px; border-top: 1px solid var(--line); }
+
+@media (max-width: 1024px) {
+  .lx__group { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lx__group--perf { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .lx { padding-inline: clamp(12px, 4vw, 20px); }
+  .lx__row { grid-template-columns: 1fr; gap: 6px; }
+  .lx__ctrl-label { padding-top: 0; }
+  .lx__chip { padding: 8px 9px; font-size: 0.72rem; }
+  .lx__iso { aspect-ratio: 4 / 3; }
+  .lx__view { gap: var(--space-sm); }
+  .lx__id b { font-size: 1.2rem; }
+  .lx__group, .lx__group--perf { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px; }
+  .lx__stat b { font-size: 0.95rem; }
+  .lx__stat span { font-size: 0.62rem; }
+}
+
+/* =========================================================
+   세부 페이지 세로 리듬 통일 (2026-07-13)
+   · 세부 구분 제목 → 설명문이 바로 이어지도록 (사이 여백 최소)
+   · 도판·표·위젯과 글 사이 간격을 --space-lg 하나로 고정 (인라인 style 제거함)
+   ========================================================= */
+.chsec__main .section__head { margin-bottom: var(--space-xs); }
+.chsec__main .section__title { max-width: none; }
+
+.chsec__main .figure,
+.chsec__main .tbl-wrap,
+.chsec__main .stepper,
+.chsec__main .lx,
+.chsec__main .cards,
+.chsec__main .kv,
+.chsec__main .readout { margin-block: var(--space-lg) 0; }
+
+/* 2단 스택(.cols) 안에서는 컬럼 사이 gap 이 간격을 담당 — 중복 여백 제거 */
+.chsec__main .cols > *,
+.chsec__main .cols .figure,
+.chsec__main .cols .kv { margin-block: 0; }
+
+/* 문단 사이는 한 줄 — 도판 간격과 섞이지 않게 */
+.chsec__main .measure { margin-bottom: 1em; }
+.chsec__main .measure:last-child { margin-bottom: 0; }
+
+/* =========================================================
+   도판 확대 (라이트박스) — 이미지를 누르면 화면 가득 열린다
+   ========================================================= */
+.figure__ph img.is-loaded, .card__img img.is-loaded, .lx__iso img.is-loaded { cursor: zoom-in; }
+
+.lbx {
+  position: fixed; inset: 0; z-index: 300;
+  display: grid; grid-template-rows: 1fr auto;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  opacity: 0; visibility: hidden; transition: opacity .3s var(--ease), visibility .3s;
+  padding: clamp(20px, 5vh, 64px) clamp(16px, 4vw, 64px);
+  cursor: zoom-out;
+}
+.lbx.is-open { opacity: 1; visibility: visible; }
+/* 도판은 화면을 꽉 채우지 않는다 — 원래 비율 그대로, 넉넉한 크기까지만 커진다.
+   width:100% + height:auto → viewBox 만 있는 SVG 도 비율대로 커진다 (width:auto 면 300px 로 쪼그라든다).
+   max-height 가 걸리면 object-fit:contain 이 비율을 지킨다. */
+.lbx__img {
+  grid-row: 1; place-self: center;
+  width: 100%; height: auto;
+  max-width: min(1200px, 88vw);
+  max-height: 78vh;
+  object-fit: contain;
+  transform: scale(0.97); transition: transform .35s var(--ease);
+}
+.lbx.is-open .lbx__img { transform: none; }
+.lbx__cap {
+  grid-row: 2; justify-self: center; text-align: center;
+  max-width: 70ch; margin: 0; padding-top: clamp(12px, 2vh, 24px);
+  font-family: var(--sans); font-size: var(--fs-small); color: var(--ink-70); line-height: 1.5;
+}
+.lbx__close {
+  position: fixed; top: clamp(16px, 3vh, 28px); right: clamp(16px, 3.5vw, 44px);
+  width: 40px; height: 40px; display: grid; place-items: center;
+  background: none; border: 1px solid var(--ink); color: var(--ink);
+  font-size: 1.1rem; line-height: 1; cursor: pointer;
+  transition: background .2s var(--ease), color .2s var(--ease);
+}
+.lbx__close:hover { background: var(--ink); color: var(--paper); }
+
+/* 정렬 가능한 표 헤더 (4장 21단지) */
+table.data th.sortable { cursor: pointer; user-select: none; transition: color .2s var(--ease); }
+table.data th.sortable:hover { color: var(--ink); }
+table.data th.sortable.is-sorted { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+/* 참고문헌 목록 (10-3) */
+.reflist { display: grid; gap: 12px; margin-top: var(--space-sm); }
+.reflist li { font-family: var(--sans); font-size: var(--fs-small); color: var(--ink-70); line-height: 1.6;
+              padding-left: 1.2em; text-indent: -1.2em; }
+.reflist li::before { content: "· "; color: var(--ink-40); }
+
+/* =========================================================
+   표 줄바꿈 (2026-07-14)
+   한글은 기본값(break-all 유사)으로 두면 열이 좁을 때 '한 글자씩' 세로로 쪼개진다.
+   → 단어 단위 줄바꿈(keep-all) + 헤더·숫자·고유명사는 아예 줄바꿈 금지.
+   넘치면 .tbl-wrap 이 가로 스크롤한다 (단어를 부수는 것보다 낫다).
+   ========================================================= */
+table.data { word-break: keep-all; overflow-wrap: normal; }
+table.data th { white-space: nowrap; }              /* 표 인덱스(헤더) */
+table.data td.num, table.data th.num { white-space: nowrap; }
+#cxTable td:nth-child(2) { white-space: nowrap; }   /* 4장 — 단지 이름 */
+#allData td:nth-child(1), #allData td:nth-child(2) { white-space: nowrap; }
+
+/* 모바일 표 — 두 종류로 나눈다.
+   ① 글이 든 표(용어집·제도·경관그룹·한계 …) → 화면 폭(=구분선 길이)에 맞춰 줄바꿈.
+   ② 숫자가 많은 표(21단지·96행·상관·종합) → 줄바꿈하면 열이 뭉개지므로 가로 스크롤.
+   단어는 어느 쪽에서도 부수지 않는다 (keep-all + break-word). */
+@media (max-width: 760px) {
+  table.data { min-width: 0; }                 /* 기본 = 화면에 맞춰 접힘 */
+  table.data th { white-space: normal; }       /* 헤더도 단어 단위로 줄바꿈 */
+
+  /* ⚠ 예전엔 숫자 표에 min-width: max-content 를 걸어 가로 스크롤시켰다. 그런데 그 값(540px)이
+     '페이지의 최소 폭'이 되어 버려, 크롬 모바일이 레이아웃 뷰포트를 540 으로 늘렸다(390 이 아니라).
+     그 결과 본문 문단까지 화면 밖으로 밀려났다. → 숫자 표도 카드로 접는다(.data--stack). */
+
+  .tbl-wrap { -webkit-overflow-scrolling: touch; }
+}
+
+/* '세 가지 질문' 처럼 항목이 3개인 스텝퍼 — 4등분이 아니라 3등분 */
+.stepper--3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 760px) { .stepper--3 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .stepper--3 { grid-template-columns: 1fr; } }
+
+/* =========================================================
+   줄바꿈 안전장치 (2026-07-14)
+   문제: 한글 본문에 'ㆍ' 로 이어 붙인 긴 토큰(예: 조망앙각·입체각·전면점유율·동간거리)은
+        띄어쓰기가 없어 하나의 '단어'로 취급된다. keep-all 만 걸면 이 토큰이 줄을 못 바꿔
+        좁은 화면에서 화면 밖으로 삐져나간다.
+   해법: keep-all(단어 보존) + overflow-wrap: break-word(도저히 안 들어갈 때만 끊음).
+        → 평소엔 단어가 잘리지 않고, 화면을 넘길 상황에서만 최후 수단으로 끊는다.
+   ========================================================= */
+.doc p, .doc li, .doc dt, .doc dd,
+.doc .lead, .doc .measure, .doc .readout,
+.doc .step__t, .doc .step__d,
+.doc .figure__cap, .doc .figure__ph span,
+.doc .section__title, .doc .doc__title, .doc .chsec__title,
+.doc .lx__note, .doc .lx__id, .doc .lx__stat span,
+table.data td, table.data th {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 760px) {
+  /* 절 제목은 데스크탑에선 한 줄 고정이지만, 좁은 화면에선 줄바꿈을 허용해야 안 넘친다 */
+  .chsec__title { white-space: normal; }
+}
+
+/* =========================================================
+   부록 데이터 표 (10-1) — 모바일에서 행을 카드로 접는다
+   열이 10개라 좁은 화면에선 어떻게 해도 가로로 넘친다.
+   → 표 구조를 버리고 각 행을 '항목: 값' 카드로 세로 스택. 가로 스크롤이 사라진다.
+   td 의 data-label 이 열 이름 역할을 한다 (JS 가 넣어 준다).
+   ========================================================= */
+#allData .tbl-scroll { overflow-x: auto; }
+
+
+@media (max-width: 760px) {
+  #allData .tbl-scroll { overflow-x: visible; }
+  table.data--stack { min-width: 0; width: 100%; }
+  table.data--stack thead { display: none; }
+  table.data--stack tbody, table.data--stack tr, table.data--stack td { display: block; }
+  table.data--stack tr {
+    border: 1px solid var(--line);
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+  table.data--stack td {
+    display: grid; grid-template-columns: 1fr auto; gap: 12px;
+    padding: 7px 0; border: 0;
+    border-bottom: 1px solid var(--line-soft);
+    text-align: left;
+  }
+  table.data--stack tr td:last-child { border-bottom: 0; }
+  table.data--stack td::before {
+    content: attr(data-label);
+    font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em;
+    color: var(--ink-40); align-self: center;
+  }
+  table.data--stack td.num { text-align: right; }
+  /* 첫 두 칸(건폐율·유형)은 카드의 제목처럼 */
+  table.data--stack td:nth-child(1), table.data--stack td:nth-child(2) { font-weight: 500; }
+}
+
+/* 부록 데이터 — 아무것도 고르지 않았을 때의 안내 */
+.lx__empty {
+  font-family: var(--sans); font-size: var(--fs-small); color: var(--ink-40);
+  border: 1px dashed var(--line); padding: var(--space-md); text-align: center; margin: 0;
+}
+
+/* =========================================================
+   열이 많은 데이터 표 — 셀 패딩을 줄인다 (2026-07-15)
+   글이 든 표는 좌우 36px 이 읽기 좋지만, 열이 6개를 넘으면 패딩만 400px 이 넘어
+   표가 본문 칸(820px)을 뚫고 나간다. 숫자 표는 18px 로 조인다.
+   ========================================================= */
+#cxTable table.data th, #cxTable table.data td,
+#allData table.data th, #allData table.data td,
+#scMass table.data th, #scMass table.data td,
+#scBcr table.data th, #scBcr table.data td,
+#regCorr table.data th, #regCorr table.data td { padding: 13px 18px; }
+
+@media (max-width: 760px) {
+  #cxTable table.data th, #cxTable table.data td,
+  #allData table.data th, #allData table.data td,
+  #scMass table.data th, #scMass table.data td,
+  #scBcr table.data th, #scBcr table.data td,
+  #regCorr table.data th, #regCorr table.data td { padding: 10px 12px; }
+}

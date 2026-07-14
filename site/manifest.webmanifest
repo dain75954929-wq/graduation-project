@@ -1,0 +1,19 @@
+{
+  "name": "보기 좋은 아파트에 대하여",
+  "short_name": "보기 좋은 아파트",
+  "description": "도시 보행자의 시지각을 기준으로 한 아파트 배치의 정량 분석",
+  "lang": "ko",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#FAFAFA",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

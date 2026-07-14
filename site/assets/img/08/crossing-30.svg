@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 820 512">
+  <!-- Generator: Adobe Illustrator 29.8.9, SVG Export Plug-In . SVG Version: 2.1.1 Build 1)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: #b5b6b6;
+      }
+
+      .st0, .st1, .st2 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .st0, .st1, .st2, .st3 {
+        fill: none;
+      }
+
+      .st1 {
+        stroke: #ddd;
+      }
+
+      .st2 {
+        stroke: #5a5858;
+      }
+
+      .st4 {
+        fill: #ffe200;
+        opacity: .3;
+      }
+
+      .st5, .st6, .st7, .st8 {
+        fill: #5a5858;
+      }
+
+      .st5, .st7 {
+        font-family: Pretendard-Light-KSCpc-EUC-H, Pretendard;
+        font-weight: 300;
+      }
+
+      .st5, .st8 {
+        font-size: 16px;
+      }
+
+      .st9 {
+        fill: #ddd;
+      }
+
+      .st7 {
+        font-size: 10px;
+      }
+
+      .st10 {
+        fill: #e60012;
+      }
+
+      .st11 {
+        fill: #0a3190;
+      }
+
+      .st12 {
+        fill: #89898a;
+      }
+
+      .st3 {
+        stroke: #89898a;
+        stroke-miterlimit: 10;
+      }
+
+      .st8 {
+        font-family: Pretendard-Medium-KSCpc-EUC-H, Pretendard;
+        font-weight: 500;
+      }
+
+      .st13 {
+        fill: #b5b6b6;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="st4" x="442.34" y="95.94" width="80.08" height="236.94"/>
+    <path class="st1" d="M240.54,107.16h161.23c26.87,18.81,53.74,37.62,80.61,56.43,26.87,23.51,53.74,47.02,80.61,70.54,26.83,23.3,53.65,46.61,80.48,69.91"/>
+    <path class="st1" d="M240.54,296.95c26.87-36.12,53.74-72.23,80.61-108.35,26.87-18.81,53.74-37.62,80.61-56.43,26.87-3.76,53.74-7.52,80.61-11.29,26.87-2.26,53.74-4.51,80.61-6.77,26.83-2.32,53.65-4.63,80.48-6.95"/>
+    <path class="st1" d="M240.68,312.75c26.78-4.51,53.57-9.03,80.35-13.54,26.87-18.81,53.74-37.62,80.61-56.43,26.87-10.53,53.74-21.07,80.61-31.6,26.87-3.01,53.74-6.02,80.61-9.03,26.87-3.76,53.74-7.52,80.61-11.29"/>
+    <path class="st1" d="M563,332.88c26.87-18.81,53.74-37.62,80.61-56.43"/>
+    <g>
+      <circle class="st13" cx="240.54" cy="107.16" r="4.84"/>
+      <circle class="st13" cx="321.16" cy="107.16" r="4.84"/>
+      <circle class="st13" cx="401.77" cy="107.16" r="4.84"/>
+      <circle class="st13" cx="482.39" cy="163.59" r="4.84"/>
+      <circle class="st13" cx="563" cy="234.13" r="4.84"/>
+      <circle class="st13" cx="643.61" cy="304.67" r="4.84"/>
+    </g>
+    <g>
+      <circle class="st9" cx="643.61" cy="276.45" r="4.84"/>
+      <path class="st9" d="M240.54,328.05c-2.67,0-4.84,2.17-4.84,4.84h9.67c0-2.67-2.17-4.84-4.84-4.84Z"/>
+      <path class="st9" d="M321.03,328.05c-2.67,0-4.84,2.17-4.84,4.84h9.67c0-2.67-2.17-4.84-4.84-4.84Z"/>
+      <path class="st9" d="M401.51,328.05c-2.67,0-4.84,2.17-4.84,4.84h9.67c0-2.67-2.17-4.84-4.84-4.84Z"/>
+      <path class="st9" d="M481.99,328.05c-2.67,0-4.84,2.17-4.84,4.84h9.67c0-2.67-2.17-4.84-4.84-4.84Z"/>
+      <path class="st9" d="M562.47,328.05c-2.67,0-4.84,2.17-4.84,4.84h9.67c0-2.67-2.17-4.84-4.84-4.84Z"/>
+    </g>
+    <g>
+      <circle class="st12" cx="240.68" cy="312.75" r="4.84"/>
+      <circle class="st12" cx="321.03" cy="299.2" r="4.84"/>
+      <circle class="st12" cx="401.64" cy="242.77" r="4.84"/>
+      <circle class="st12" cx="482.25" cy="211.17" r="4.84"/>
+      <circle class="st12" cx="562.87" cy="202.14" r="4.84"/>
+      <circle class="st12" cx="643.48" cy="190.86" r="4.84"/>
+    </g>
+    <g>
+      <circle class="st6" cx="240.54" cy="296.95" r="4.84"/>
+      <circle class="st6" cx="321.16" cy="188.6" r="4.84"/>
+      <circle class="st6" cx="401.77" cy="132.17" r="4.84"/>
+      <circle class="st6" cx="482.39" cy="120.89" r="4.84"/>
+      <circle class="st6" cx="563" cy="114.11" r="4.84"/>
+      <circle class="st6" cx="643.61" cy="107.34" r="4.84"/>
+    </g>
+    <g>
+      <line class="st2" x1="200.24" y1="332.88" x2="683.92" y2="332.88"/>
+      <line class="st2" x1="240.54" y1="332.88" x2="240.54" y2="323.21"/>
+      <line class="st2" x1="321.16" y1="332.88" x2="321.16" y2="323.21"/>
+      <line class="st2" x1="401.77" y1="332.88" x2="401.77" y2="323.21"/>
+      <line class="st2" x1="482.39" y1="332.88" x2="482.39" y2="323.21"/>
+      <line class="st2" x1="563" y1="332.88" x2="563" y2="323.21"/>
+      <line class="st2" x1="643.61" y1="332.88" x2="643.61" y2="323.21"/>
+      <line class="st2" x1="683.92" y1="332.88" x2="683.92" y2="323.21"/>
+      <line class="st2" x1="200.24" y1="332.88" x2="200.24" y2="107.16"/>
+      <line class="st2" x1="200.24" y1="287.74" x2="209.91" y2="287.74"/>
+      <line class="st2" x1="200.24" y1="242.6" x2="209.91" y2="242.6"/>
+      <line class="st2" x1="200.24" y1="197.45" x2="209.91" y2="197.45"/>
+      <line class="st2" x1="200.24" y1="152.31" x2="209.91" y2="152.31"/>
+      <line class="st2" x1="200.24" y1="107.16" x2="209.91" y2="107.16"/>
+    </g>
+    <text class="st5" transform="translate(423.99 388.8)"><tspan x="0" y="0">건폐율</tspan></text>
+    <text class="st5" transform="translate(146.65 331.3) rotate(-90)"><tspan x="0" y="0">통과율(%) ㆍ위압 완화 점수(0~100)</tspan></text>
+    <g>
+      <text class="st7" transform="translate(233.5 358.06)"><tspan x="0" y="0">5%</tspan></text>
+      <text class="st7" transform="translate(312.01 358.06)"><tspan x="0" y="0">10%</tspan></text>
+      <text class="st7" transform="translate(391.79 358.06)"><tspan x="0" y="0">20%</tspan></text>
+      <text class="st7" transform="translate(472.3 358.06)"><tspan x="0" y="0">30%</tspan></text>
+      <text class="st8" transform="translate(449.52 78.74)"><tspan x="0" y="0">30% 내외</tspan></text>
+      <text class="st7" transform="translate(552.92 358.06)"><tspan x="0" y="0">40%</tspan></text>
+      <text class="st7" transform="translate(633.65 358.06)"><tspan x="0" y="0">50%</tspan></text>
+    </g>
+    <g>
+      <text class="st7" transform="translate(183.03 335.92)"><tspan x="0" y="0">0</tspan></text>
+      <text class="st7" transform="translate(176.95 245.67)"><tspan x="0" y="0">40</tspan></text>
+      <text class="st7" transform="translate(177.03 200.55)"><tspan x="0" y="0">60</tspan></text>
+      <text class="st7" transform="translate(177.03 155.42)"><tspan x="0" y="0">80</tspan></text>
+      <text class="st7" transform="translate(177.14 290.8)"><tspan x="0" y="0">20</tspan></text>
+      <text class="st7" transform="translate(172.98 110.29)"><tspan x="0" y="0">100</tspan></text>
+    </g>
+    <g>
+      <text class="st7" transform="translate(343.13 439.92)"><tspan x="0" y="0">전면점유율 통과율(%)</tspan></text>
+      <g>
+        <line class="st1" x1="362.1" y1="411.89" x2="410.47" y2="411.89"/>
+        <circle class="st9" cx="386.29" cy="411.89" r="4.84"/>
+      </g>
+    </g>
+    <g>
+      <text class="st7" transform="translate(210.49 439.92)"><tspan x="0" y="0">동간거리 통과율(%)</tspan></text>
+      <g>
+        <line class="st0" x1="225.14" y1="411.89" x2="273.51" y2="411.89"/>
+        <circle class="st13" cx="249.33" cy="411.89" r="4.84"/>
+      </g>
+    </g>
+    <g>
+      <text class="st7" transform="translate(604.87 439.92)"><tspan x="0" y="0">조망앙각 완화 점수</tspan></text>
+      <g>
+        <line class="st2" x1="617.67" y1="411.89" x2="666.04" y2="411.89"/>
+        <circle class="st6" cx="641.85" cy="411.89" r="4.84"/>
+      </g>
+    </g>
+    <g>
+      <text class="st7" transform="translate(483.73 439.92)"><tspan x="0" y="0">입체각 완화 점수</tspan></text>
+      <g>
+        <line class="st3" x1="492.21" y1="411.89" x2="540.58" y2="411.89"/>
+        <circle class="st12" cx="516.39" cy="411.89" r="4.84"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <path class="st11" d="M374.26,90.15c4.55-1.35,9.29-2.09,14.04-2.19,4.75-.09,9.52.47,14.12,1.71,4.6,1.22,9.06,3.05,13.16,5.51,4.1,2.45,7.88,5.45,11.22,8.91l-1.05.97c-3.09-3.5-6.71-6.54-10.67-9.05-3.96-2.52-8.29-4.46-12.81-5.76-4.53-1.29-9.24-1.91-13.96-1.88-4.72.02-9.43.73-13.96,2.08l-.09-.29Z"/>
+    <polygon class="st11" points="418.35 105.31 418.43 103.81 425.81 104.2 425.66 96.8 427.16 96.77 427.35 105.78 418.35 105.31"/>
+  </g>
+  <g>
+    <path class="st10" d="M370.25,251.71c3.59-4.34,7.56-8.35,11.86-12,4.3-3.63,8.95-6.87,13.87-9.62,4.91-2.78,10.07-5.12,15.42-6.93,5.35-1.82,10.88-3.12,16.48-3.95l.18,1.43c-11.09,1.21-21.95,4.64-31.8,9.96-4.92,2.68-9.58,5.84-13.9,9.41-4.33,3.56-8.31,7.55-11.88,11.88l-.23-.19Z"/>
+    <polygon class="st10" points="423.92 226.74 422.76 225.8 427.41 220.05 421.33 215.83 422.19 214.6 429.59 219.73 423.92 226.74"/>
+  </g>
+  <g>
+    <path class="st10" d="M368.45,137.15c4.38-3.78,9.08-7.18,14.05-10.16,4.96-2.98,10.21-5.49,15.63-7.53,5.42-2.05,11.02-3.63,16.74-4.68,5.71-1.04,11.52-1.58,17.34-1.63v1.45c-11.48-.32-23.02,1.56-33.87,5.42-5.41,1.97-10.66,4.4-15.63,7.32-4.99,2.89-9.69,6.27-14.05,10.05l-.2-.23Z"/>
+    <polygon class="st10" points="427.26 120.08 426.23 118.98 431.61 113.91 426.16 108.91 427.18 107.81 433.82 113.9 427.26 120.08"/>
+  </g>
+</svg>

@@ -80,16 +80,26 @@
   }
   function fontStr(px) { return px + "px Pretendard, -apple-system, sans-serif"; }
 
-  var baseFS, W, H, dpr;
+  /* 좁은 화면 대응 — 화면 폭에 그대로 맞추면 타워가 가늘고 길쭉해진다.
+     최소 설계 폭(MIN_VW)으로 그린 뒤 화면 밖으로 넘치는 양옆을 잘라낸다(중앙 크롭).
+     높이도 모바일에선 줄여(비율은 다소 무시) 덜 길어 보이게 한다. */
+  var MIN_VW = 960;
+  var baseFS, W, H, dpr, VW, OX, HS;
   var groups = [], tiles = [], siteIndex = 0, raf = 0, lastT = 0;
   var phase = "build", buildStart = 0, holdUntil = 0, outStart = 0;
-  var cta = document.getElementById("coverCta"), ctaShown = false;   // 첫 건물 후 등장
+  var cta = document.getElementById("coverCta"), ctaShown = false;
+  var CTA_OUT_AT = 0.5;   // 첫 단지의 '퇴장'이 이만큼 진행되면 버튼 등장
 
   function resize() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = cover.clientWidth;
-    H = cover.clientHeight - (foot ? foot.offsetHeight : 0);
+    var footH = foot ? foot.offsetHeight : 0;
+    H = cover.clientHeight - footH;
     if (!W || H <= 0) return;
+    cover.style.setProperty("--foot-h", footH + "px");   // CTA를 '푸터 제외한 화면'의 정중앙에 두기 위해
+    VW = Math.max(W, MIN_VW);        // 그리기용 가상 폭 (좁은 화면이면 화면보다 넓게)
+    OX = (W - VW) / 2;               // 중앙 크롭 오프셋 (좁을수록 음수 → 양옆 잘림)
+    HS = (W < 700) ? 0.70 : 0.92;    // 모바일에선 타워 높이 축소
     baseFS = labelFS();
     canvas.width = W * dpr; canvas.height = H * dpr;
     canvas.style.width = W + "px"; canvas.style.height = H + "px";
@@ -108,7 +118,8 @@
     site.towers.forEach(function (tw) { if (tw[0] < minX) minX = tw[0]; if (tw[1] > maxX) maxX = tw[1]; });
     var shift = 0.5 - (minX + maxX) / 2;
     var T = site.towers.map(function (tw) {
-      return { bx: (tw[0] + shift) * W, bw: (tw[1] - tw[0]) * W, bTop: H - tw[2] * H * 0.92, c: tw[3], key: 0 };
+      // 가상 폭(VW) 기준으로 배치한 뒤 OX 만큼 밀어 중앙만 보이게(양옆은 캔버스 밖으로 잘림)
+      return { bx: (tw[0] + shift) * VW + OX, bw: (tw[1] - tw[0]) * VW, bTop: H - tw[2] * H * HS, c: tw[3], key: 0 };
     });
     T.forEach(function (t) { t.key = rng(); });    // 같은 색 안 건물 순서는 무작위
     var ranks = T.map(function (_, i) { return i; }).sort(function (a, b) { return T[a].c - T[b].c || T[a].key - T[b].key; });
@@ -187,11 +198,6 @@
         o.y += SPEED * (o.c === 0 ? 0.7 : 1) * dt;          // 처음(진한색) 조금 느리게
         if (o.y >= o.ty) { o.y = o.ty; o.settled = true; } else all = false;
       }
-      if (!ctaShown && cta) {                                  // 첫 건물(rank 0) 다 내려오면 CTA 등장
-        var fd = true;
-        for (var ci = 0; ci < tiles.length; ci++) if (tiles[ci].first && !tiles[ci].settled) { fd = false; break; }
-        if (fd) { ctaShown = true; cta.classList.add("is-shown"); }   // 첫 그래픽 첫 건물에 팝업
-      }
       if (all) { phase = "hold"; holdUntil = t + 2400; }
     } else if (phase === "hold") {
       if (t > holdUntil) {
@@ -199,16 +205,26 @@
         for (var j = 0; j < tiles.length; j++) tiles[j].gone = false;
       }
     } else {
-      var done = true;
+      var done = true, goneN = 0;
       for (var k = 0; k < tiles.length; k++) {
         var p = tiles[k];
-        if (p.gone) continue;
+        if (p.gone) { goneN++; continue; }
         if (t - outStart < p.outDelay) { done = false; continue; }
         p.y += SPEED * OUT_MULT * (p.c === 0 ? 0.6 : 1) * dt;     // 마지막(진한색) 조금 느리게
-        if (p.y > H + 120) p.gone = true; else done = false;
+        if (p.y > H + 120) { p.gone = true; goneN++; } else done = false;
+      }
+      // 퇴장(사라짐)이 50% 진행된 시점에 버튼(+글래스) 등장
+      if (!ctaShown && cta && tiles.length && siteIndex !== SITES.length - 1 &&
+          goneN / tiles.length >= CTA_OUT_AT) {
+        ctaShown = true; cta.classList.add("is-shown");
+        if (cover) cover.classList.add("is-glass");
       }
       if (done) {
-        if (siteIndex === SITES.length - 1 && cta) { cta.classList.remove("is-shown"); ctaShown = false; }  // 5개 그래픽(=한 사이클) 끝 → 팝다운
+        if (siteIndex === SITES.length - 1 && cta) {
+          // 5개 그래픽(=한 사이클) 끝 → 버튼·글래스 함께 팝다운
+          cta.classList.remove("is-shown"); ctaShown = false;
+          if (cover) cover.classList.remove("is-glass");
+        }
         build((siteIndex + 1) % SITES.length, false);
       }
     }
@@ -219,6 +235,8 @@
   function debounce(fn, ms) { var t; return function () { clearTimeout(t); t = setTimeout(fn, ms); }; }
   resize();
   if (!reduce) raf = requestAnimationFrame(step);
+  // 모션 최소화 설정이면 step()이 안 돌아 CTA가 영영 안 뜬다 → 즉시 노출(진입 불가 방지)
+  else if (cta) { ctaShown = true; cta.classList.add("is-shown"); if (cover) cover.classList.add("is-glass"); }
   window.addEventListener("resize", debounce(resize, 200));
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
   // 언어 토글(한/영) → 단어 풀 바꿔 다시 빌드

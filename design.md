@@ -116,7 +116,8 @@
 - 섹션 상하 패딩: `--space-xl`(데스크탑) / `--space-lg`(모바일)
 - 섹션 사이는 **풀블리드 헤어라인**(`--line`)으로 구분 — 도면 경계처럼
 
-### 모눈 배경 (시그니처 요소)
+### 모눈 배경 (~~시그니처 요소~~ 2026-07-12 제거)
+> 세부 페이지 배경 그리드는 콘텐츠가 들어오면서 산만해 **제거**했다(`body.page::before` 삭제). 아래는 폐기된 초기안 기록.
 은은한 그리드 패턴을 배경에 깔아 "도면 위" 느낌.
 ```css
 background-image:
@@ -394,12 +395,66 @@ Apartment Streetscape Analysis  ← 영문 부제 (ink-40)
 ```
 site/
 ├─ index.html        표지(Cover)
+├─ page.html         절 콘텐츠 페이지(단일 템플릿, ?id=<절>) — content.js 주입
 ├─ style-guide.html  서체·테마·스케일 토글 가이드
 ├─ css/style.css     공통 스타일 + 토큰(data-type/theme/scale 오버라이드 포함)
+├─ assets/img/<장>/  절별 도판(변환한 SVG/WebP) — .gitignore 예외로 커밋 허용
 └─ js/
-   ├─ main.js        헤더·메뉴(GNB/LNB) 생성·언어토글·디자인설정 적용·(구)건폐율 슬라이더
+   ├─ content.js     절별 콘텐츠 데이터(window.CONTENT[<절 id>])
+   ├─ main.js        헤더·메뉴 생성·언어토글·콘텐츠 주입(renderDoc)·건폐율 슬라이더·도판 로드
    └─ skyline.js     표지 키네틱 스카이라인
 ```
 - 헤더·메뉴는 `main.js`가 생성(공통 컴포넌트화) → 페이지 추가 시 각 HTML은 고유 콘텐츠만 작성
 - 콘텐츠 원고는 `웹사이트/콘텐츠/*.md` (섹션별), 페이지 구성안은 `웹사이트/페이지구성_제안.md`
 - 향후 페이지가 늘면 정적 유지(A) 또는 Astro 등 SSG 전환(B) 검토 — 미정
+
+## 13. 콘텐츠 렌더링 시스템 (2026-07-12)
+
+본문은 **`page.html` 하나가 `?id=<장>`로 장(章) 단위 페이지를 담당**하고, `main.js`의 `renderDoc()`이 그 장의 **소제목(절)들을 세로로 쌓아 스크롤**로 보여준다(2026-07-12 변경 — 절마다 별도 페이지 X, 소제목이 너무 많아 스크롤 방식으로). 메뉴 소제목 링크는 `page.html?id=<장>#<절>` 앵커로 해당 절에 스크롤한다(장 페이지 안 `.chsec[id=절]`, `scroll-margin-top`으로 헤더 회피). 레거시 `?id=<절>` 링크는 소유 장을 찾아 그 절로 스크롤하는 폴백이 있다. 우하단 CTA는 **다음 장**으로 이동. 스크립트 로드 순서는 `content.js` → `main.js`.
+
+**콘텐츠 스키마** (`content.js`) — 절 id별:
+```js
+"7-1": { titleKo, titleEn, subKo, subEn, body }
+```
+- `body`는 편집 클래스로 조립한 HTML 문자열. 새 클래스를 만들지 말고 **기존 §4 컴포넌트만 사용**: `.section`·`.section__head`(`__index`/`__title`/`__sub`)·`.cols`(`--wide-fig`/`--text-fig`)·`.lead`·`.pull`·`.figure`(`.figure__ph`/`.figure__cap`)·`.cards`/`.card`·`.tbl-wrap`+`table.data`·`.scn`(시나리오 태그)·`.kv`·`.flow`·`.bcr`(슬라이더).
+- 모든 텍스트는 `data-ko`/`data-en` 짝으로 — `renderDoc`이 언어 토글 시 subtree를 스왑(전역 스왑은 주입 전 실행되므로 주입 직후 한 번 더 돌린다).
+
+**도판 처리** — 파일이 아직 없어도 페이지가 완성돼 보이도록:
+```html
+<div class="figure__ph"><img data-fig src="assets/img/07/…svg"><span>도판 예정 · 출처</span></div>
+```
+`initFigures()`가 로드 성공 시 `img.is-loaded`(페이드인)로 placeholder 위에 표시, 실패 시 캡션 placeholder 유지. → 사용자가 `assets/img/<장>/`에 파일을 넣기만 하면 자동 반영. 파일명 스펙은 각 폴더 `_넣을파일.md`.
+
+**건폐율 슬라이더** — `initBcr(root)`로 함수화되어 콘텐츠 주입 후 호출된다(정적 로드 1회가 아님). 데이터는 `main.js`의 `STOPS`(건폐율별 평균 실측값). 마크업 id: `bcrRange`/`rBcr`·`rFloors`·`rDong`·`rAng`·`rSolid`·`rFront`/`bcrZone`·`bcrNote`·`bcrPlanN`/`bcrUnits`·`bcrSection`/`bcrTicks`.
+
+**레이아웃 (2026-07-12 최종)**: 세부 페이지 `.doc.container`는 풀폭(`max-width:none`). **내용물(`.chsec__main`)은 화면 정중앙**(`max-width:820px; margin-inline:auto`), **절 제목(`.chsec__rail`)은 화면 완전 왼쪽에 스티키로 고정**(같은 그리드 셀에 겹쳐 배치 — `justify-self:start; width:clamp(150,14vw,200); position:sticky`)해 스크롤해도 남는다(마크다운식 러닝헤드). 절 제목은 우측 여백이 아니라 **본문 왼쪽 여백 공간**에 뜬다. 본문 문단(`.measure`)은 표 폭에 맞춰 `max-width:none; text-align:justify; word-break:keep-all`(양쪽 정렬). 본문 내부 2단(`.cols`)은 금지 → 텍스트·표·도판 세로 스택. 도판 `max-width:820px`. 순서/파이프라인은 가로 `.stepper`(4열). **1280px 이하**(왼쪽 여백 부족)에서 절 제목이 상단 스티키 바로 전환. 위계: 장 제목(display) > 절 제목(`.chsec__title`) > 내부 `.section__title`(h2).
+
+**진행 상태**: 7장 '96개의 배치' 5개 절(7-1~7-5) 완성 = **템플릿 확정본**. 나머지 8개 장은 이 패턴을 복제해 확장. 콘텐츠 텍스트는 `booklet_…md` 도입문 + `콘텐츠/*.md` 초안을 22절로 재편 + PDF 도판 캡션 보강.
+
+---
+
+## 자동 렌더 위젯 (도판을 대신한다)
+
+**원칙 (2026-07-14 확정)**: 새 도판을 그리지 않는다. 그릴 수밖에 없는 도판은 **데이터로 렌더하거나, 이미 나온 산출물을 그대로 붙이거나, 지운다.** 이 원칙으로 남아 있던 도판 6개 중 5개를 없앴다 (기록: `site/assets/img/_넣을파일_전체.md`).
+
+| 위젯 | 절 | 데이터 | 초기화 |
+|---|---|---|---|
+| 21단지 표 (막대 내장 + 정렬) | 4-2 | `js/complexes.js` | `initComplexes` |
+| 세그멘테이션 대조쌍 (21곳 칩) | 5-2 | `js/seg.js` + `assets/img/05/seg/` | `initSeg` |
+| 상관·회귀 표 | 6-1 | `js/regression.js` | `initRegression` |
+| 96개 배치안 탐색기 | 7-5 | `js/layouts.js` | `initLx` |
+| 건폐율별 종합 · 유형별 성적표 | 8-1 · 8-2 | `js/scores.js` | `initScores` |
+| 96행 데이터 (칩 필터) | 10-1 | `js/layouts.js` | `initAllData` |
+
+- 위젯 초기화는 `renderDoc` 안에서 **개별 try/catch로 격리**한다 — 하나가 죽어도 메뉴·언어토글·모바일 크롬은 살아야 한다.
+- **표 셀 막대** (`td.bar` + `.bar__f`): 열마다 min→max 정규화한 상대 크기를 셀 뒤에 깐다. 순위처럼 정렬 기준인 열에는 그리지 않는다(계단 모양이 될 뿐). 4장의 `rank-bars` 도판을 표가 흡수한 방식.
+- **칩 UI**는 `.lx__chips` / `.lx__chip` / `.is-on` 하나만 쓴다. 새 칩 스타일을 만들지 말 것.
+- **세그멘테이션 대조쌍**: 21곳을 한 장의 도판에 늘어놓으면 아무것도 안 보인다 → 단지를 하나 고르면 원본 ↔ 오버레이가 나란히 뜬다. 사진은 1280×960(4:3)이라 `.figure__ph` 기본 비율에 그대로 맞는다. 생성 스크립트는 `scratchpad/seg-webp.py`(WebP 변환) + `gen-seg.py`(`seg.js` 생성, 단지명을 `complexes.js`와 대조해 순위 결합).
+
+## 표기 규칙 (2026-07-14 확정)
+
+- **네 가지 지표는 항상 `동간거리 → 전면점유율 → 조망앙각 → 입체각` 순서로 등장한다.** 3-3 과 7-4 는 같은 `metric-*.svg` 카드 네 장을 그대로 공유한다. 순서를 바꾸면 "앞의 둘은 물리적 관계를, 뒤의 둘은 시각 위압을 잰다" 같은 문장도 함께 뒤집어야 한다.
+- **설명글에 em-dash(—)를 쓰지 않는다.** AI가 쓴 티가 난다. 마침표·쉼표·괄호로 푼다. 예외는 표의 결측 placeholder 와 참고문헌 **원제목**뿐(출처를 바꾸면 인용이 틀려진다).
+- **표 안에서 특정 행만 볼드체로 강조하지 않는다.**
+- **절 제목은 추상적이지 않게.** '비어 있는 자리' → '보행자를 위한 기준이 없다', '다른 도시는 이렇게 쓴다' → '해외에는 보행자를 위한 기준이 있다'. 제목만 읽고 무슨 내용인지 알 수 있어야 한다.
+- **괄호가 중간에서 끊기지 않게** `.nb { white-space: nowrap }` 로 묶는다. `(4–6장)` 의 en-dash 가 줄바꿈 기회라 `(4–` / `6장)` 으로 잘린다.
