@@ -686,13 +686,16 @@
   /* ---------- 5-2 세그멘테이션 대조쌍 (js/seg.js) ----------
      21곳을 한 장의 도판에 늘어놓으면 아무것도 안 보인다. 단지를 하나 고르면
      그 단지의 대표 사진 ↔ 세그멘테이션 오버레이가 나란히 뜬다.
-     기본값은 위압감 1위(seg.js 가 순위순으로 정렬돼 있다). ---------- */
+     기본값은 대상지(잠실르엘). 7장 이후가 전부 이 단지 위에서 벌어지므로 여기서 미리 보여 준다. ---------- */
+  var SITE = "잠실르엘아파트";
   function initSeg(root) {
     root = root || document;
     var wrap = root.querySelector("#segPair");
     if (!wrap || wrap.__s || !window.SEGPAIRS) return;
     wrap.__s = 1;
-    var S = window.SEGPAIRS, cur = 0;
+    var S = window.SEGPAIRS;
+    var cur = 0;
+    for (var si = 0; si < S.length; si++) if (S[si].name === SITE) { cur = si; break; }
 
     // 칩·활성표시는 10-1 탐색기와 같은 .lx__chip 을 그대로 쓴다 (스타일 중복 금지)
     wrap.innerHTML =
