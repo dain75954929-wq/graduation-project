@@ -314,12 +314,12 @@
      · 위압 점수(조망앙각·입체각) = 위압 해소 통과거리를 [7 m=100, 200 m=0] 정규화 — 클수록 위압 적음
      · 아이소메트릭: assets/img/07/iso/iso_<건폐율>_<유형슬러그>.webp (없으면 placeholder) */
   var LX_ZONE = {
-    "5%":  ["초고층·저밀 — 시각 위압 최대", "Sparse high-rise — peak visual oppression"],
-    "10%": ["고층 — 조망앙각이 먼저 풀린다", "High-rise — view angle clears first"],
-    "20%": ["중층 — 조망앙각 거의 해소", "Mid-rise — view angle largely resolved"],
-    "30%": ["중밀 — 시지각과 인동이 함께 충족되는 균형 구간", "Balanced — perception and spacing both hold"],
-    "40%": ["저층고밀 — 동간이 무너지기 시작", "Dense low-rise — spacing starts to fail"],
-    "50%": ["저층고밀 — 인동 한계", "Dense low-rise — spacing at its limit"]
+    "5%":  ["초고층·저건폐율. 시각 위압이 가장 크다", "Sparse high-rise. Visual oppression at its peak"],
+    "10%": ["고층. 조망앙각이 먼저 풀린다", "High-rise. View angle clears first"],
+    "20%": ["중층. 조망앙각이 거의 해소된다", "Mid-rise. View angle largely resolved"],
+    "30%": ["중간 건폐율. 시지각과 인동이 함께 충족되는 균형 구간", "Middle coverage. Perception and spacing both hold"],
+    "40%": ["저층·고건폐율. 동간이 무너지기 시작한다", "Low-rise at high coverage. Spacing starts to fail"],
+    "50%": ["저층·고건폐율. 인동간격의 한계", "Low-rise at high coverage. Spacing at its limit"]
   };
   // 데이터 키가 1·2·3·4 인 복합 유형 → 실제 조합 이름으로 표시 (키는 그대로 두고 라벨만 교체)
   var LX_NAME = { "1": "ㅁ3+L11", "2": "V4+I2", "3": "V3+I2", "4": "I2+V4+I2" };
@@ -644,7 +644,7 @@
     { ko: "CityLife Apartments", en: "CityLife Apartments", bcr: "약 30", bcrEn: "approx. 30", far: "약 250~300", farEn: "approx. 250–300", fl: "5~13층", flEn: "5–13",
       note: "건물을 단지 외곽으로 돌려 내부 녹지를 최대로 확보했다", noteEn: "Buildings pushed to the edge to maximise the green interior" },
     { ko: "Little C", en: "Little C", bcr: "약 60~70", bcrEn: "approx. 60–70", far: "약 400", farEn: "approx. 400", fl: "5~15층", flEn: "5–15",
-      note: "거대한 매스 대신 15개의 작은 건물로 쪼개 유럽형 고밀 가로를 만들었다", noteEn: "Split into fifteen small buildings instead of one mass, making a dense European street" },
+      note: "거대한 매스 대신 15개의 작은 건물로 쪼개, 건폐율 60~70%로 유럽형 가로를 만들었다", noteEn: "Split into fifteen small buildings instead of one mass, holding 60–70% coverage to make a European street" },
     { ko: "Hunziker Areal", en: "Hunziker Areal", bcr: "약 40~50", bcrEn: "approx. 40–50", far: "약 200~250", farEn: "approx. 200–250", fl: "4~8층", flEn: "4–8",
       note: "자동차 없는 마을을 지향하며 건물 사이를 광장과 공용 공간으로 채웠다", noteEn: "A car-free village; the gaps between buildings are squares and shared space" },
     { ko: "Battery Park City", en: "Battery Park City", bcr: "약 40", bcrEn: "approx. 40", far: "약 600~1000", farEn: "approx. 600–1000", fl: "6~45층", flEn: "6–45",
