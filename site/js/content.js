@@ -1192,7 +1192,7 @@ window.CONTENT = {
 
       <section class="section" id="filter">
         <div class="section__head reveal">
-          <h2 class="section__title" data-ko="상업지역을 걸러내다" data-en="Filtering Out Commercial Zones">상업지역을 걸러내다</h2>
+          <h2 class="section__title" data-ko="준주거지역을 걸러낸다" data-en="Filtering Out Semi-Residential Zones">준주거지역을 걸러낸다</h2>
         </div>
         <p class="measure muted reveal" data-ko="위압감 순위 1위는 롯데캐슬 SKY-L65였다. 65층, 용적률 994퍼센트. 압도적인 수치지만 이 단지는 상업지역에 서 있다. 용적률 조건이 근본적으로 다르므로 일반적인 아파트 단지를 대변할 수 없고, 여기서 얻은 결론을 다른 단지에 적용할 수도 없다." data-en="The most oppressive was Lotte Castle SKY-L65, at 65 storeys and FAR 994%. Overwhelming figures, but the complex stands in a commercial zone. Its floor area ratio conditions are fundamentally different; it cannot stand for ordinary apartment estates, and conclusions drawn there do not transfer.">위압감 순위 1위는 롯데캐슬 SKY-L65였다. 65층, 용적률 994퍼센트. 압도적인 수치지만 이 단지는 상업지역에 서 있다. 용적률 조건이 근본적으로 다르므로 일반적인 아파트 단지를 대변할 수 없고, 여기서 얻은 결론을 다른 단지에 적용할 수도 없다.</p>
         <p class="measure muted reveal" data-ko="그래서 일반주거지역으로 범위를 좁혔다. 그 안에서 위압감이 가장 높게 나타난 단지가 잠실르엘이다." data-en="So the field narrows to general residential zones. Within it, the highest oppressiveness belongs to Jamsil Le-el.">그래서 일반주거지역으로 범위를 좁혔다. 그 안에서 위압감이 가장 높게 나타난 단지가 잠실르엘이다.</p>
