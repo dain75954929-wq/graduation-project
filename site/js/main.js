@@ -517,7 +517,9 @@
           '<th class="num">' + (en ? "Spacing /16" : "동간 충족 /16") + "</th>" +
           '<th class="num">' + (en ? "Solid angle" : "입체각 점수") + "</th>" +
           '<th class="num">' + (en ? "View angle" : "조망앙각 점수") + "</th>" +
-          '<th class="num">' + (en ? "Pass distance" : "위압 해소 거리") + "</th>" +
+          '<th class="num">' + (en ? "Solid pass" : "입체각 통과거리") + "</th>" +
+          '<th class="num">' + (en ? "View pass" : "조망앙각 통과거리") + "</th>" +
+          '<th class="num">' + (en ? "Mean pass" : "위압 해소 거리") + "</th>" +
         "</tr></thead><tbody>" +
         S.byBcr.map(function (r) {
           return "<tr>" +
@@ -526,7 +528,9 @@
             '<td class="num" data-label="' + (en ? "Spacing /16" : "동간 충족 /16") + '">' + r.gap + "</td>" +
             '<td class="num" data-label="' + (en ? "Solid angle" : "입체각 점수") + '">' + r.solid + "</td>" +
             '<td class="num" data-label="' + (en ? "View angle" : "조망앙각 점수") + '">' + r.ang + "</td>" +
-            '<td class="num" data-label="' + (en ? "Pass distance" : "위압 해소 거리") + '">' + r.pass + " m</td>" +
+            '<td class="num" data-label="' + (en ? "Solid pass" : "입체각 통과거리") + '">' + r.solidPass + " m</td>" +
+            '<td class="num" data-label="' + (en ? "View pass" : "조망앙각 통과거리") + '">' + r.angPass + " m</td>" +
+            '<td class="num" data-label="' + (en ? "Mean pass" : "위압 해소 거리") + '">' + r.pass + " m</td>" +
           "</tr>";
         }).join("") + "</tbody></table>";
     }
@@ -542,7 +546,8 @@
           '<th class="num">' + (en ? "Spacing /6" : "동간 /6") + "</th>" +
           '<th class="num">' + (en ? "Solid" : "입체각") + "</th>" +
           '<th class="num">' + (en ? "View" : "조망앙각") + "</th>" +
-          '<th class="num">' + (en ? "Score" : "시각위압 점수") + "</th>" +
+          '<th class="num">' + (en ? "Visual" : "시각위압 점수") + "</th>" +
+          '<th class="num">' + (en ? "Total" : "종합 점수") + "</th>" +
         "</tr></thead><tbody>" +
         S.byMass.map(function (r) {
           return "<tr>" +
@@ -552,7 +557,8 @@
             '<td class="num" data-label="' + (en ? "Spacing /6" : "동간 /6") + '">' + r.gap + "/6</td>" +
             '<td class="num" data-label="' + (en ? "Solid" : "입체각") + '">' + r.solid + "</td>" +
             '<td class="num" data-label="' + (en ? "View" : "조망앙각") + '">' + r.ang + "</td>" +
-            '<td class="num" data-label="' + (en ? "Score" : "시각위압 점수") + '">' + r.score + "</td>" +
+            '<td class="num" data-label="' + (en ? "Visual" : "시각위압 점수") + '">' + r.score + "</td>" +
+            '<td class="num" data-label="' + (en ? "Total" : "종합 점수") + '">' + r.total.toFixed(1) + "</td>" +
           "</tr>";
         }).join("") + "</tbody></table>";
     }
