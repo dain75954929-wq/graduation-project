@@ -1270,6 +1270,102 @@ window.CONTENT = {
         <p class="readout reveal"><span data-ko="선별은 두 번 걸렀다. 먼저 21곳에서 상업지역에 선 초고층 주상복합을 제외했다. 위압감 1위 롯데캐슬 SKY-L65와 3위 청량리역 한양수자인 그라시엘이 여기서 빠진다. 이들은 애초에 일반주거지역의 배치 규칙을 적용받지 않으므로 실험대가 될 수 없다. 남은 일반주거지역 단지 가운데 위압감이 가장 높았던 곳이 잠실르엘이다. 7장의 지도는 이 대지가 실제로 어디에 놓여 있는지를 보여 준다." data-en="The filter ran twice. First, the commercial-zone towers were removed from the twenty-one, which takes out Lotte Castle SKY-L65 (rank 1) and Cheongnyangni Hanyang Sujain Graciel (rank 3). Standing outside the layout rules of a general residential zone, they cannot serve as a test bed. Of the general-residential estates that remain, Jamsil Le-el ranked highest for oppressiveness. The map in Chapter 7 shows where the site actually sits.">선별은 두 번 걸렀다. 먼저 21곳에서 상업지역에 선 초고층 주상복합을 제외했다. 위압감 1위 롯데캐슬 SKY-L65와 3위 청량리역 한양수자인 그라시엘이 여기서 빠진다. 이들은 애초에 일반주거지역의 배치 규칙을 적용받지 않으므로 실험대가 될 수 없다. 남은 일반주거지역 단지 가운데 위압감이 가장 높았던 곳이 잠실르엘이다. 7장의 지도는 이 대지가 실제로 어디에 놓여 있는지를 보여 준다.</span></p>
       </section>
     `
+  },
+
+  /* ==================== 1 서론 ==================== */
+  "i-bg": {
+    titleKo: "연구의 배경",
+    titleEn: "Background",
+    body: `
+      <p class="lead reveal" data-ko="2024년 인구주택총조사에 따르면 한국 일반 가구의 53.9퍼센트가 아파트에 산다. 그러나 아파트를 가장 자주 마주치는 사람은 그 안에 사는 사람이 아니라 그 앞을 지나가는 사람이다." data-en="According to the 2024 census, 53.9% of Korean households live in apartments. Yet the person who meets the apartment most often is not the one who lives inside, but the one walking past.">2024년 인구주택총조사에 따르면 한국 일반 가구의 53.9퍼센트가 아파트에 산다. 그러나 아파트를 가장 자주 마주치는 사람은 그 안에 사는 사람이 아니라 그 앞을 지나가는 사람이다.</p>
+
+      <section class="section" id="two-eyes">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="두 개의 시선" data-en="Two Gazes">두 개의 시선</h2></div>
+        <p class="measure muted reveal" data-ko="아파트에는 두 종류의 눈이 있다. 하나는 안에서 밖을 보는 눈으로, 남향과 조망, 채광과 사생활을 원한다. 설계의 거의 모든 결정과 법이 이 눈을 위해 내려진다. 다른 하나는 밖에서 안을 보는 눈이다. 단지 앞을 걷는 사람이 매일 마주하는 것은 아파트의 뒷면이고 담장이고 옹벽이고 벽처럼 늘어선 상가인데, 그들을 위한 규정은 어디에도 없다." data-en="An apartment has two kinds of eye. One looks outward from within and wants aspect, view, daylight, privacy; almost every design decision and every rule is made for it. The other looks inward from outside. What a passer-by meets each day is the back of the estate, the wall, the retaining wall, the shops lined up like a barrier, and no rule anywhere exists for them.">아파트에는 두 종류의 눈이 있다. 하나는 안에서 밖을 보는 눈으로, 남향과 조망, 채광과 사생활을 원한다. 설계의 거의 모든 결정과 법이 이 눈을 위해 내려진다. 다른 하나는 밖에서 안을 보는 눈이다. 단지 앞을 걷는 사람이 매일 마주하는 것은 아파트의 뒷면이고 담장이고 옹벽이고 벽처럼 늘어선 상가인데, 그들을 위한 규정은 어디에도 없다.</p>
+        <p class="measure muted reveal" data-ko="오늘의 아파트 외관은 거주자 개개인이 각자의 내부 공간을 향해 내린 최선의 선택들이 응집된 결과다. 입주민은 아늑한 거실을 골랐을 뿐이지만, 그 선택들이 모여 도시의 관점에서는 배타적인 철옹성이자 시각적 위압감으로 다가온다. 입주민의 인식과 도시민의 경험 사이의 이 간극이 이 프로젝트의 출발점이다." data-en="Today’s apartment facade is the aggregate of residents’ best choices made toward their own interiors. Each chose a comfortable living room, but those choices together read, from the city’s view, as an exclusionary fortress and a visual pressure. The gap between the resident’s perception and the citizen’s experience is where this project begins.">오늘의 아파트 외관은 거주자 개개인이 각자의 내부 공간을 향해 내린 최선의 선택들이 응집된 결과다. 입주민은 아늑한 거실을 골랐을 뿐이지만, 그 선택들이 모여 도시의 관점에서는 배타적인 철옹성이자 시각적 위압감으로 다가온다. 입주민의 인식과 도시민의 경험 사이의 이 간극이 이 프로젝트의 출발점이다.</p>
+        <figure class="figure figure--wide reveal">
+          <div class="figure__ph"><img data-fig src="assets/img/01/two-views.webp" alt="담장 너머로 솟은 아파트를 마주한 보행자" loading="lazy"><span data-ko="도판 · 담장 너머의 아파트" data-en="Figure · the apartment beyond the wall">도판 · 담장 너머의 아파트</span></div>
+          <figcaption class="figure__cap"><span data-ko="밖에서 본 아파트. 보행자가 매일 마주하는 것은 담장과 CCTV, 출입금지 표지, 그리고 그 위로 솟은 매스다" data-en="The apartment from outside: the wall, the cameras, the no-entry sign, and the mass rising above them">밖에서 본 아파트. 보행자가 매일 마주하는 것은 담장과 CCTV, 출입금지 표지, 그리고 그 위로 솟은 매스다</span></figcaption>
+        </figure>
+      </section>
+    `
+  },
+
+  "i-aim": {
+    titleKo: "연구의 목적과 질문",
+    titleEn: "Aim and Questions",
+    body: `
+      <p class="lead reveal" data-ko="본 연구의 목적은 입주민의 사적 안락을 훼손하지 않으면서도 도시민에게 위압적이지 않은 아파트 배치의 조건을, 단지 밖을 걷는 보행자의 시지각을 기준으로 규명하는 데 있다." data-en="The aim is to establish, from the visual perception of a pedestrian outside the estate, the conditions for an apartment layout that does not oppress the citizen while leaving the resident’s private comfort intact.">본 연구의 목적은 입주민의 사적 안락을 훼손하지 않으면서도 도시민에게 위압적이지 않은 아파트 배치의 조건을, 단지 밖을 걷는 보행자의 시지각을 기준으로 규명하는 데 있다.</p>
+
+      <section class="section" id="questions">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="세 가지 질문" data-en="Three Questions">세 가지 질문</h2></div>
+        <p class="measure muted reveal" data-ko="“보기 좋은 아파트는 무엇으로 판단할 수 있는가”라는 물음을 세 가지로 나눈다." data-en="The question “by what can a well-seen apartment be judged?” divides into three.">“보기 좋은 아파트는 무엇으로 판단할 수 있는가”라는 물음을 세 가지로 나눈다.</p>
+        <div class="stepper stepper--3 reveal" data-d="1">
+          <div class="step"><span class="step__n">01</span><h3 class="step__t" data-ko="어떻게 다뤄 왔는가" data-en="How has it been treated">어떻게 다뤄 왔는가</h3><p class="step__d" data-ko="보행자가 지각하는 대상과 그로 인한 심리적 반응을 제도와 선행연구는 어떤 지표로 다뤄 왔는가. 3·4장" data-en="By what metrics have regulation and prior research treated what the pedestrian perceives? Chapters 3–4">보행자가 지각하는 대상과 그로 인한 심리적 반응을 제도와 선행연구는 어떤 지표로 다뤄 왔는가. 3·4장</p></div>
+          <div class="step"><span class="step__n">02</span><h3 class="step__t" data-ko="어떻게 수치로 만드는가" data-en="How to turn it into a number">어떻게 수치로 만드는가</h3><p class="step__d" data-ko="보행자가 체감하는 위압감을 어떻게 재현 가능한 수치로 만들 것인가. 5·6장" data-en="How can the oppressiveness a pedestrian feels be made a reproducible number? Chapters 5–6">보행자가 체감하는 위압감을 어떻게 재현 가능한 수치로 만들 것인가. 5·6장</p></div>
+          <div class="step"><span class="step__n">03</span><h3 class="step__t" data-ko="무엇이 좌우하는가" data-en="What governs it">무엇이 좌우하는가</h3><p class="step__d" data-ko="서울 아파트 단지의 어떤 물리적 속성이 위압감을 강화하거나 완화하는가. 7·8장" data-en="Which physical properties intensify or relieve it? Chapters 7–8">서울 아파트 단지의 어떤 물리적 속성이 위압감을 강화하거나 완화하는가. 7·8장</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="scope">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="범위와 흐름" data-en="Scope and Flow">범위와 흐름</h2></div>
+        <p class="measure muted reveal" data-ko="공간적 범위는 서울 제3종 일반주거지역의 공동주택이며 상세 대상지는 잠실르엘이다. 관점은 단지 외부를 걷는 보행자의 시지각으로 한정하고, 내용은 배치와 매스의 단계에서 결정되는 형태로 좁힌다. 외장재와 색채는 변인에서 제외한다. 연구는 제도와 선행연구 검토에서 지표 체계로, 다시 96개 배치안의 평가에서 방향 도출로 이어진다." data-en="The spatial scope is housing in Seoul’s Class 3 general residential zone, with Jamsil Le-el as the detailed site; the viewpoint is limited to the perception of a pedestrian outside, and the content to form decided at the layout and massing stage, with cladding and colour excluded. The study runs from regulation and prior research to a metric system, then from evaluating 96 layouts to deriving a direction.">공간적 범위는 서울 제3종 일반주거지역의 공동주택이며 상세 대상지는 잠실르엘이다. 관점은 단지 외부를 걷는 보행자의 시지각으로 한정하고, 내용은 배치와 매스의 단계에서 결정되는 형태로 좁힌다. 외장재와 색채는 변인에서 제외한다. 연구는 제도와 선행연구 검토에서 지표 체계로, 다시 96개 배치안의 평가에서 방향 도출로 이어진다.</p>
+      </section>
+    `
+  },
+
+  /* ==================== 2 개념과 이론 ==================== */
+  "c-opp": {
+    titleKo: "위압감, 개방감, 위요감",
+    titleEn: "Oppressiveness, Openness, Enclosure",
+    body: `
+      <p class="lead reveal" data-ko="본 연구가 다루는 감정은 위압감(oppressiveness)이다. 보행자가 고층·고밀의 매스를 마주할 때 느끼는 심리적 압박과 위축을 가리킨다. 위압감은 개방감, 위요감과 함께 논의되어 왔지만 셋은 같지 않다." data-en="The feeling this project treats is oppressiveness: the psychological pressure a pedestrian feels before high, dense mass. It is discussed alongside openness and enclosure, but the three are not one.">본 연구가 다루는 감정은 위압감(oppressiveness)이다. 보행자가 고층·고밀의 매스를 마주할 때 느끼는 심리적 압박과 위축을 가리킨다. 위압감은 개방감, 위요감과 함께 논의되어 왔지만 셋은 같지 않다.</p>
+
+      <section class="section" id="three-words">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="느낌도 측정할 수 있다" data-en="A Feeling Can Be Measured">느낌도 측정할 수 있다</h2></div>
+        <p class="measure muted reveal" data-ko="도시경관에서 아파트 단지가 오래도록 지적받아온 문제는 획일경관, 차폐경관, 위압경관, 돌출경관 네 가지다. 그 가운데 위압경관은 가장 자주 언급되면서도 가장 측정되지 않았다. 느낌이기 때문이다. 그러나 신경미학 연구는 복잡하거나 비대칭적인 형태 앞에서 편도체가 활성화되어 경계심과 불안이 유발된다고 보고한다. 위압감은 취향이 아니라 생리적 방어 반응에 가깝고, 그렇다면 재는 방법도 있다." data-en="Four problems have long been named of apartment estates: uniformity, obstruction, oppression, and protrusion. Of these, oppression is the most cited and the least measured, because it is a feeling. Yet neuroaesthetics reports the amygdala activating before complex or asymmetric form, raising vigilance and anxiety. Oppressiveness is less a taste than a physiological defence, and so there must be a way to measure it.">도시경관에서 아파트 단지가 오래도록 지적받아온 문제는 획일경관, 차폐경관, 위압경관, 돌출경관 네 가지다. 그 가운데 위압경관은 가장 자주 언급되면서도 가장 측정되지 않았다. 느낌이기 때문이다. 그러나 신경미학 연구는 복잡하거나 비대칭적인 형태 앞에서 편도체가 활성화되어 경계심과 불안이 유발된다고 보고한다. 위압감은 취향이 아니라 생리적 방어 반응에 가깝고, 그렇다면 재는 방법도 있다.</p>
+        <p class="measure muted reveal" data-ko="개방감은 시야가 하늘과 원경으로 열려 있다고 느끼는 정도이고, 위요감은 가로가 건물에 둘러싸인 상태다. 위압감과 개방감은 반대 방향을 향하되 서로의 역수가 아니어서, 압박감의 허용한계 65퍼센트와 개방감의 확보한계 73퍼센트를 더해도 100이 되지 않는다. 그래서 이 프로젝트는 위압감을 개방감의 역수로 구하지 않고 별도의 지표로 측정하며, D/H로 표현되는 위요감은 기존 논의와 대조하는 참조 기준으로만 둔다." data-en="Openness is the sense that the view runs out to sky and distance; enclosure is a street ringed by buildings. Oppressiveness and openness point opposite ways yet are not inverses: a 65% pressure limit and a 73% openness limit do not sum to 100. So this project measures oppressiveness as its own metric, not the inverse of openness, keeping enclosure (as D/H) only as a reference.">개방감은 시야가 하늘과 원경으로 열려 있다고 느끼는 정도이고, 위요감은 가로가 건물에 둘러싸인 상태다. 위압감과 개방감은 반대 방향을 향하되 서로의 역수가 아니어서, 압박감의 허용한계 65퍼센트와 개방감의 확보한계 73퍼센트를 더해도 100이 되지 않는다. 그래서 이 프로젝트는 위압감을 개방감의 역수로 구하지 않고 별도의 지표로 측정하며, D/H로 표현되는 위요감은 기존 논의와 대조하는 참조 기준으로만 둔다.</p>
+      </section>
+    `
+  },
+
+  "c-scale": {
+    titleKo: "휴먼스케일과 시각 지표",
+    titleEn: "Human Scale and Visual Metrics",
+    body: `
+      <p class="lead reveal" data-ko="공동주택을 규율하는 기준은 둘로 나뉜다. 세대 내부에서 측정되어 가로를 걷는 사람이 볼 수 없는 환경 성능(일조·채광·통풍)과, 밖에서 보이는 형태와 시야다. 본 연구가 다루는 것은 형태와 시야다." data-en="Standards for housing split in two: environmental performance measured inside the unit and invisible from the street (sunlight, daylight, ventilation), and form and sightline seen from outside. This project treats form and sightline.">공동주택을 규율하는 기준은 둘로 나뉜다. 세대 내부에서 측정되어 가로를 걷는 사람이 볼 수 없는 환경 성능(일조·채광·통풍)과, 밖에서 보이는 형태와 시야다. 본 연구가 다루는 것은 형태와 시야다.</p>
+
+      <section class="section" id="scale-as-condition">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="휴먼스케일을 측정의 조건으로" data-en="Human Scale as a Measurement Condition">휴먼스케일을 측정의 조건으로</h2></div>
+        <p class="measure muted reveal" data-ko="휴먼스케일은 흔히 ‘인간의 몸에 맞는 크기’라는 규범으로 쓰이지만, 그렇게만 쓰면 구체적인 값을 갖지 못한다. 본 연구는 이를 측정의 조건으로 정의한다. 사람의 신체에서 도출되는 치수가 무엇을 어디에서 재야 하는지를 규정한다고 보는 것이다." data-en="Human scale is usually a norm, ‘a size that fits the body’, but as a norm alone it has no concrete value. This project defines it as a measurement condition: the dimensions derived from the body prescribe what to measure and where.">휴먼스케일은 흔히 ‘인간의 몸에 맞는 크기’라는 규범으로 쓰이지만, 그렇게만 쓰면 구체적인 값을 갖지 못한다. 본 연구는 이를 측정의 조건으로 정의한다. 사람의 신체에서 도출되는 치수가 무엇을 어디에서 재야 하는지를 규정한다고 보는 것이다.</p>
+        <p class="measure muted reveal" data-ko="휴먼스케일이 정하는 조건은 세 가지다. 서 있는 사람의 눈높이, 한 번에 보이는 범위, 거리에 따라 달라지는 지각이다. 이 셋을 묶으면 평가의 범위가 정해진다. 단지 밖에 선 사람의 눈높이에서, 한 번에 보이는 범위 안에서, 거리를 나누어 확인할 수 있고, 같은 조건이면 누구나 같은 값을 얻을 수 있는 형태 지표. 보이는 것만이 평가의 대상이다." data-en="Human scale fixes three conditions: the eye height of a standing person, the range seen at once, and perception that changes with distance. Together they set the scope of evaluation: a form metric read at the pedestrian’s eye height, within the range seen at once, split by distance, and reproducible by anyone under the same conditions. Only what is seen can be evaluated.">휴먼스케일이 정하는 조건은 세 가지다. 서 있는 사람의 눈높이, 한 번에 보이는 범위, 거리에 따라 달라지는 지각이다. 이 셋을 묶으면 평가의 범위가 정해진다. 단지 밖에 선 사람의 눈높이에서, 한 번에 보이는 범위 안에서, 거리를 나누어 확인할 수 있고, 같은 조건이면 누구나 같은 값을 얻을 수 있는 형태 지표. 보이는 것만이 평가의 대상이다.</p>
+      </section>
+    `
+  },
+
+  "c-theory": {
+    titleKo: "가로의 시지각을 다룬 이론",
+    titleEn: "Theories of Street Perception",
+    body: `
+      <p class="lead reveal" data-ko="앞서 정한 범위는 새로운 것이 아니다. 여러 이론이 서로 다른 맥락에서 하나의 전제를 공유한다. 가로는 위에서 내려다본 평면이 아니라 서 있는 사람의 눈높이에서 펼쳐지는 장면이라는 것이다." data-en="The scope set above is not new. Several theories, in different contexts, share one premise: the street is not a plan seen from above but a scene unfolding at the eye height of a standing person.">앞서 정한 범위는 새로운 것이 아니다. 여러 이론이 서로 다른 맥락에서 하나의 전제를 공유한다. 가로는 위에서 내려다본 평면이 아니라 서 있는 사람의 눈높이에서 펼쳐지는 장면이라는 것이다.</p>
+
+      <section class="section" id="lineage">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="거리·각도·에워쌈" data-en="Distance, Angle, Enclosure">거리·각도·에워쌈</h2></div>
+        <div class="tbl-wrap reveal" data-d="1">
+          <table class="data">
+            <thead><tr><th data-ko="이론" data-en="Theory">이론</th><th data-ko="핵심" data-en="Core">핵심</th></tr></thead>
+            <tbody>
+              <tr><td data-ko="Gehl (1971)" data-en="Gehl (1971)">Gehl (1971)</td><td data-ko="거리에 따라 인지가 달라진다. 100m 형체, 25m 표정, 7m 감정. 지상 5층을 넘으면 가로와의 사회적 접촉이 끊긴다" data-en="Perception changes with distance: form at 100 m, expression at 25 m, emotion at 7 m; above the fifth floor, social contact with the street breaks">거리에 따라 인지가 달라진다. 100m 형체, 25m 표정, 7m 감정. 지상 5층을 넘으면 가로와의 사회적 접촉이 끊긴다</td></tr>
+              <tr><td data-ko="Maertens (1884)" data-en="Maertens (1884)">Maertens (1884)</td><td data-ko="올려다본 각도로 보이는 크기가 달라진다. 27도에서 건물 전체가 한눈에 들어오며, 그 거리는 높이의 약 두 배다" data-en="Apparent size changes with the angle up: at 27° the whole building is taken in at once, at a distance of about twice its height">올려다본 각도로 보이는 크기가 달라진다. 27도에서 건물 전체가 한눈에 들어오며, 그 거리는 높이의 약 두 배다</td></tr>
+              <tr><td data-ko="아시하라 (1975·79)" data-en="Ashihara (1975·79)">아시하라 (1975·79)</td><td data-ko="건물 높이와 거리의 관계(D/H)가 개방감과 압박을 가른다" data-en="The ratio of height to distance (D/H) divides openness from pressure">건물 높이와 거리의 관계(D/H)가 개방감과 압박을 가른다</td></tr>
+              <tr><td data-ko="Alexander (1977)" data-en="Alexander (1977)">Alexander (1977)</td><td data-ko="외부 공간은 남는 땅이 아니라 건물이 에워싸 만든 형태여야 한다(긍정적 외부공간)" data-en="Outdoor space should be shaped by buildings around it, not leftover land (Positive Outdoor Space)">외부 공간은 남는 땅이 아니라 건물이 에워싸 만든 형태여야 한다(긍정적 외부공간)</td></tr>
+              <tr><td data-ko="Speck (2012)" data-en="Speck (2012)">Speck (2012)</td><td data-ko="걷기 좋은 가로의 요건으로 짧은 블록과 7.5~10m마다 바뀌는 입구와 창을 든다" data-en="Names short blocks and entrances/windows changing every 7.5–10 m as conditions for a walkable street">걷기 좋은 가로의 요건으로 짧은 블록과 7.5~10m마다 바뀌는 입구와 창을 든다</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="measure muted reveal" data-ko="네 논의가 공통으로 지목하는 것은 눈높이와 보이는 범위, 거리다. 그러나 이들은 규범이지 척도가 아니다. 어느 거리에서 보아야 하는지는 제시하지만 그 거리에서 무엇을 얼마나 측정해야 하는지는 정하지 않았다. 이 공백을 제도와 선행연구가 어떻게 다뤄 왔는지를 다음 두 장에서 본다." data-en="All point to eye height, the range seen, and distance, but they are norms, not rulers: they say from what distance to look, not what or how much to measure there. The next two chapters examine how regulation and prior research have treated that gap.">네 논의가 공통으로 지목하는 것은 눈높이와 보이는 범위, 거리다. 그러나 이들은 규범이지 척도가 아니다. 어느 거리에서 보아야 하는지는 제시하지만 그 거리에서 무엇을 얼마나 측정해야 하는지는 정하지 않았다. 이 공백을 제도와 선행연구가 어떻게 다뤄 왔는지를 다음 두 장에서 본다.</p>
+      </section>
+    `
   }
 
 };
