@@ -381,10 +381,10 @@
         "</div>" +
         '<div class="lx__group lx__group--perf">' +
           '<p class="lx__gt">' + (en ? "Street performance" : "가로 성능") + "</p>" +
-          stat(d.ang, "조망앙각 점수", "View-angle score") +
-          stat(d.solid, "입체각 점수", "Solid-angle score") +
-          stat(d.front + "%", "전면 점유", "Frontage") +
-          stat(d.gap + " m", "최근접 동간", "Nearest gap") +
+          '<p class="lx__wip" style="color:var(--ink-40);font-size:var(--fs-label);line-height:1.5;margin:0">' +
+            (en ? "Being re-measured under the redefined metrics (frontage, horizontal openness, view angle, solid angle)."
+                : "지표 재정의(전면점유율·수평 개방률·조망앙각·입체각)로 재측정 중입니다.") +
+          "</p>" +
         "</div>";
 
       var z = LX_ZONE[bcr] || ["", ""];
