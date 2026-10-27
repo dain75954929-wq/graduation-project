@@ -1554,6 +1554,174 @@ window.CONTENT = {
         <p class="measure muted reveal" data-ko="선행연구들은 장면을 생성하면서도 화각을 대부분 장치의 편의로 정했고 조망거리를 체계적으로 나눈 경우는 드물었다. 본 연구는 눈높이를 1.6미터, 화각을 사람의 양안 시야인 수평 120도·수직 130도로 고정하고, 조망거리를 네 띠로 나눈다. 장면은 등장방형으로 출력한 뒤 등입체각 사영으로 재투영해 화소의 면적으로 입체각을 센다. 선행연구가 통제하지 않은 화각과 조망거리를 바로잡은 것이 본 연구의 측정 전제다." data-en="Prior work mostly set the angle of view by the convenience of the apparatus and rarely split viewing distance systematically. This project fixes the eye at 1.6 m, the angle at the binocular field of 120° horizontal and 130° vertical, and splits distance into four bands; scenes are output as equirectangular, re-projected equal-solid-angle, and solid angle counted by pixel area. Correcting the angle and distance that prior work left uncontrolled is this project’s measurement premise.">선행연구들은 장면을 생성하면서도 화각을 대부분 장치의 편의로 정했고 조망거리를 체계적으로 나눈 경우는 드물었다. 본 연구는 눈높이를 1.6미터, 화각을 사람의 양안 시야인 수평 120도·수직 130도로 고정하고, 조망거리를 네 띠로 나눈다. 장면은 등장방형으로 출력한 뒤 등입체각 사영으로 재투영해 화소의 면적으로 입체각을 센다. 선행연구가 통제하지 않은 화각과 조망거리를 바로잡은 것이 본 연구의 측정 전제다.</p>
       </section>
     `
+  },
+
+  /* ==================== 3 제도 — 논문 3장 ==================== */
+  "r-kr": {
+    titleKo: "국내 제도",
+    titleEn: "Domestic Regulation",
+    body: `
+      <p class="lead reveal" data-ko="오늘의 도시경관은 제도가 만들어 낸 결과다. 한국의 건축 규제는 일본에서 갈라져 나와 1962년 건축법으로 시작했고, 규정하는 대상에 따라 세 계열로 나뉜다. 세대 내부를 위해 거리와 각도를 정한 것, 단지와 가로의 경계에 공간을 확보하게 한 것, 밖에서 보이는 모습을 다루려 한 것이다." data-en="Today’s urban landscape is the work of regulation. Korea’s building rules split off from Japan’s and began with the 1962 Building Act; by what they govern they fall into three lines: those fixing distance and angle for the unit inside, those securing space at the estate–street edge, and those addressing how it looks from outside.">오늘의 도시경관은 제도가 만들어 낸 결과다. 한국의 건축 규제는 일본에서 갈라져 나와 1962년 건축법으로 시작했고, 규정하는 대상에 따라 세 계열로 나뉜다. 세대 내부를 위해 거리와 각도를 정한 것, 단지와 가로의 경계에 공간을 확보하게 한 것, 밖에서 보이는 모습을 다루려 한 것이다.</p>
+
+      <section class="section" id="kr-flow">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="만들었다가 거두어들인 수치" data-en="Numbers Made, Then Withdrawn">만들었다가 거두어들인 수치</h2></div>
+        <div class="tbl-wrap reveal" data-d="1">
+          <table class="data">
+            <thead><tr><th data-ko="시기" data-en="Period">시기</th><th data-ko="흐름" data-en="Direction">흐름</th></tr></thead>
+            <tbody>
+              <tr><td data-ko="1960–70년대" data-en="1960s–70s">1960–70년대</td><td data-ko="최소 성능의 확보. 도로사선제한(1962), 일조 규정, 대지 안의 공지(1976), 아파트지구(1976). 무엇을 달성하라기보다 어디까지 지어서는 안 되는지를 거리와 각도로 지정한 사양 규제다" data-en="Securing minimum performance: street angular limit (1962), sunlight rules, required open space (1976), apartment districts (1976). Prescriptive rules fixing, by distance and angle, how far one may not build">최소 성능의 확보. 도로사선제한(1962), 일조 규정, 대지 안의 공지(1976), 아파트지구(1976). 무엇을 달성하라기보다 어디까지 지어서는 안 되는지를 거리와 각도로 지정한 사양 규제다</td></tr>
+              <tr><td data-ko="1990년대" data-en="1990s">1990년대</td><td data-ko="단지와 가로의 경계로 관심 이동. 공개공지(1991), 가로구역별 최고높이(1999). 다만 요구한 것은 일정 면적의 확보였을 뿐, 그것이 밖에서 어떻게 보이는가는 아니었다" data-en="Attention shifts to the estate–street edge: public open space (1991), street-block height limits (1999). Yet what was asked was a quantity of space, not how it looked from outside">단지와 가로의 경계로 관심 이동. 공개공지(1991), 가로구역별 최고높이(1999). 다만 요구한 것은 일정 면적의 확보였을 뿐, 그것이 밖에서 어떻게 보이는가는 아니었다</td></tr>
+              <tr><td data-ko="2000년대" data-en="2000s">2000년대</td><td data-ko="보이는 모습이 의제가 됨. ‘성냥갑’·‘병풍’이 제도의 언어로 들어왔다. 경관법(2007), 서울시 공동주택 심의기준(2008), 입면차폐도(1999), 35층 기준(2013·14). 다만 수단은 높이 상한과 비율 하한일 뿐, 보행자가 서는 지점에서 잰 값은 아니었다" data-en="How it looks becomes an agenda; ‘matchbox’ and ‘folding screen’ enter the language of rules. Landscape Act (2007), Seoul review criteria (2008), facade obstruction (1999), 35-storey cap (2013·14). But the means were height caps and ratio floors, not a value measured where the pedestrian stands">보이는 모습이 의제가 됨. ‘성냥갑’·‘병풍’이 제도의 언어로 들어왔다. 경관법(2007), 서울시 공동주택 심의기준(2008), 입면차폐도(1999), 35층 기준(2013·14). 다만 수단은 높이 상한과 비율 하한일 뿐, 보행자가 서는 지점에서 잰 값은 아니었다</td></tr>
+              <tr><td data-ko="2010년대 이후" data-en="2010s on">2010년대 이후</td><td data-ko="수치를 거두어들임. 입면차폐도 폐지(2008), 도로사선제한 폐지(2015), 인동간격 0.8H→0.5H(2022), 35층 기준 폐지(2023). 완화의 명분은 한결같이 획일성이었으나, 풀린 자리에 들어온 것은 다른 수치가 아니라 정성적 심의와 인센티브였다" data-en="The numbers are withdrawn: facade obstruction repealed (2008), street angular limit (2015), spacing 0.8H→0.5H (2022), 35-storey cap (2023). The rationale was always uniformity, yet what filled the vacated place was not another number but qualitative review and incentives">수치를 거두어들임. 입면차폐도 폐지(2008), 도로사선제한 폐지(2015), 인동간격 0.8H→0.5H(2022), 35층 기준 폐지(2023). 완화의 명분은 한결같이 획일성이었으나, 풀린 자리에 들어온 것은 다른 수치가 아니라 정성적 심의와 인센티브였다</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="measure muted reveal" data-ko="2026년 9월 서울시가 주동의 수와 연속성, 건물 폭, 동간격을 관리하겠다고 밝힌 것은 그 공백이 다시 문제로 돌아왔음을 보여 준다." data-en="Seoul’s September 2026 announcement that it would manage the number and continuity of blocks, building width, and spacing shows the gap has returned as a problem.">2026년 9월 서울시가 주동의 수와 연속성, 건물 폭, 동간격을 관리하겠다고 밝힌 것은 그 공백이 다시 문제로 돌아왔음을 보여 준다.</p>
+      </section>
+
+      <section class="section" id="kr-three">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="세 계열의 어긋남" data-en="Three Lines, Out of Step">세 계열의 어긋남</h2></div>
+        <p class="measure muted reveal" data-ko="세대의 일조와 채광을 위해 거리와 각도를 정한 계열이 지금도 배치를 가장 강하게 결정한다. 정북방향 일조사선은 건물의 북쪽 면을 계단처럼 깎고 주동을 남향 일렬로 돌려세웠고, 인동간격은 서울시 조례로 높이의 0.5배 또는 최소 10미터를 요구하여 마주 보는 주동 사이의 틈을 결정한다. 세대 내부를 위해 만든 수치가 단지 밖 보행자의 시야를 가르는 셈이며, 본 연구가 수평 개방률로 그 틈을 재는 까닭이 여기에 있다." data-en="The line fixing distance and angle for sunlight still governs layout most strongly. The north-facing angular limit shaves the north face into steps and turns blocks into south-facing rows; spacing, set by Seoul ordinance at 0.5× the height or a 10 m minimum, decides the gap between facing blocks. A number made for the interior cuts the pedestrian’s view outside, which is why this project measures that gap with horizontal openness.">세대의 일조와 채광을 위해 거리와 각도를 정한 계열이 지금도 배치를 가장 강하게 결정한다. 정북방향 일조사선은 건물의 북쪽 면을 계단처럼 깎고 주동을 남향 일렬로 돌려세웠고, 인동간격은 서울시 조례로 높이의 0.5배 또는 최소 10미터를 요구하여 마주 보는 주동 사이의 틈을 결정한다. 세대 내부를 위해 만든 수치가 단지 밖 보행자의 시야를 가르는 셈이며, 본 연구가 수평 개방률로 그 틈을 재는 까닭이 여기에 있다.</p>
+        <p class="measure muted reveal" data-ko="밖에서 보이는 모습을 수치로 다룬 유일한 제도가 입면차폐도다. 1994년 한강 연접지역의 경관 관리를 위해 제안되어 1999년 서울시 공동주택 건축심의 기준으로 도입되었고, 조망축 방향으로 투영한 입면적을 단지의 최장길이로 나눈 값이었다. 병풍형 배치를 하나의 수치로 붙잡으려 한 것이다. 그러나 2008년, 법령 근거 없이 획일적으로 제한하고 용적률 규제와 중복된다는 이유로 폐지되었다. 투영 면적을 단지 길이로 나눌 뿐 보행자가 어디에서 보는지를 묻지 않았다는 점에서, 이 지표는 본 연구가 넘어서려는 대상이기도 하다." data-en="The only rule to treat the outside look as a number was facade obstruction. Proposed in 1994 to manage the Han River landscape and adopted into Seoul’s review in 1999, it divided the facade area projected on the view axis by the site’s longest dimension, trying to catch the folding-screen layout in one figure. It was repealed in 2008 for restricting uniformly without statutory basis and duplicating the floor-area control. Because it divided projected area by site length without asking where the pedestrian stood, it is also what this project sets out to surpass.">밖에서 보이는 모습을 수치로 다룬 유일한 제도가 입면차폐도다. 1994년 한강 연접지역의 경관 관리를 위해 제안되어 1999년 서울시 공동주택 건축심의 기준으로 도입되었고, 조망축 방향으로 투영한 입면적을 단지의 최장길이로 나눈 값이었다. 병풍형 배치를 하나의 수치로 붙잡으려 한 것이다. 그러나 2008년, 법령 근거 없이 획일적으로 제한하고 용적률 규제와 중복된다는 이유로 폐지되었다. 투영 면적을 단지 길이로 나눌 뿐 보행자가 어디에서 보는지를 묻지 않았다는 점에서, 이 지표는 본 연구가 넘어서려는 대상이기도 하다.</p>
+      </section>
+    `
+  },
+
+  "r-intl": {
+    titleKo: "국외 제도",
+    titleEn: "Regulation Abroad",
+    body: `
+      <p class="lead reveal" data-ko="고밀 고층의 공동주택이 가로와 맞닿는 조건을 가진 도시들은 건물의 형태나 이격을 수치로 규정해 왔다. 뉴욕과 포틀랜드, 토론토, 밴쿠버, 독일, 홍콩, 일본이 여기에 해당한다. 시간 순으로 보면 하나의 전환이 있다. 형태를 직접 그려 주던 사양 규제에서, 그 경직성에 대한 반작용을 거쳐, 결과를 수치로 요구하는 성능 규제로 옮겨 간 것이다." data-en="Cities where dense high-rise housing meets the street have set form or spacing as numbers: New York, Portland, Toronto, Vancouver, Germany, Hong Kong, Japan. Read in time there is one shift: from prescriptive rules that drew the form directly, through a reaction to their rigidity, to performance rules that demand a result as a number.">고밀 고층의 공동주택이 가로와 맞닿는 조건을 가진 도시들은 건물의 형태나 이격을 수치로 규정해 왔다. 뉴욕과 포틀랜드, 토론토, 밴쿠버, 독일, 홍콩, 일본이 여기에 해당한다. 시간 순으로 보면 하나의 전환이 있다. 형태를 직접 그려 주던 사양 규제에서, 그 경직성에 대한 반작용을 거쳐, 결과를 수치로 요구하는 성능 규제로 옮겨 간 것이다.</p>
+
+      <section class="section" id="intl-housing">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="가로에 면하는 면을 정하다" data-en="Fixing the Face on the Street">가로에 면하는 면을 정하다</h2></div>
+        <div class="tbl-wrap reveal" data-d="1">
+          <table class="data">
+            <thead><tr><th data-ko="제도" data-en="Rule">제도</th><th data-ko="규정" data-en="What it sets">규정</th></tr></thead>
+            <tbody>
+              <tr><td data-ko="뉴욕 Quality Housing (1987)" data-en="New York Quality Housing (1987)">뉴욕 Quality Housing (1987)</td><td data-ko="가로벽의 위치와 기단의 높이, 최고높이를 함께 정함. 같은 용적률이라도 기단을 낮게 깔아 6층 또는 14층으로 실현" data-en="Fixes street-wall position, base height, and top height together; the same floor area realised as 6 or 14 storeys">가로벽의 위치와 기단의 높이, 최고높이를 함께 정함. 같은 용적률이라도 기단을 낮게 깔아 6층 또는 14층으로 실현</td></tr>
+              <tr><td data-ko="포틀랜드 Title 33.120" data-en="Portland Title 33.120">포틀랜드 Title 33.120</td><td data-ko="최대 후퇴선 안에 가로면 입면 50% 이상, 주출입구 8피트 이내, 건물 길이 100피트 제한, 1층 창 비율 하한 → 전면점유율의 선례" data-en="≥50% of street facade within the setback, entrance within 8 ft, length ≤100 ft, a floor for ground-floor glazing → the precedent for frontage">최대 후퇴선 안에 가로면 입면 50% 이상, 주출입구 8피트 이내, 건물 길이 100피트 제한, 1층 창 비율 하한 → 전면점유율의 선례</td></tr>
+              <tr><td data-ko="토론토·밴쿠버·독일" data-en="Toronto · Vancouver · Germany">토론토·밴쿠버·독일</td><td data-ko="탑과 탑 사이 25m·24.4m, 탑 바닥 750·605㎡ 상한. 독일 외벽 이격 1H→0.4H(2002). 거리와 바닥 면적을 함께 묶어 주동이 길어지고 높아지는 것을 억제 → 이격 제약의 비교 대상" data-en="25 m / 24.4 m between towers, 750 / 605 ㎡ floor caps; Germany’s wall setback eased 1H→0.4H (2002). Pairing distance with footprint curbs long, tall blocks → a benchmark for the spacing constraint">탑과 탑 사이 25m·24.4m, 탑 바닥 750·605㎡ 상한. 독일 외벽 이격 1H→0.4H(2002). 거리와 바닥 면적을 함께 묶어 주동이 길어지고 높아지는 것을 억제 → 이격 제약의 비교 대상</td></tr>
+              <tr><td data-ko="홍콩 APP-152 (2011)" data-en="Hong Kong APP-152 (2011)">홍콩 APP-152 (2011)</td><td data-ko="투영 입면 60m 초과 시 20~33.3%의 투과율 확보, 건물 사이 15m, 가로 중심선에서 7.5m 후퇴 → 수평 개방률의 임계" data-en="Above 60 m projected facade, 20–33.3% permeability, 15 m between buildings, 7.5 m setback → the threshold for horizontal openness">투영 입면 60m 초과 시 20~33.3%의 투과율 확보, 건물 사이 15m, 가로 중심선에서 7.5m 후퇴 → 수평 개방률의 임계</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="intl-perf">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="사양에서 성능으로" data-en="From Prescription to Performance">사양에서 성능으로</h2></div>
+        <p class="measure muted reveal" data-ko="1916년 뉴욕 조닝은 가로폭의 배수에 이르는 높이까지 수직벽을 세우고 그 위는 사선 안으로 후퇴하게 했다. 건물의 윤곽을 조례가 직접 그려 준 셈이다. 일본 건축기준법 제56조도 같은 성격이며, 국내 도로사선제한이 갈라져 나온 자리다. 1961년 뉴욕은 사선의 획일적인 웨딩케이크 형태에서 벗어나려 형태 규제를 용적률로 바꾸고 공개 광장에 용적을 보너스로 주었으나, 광장은 빈터로 남고 tower-in-the-park가 확산되어 가로가 끊겼다. 수치를 풀면 다른 획일성이 들어선다는 것을 보여 준 사례이며, 국내가 2015년 이후 겪는 것과 구조가 같다." data-en="New York’s 1916 zoning raised a vertical wall to a multiple of the street width and set it back on an angle above, the code drawing the outline itself; Japan’s Article 56 is of the same kind, the root from which Korea’s angular limit split. In 1961 New York, escaping the uniform wedding-cake, replaced form with floor area and gave a bonus for public plazas, but the plazas stood empty, the tower-in-the-park spread, and the street broke, the same structure Korea has faced since 2015.">1916년 뉴욕 조닝은 가로폭의 배수에 이르는 높이까지 수직벽을 세우고 그 위는 사선 안으로 후퇴하게 했다. 건물의 윤곽을 조례가 직접 그려 준 셈이다. 일본 건축기준법 제56조도 같은 성격이며, 국내 도로사선제한이 갈라져 나온 자리다. 1961년 뉴욕은 사선의 획일적인 웨딩케이크 형태에서 벗어나려 형태 규제를 용적률로 바꾸고 공개 광장에 용적을 보너스로 주었으나, 광장은 빈터로 남고 tower-in-the-park가 확산되어 가로가 끊겼다. 수치를 풀면 다른 획일성이 들어선다는 것을 보여 준 사례이며, 국내가 2015년 이후 겪는 것과 구조가 같다.</p>
+        <p class="measure muted reveal" data-ko="전환점은 1982년 뉴욕의 Daylight Evaluation이다. 가로 중심에서 250피트 떨어진 지점에 평가 시점을 두고, 그 지점에서 올려다본 하늘을 격자로 투영해 건물이 가린 칸과 남은 칸을 세어 점수를 매긴다. 기준을 넘으면 사선을 적용하지 않는다. 2002년 일본의 천공률도 측정점에서 하늘이 남은 비율로 사선제한을 면제한다. 보행자가 서는 자리를 정하고, 그 자리에서 보이는 것을 세며, 그 값으로 적부를 가리는 세 가지가 한 조항에 모두 들어 있는 드문 사례다. 본 연구가 조망점을 정하고 시야를 격자로 다루는 방식의 직접적인 선례이기도 하다." data-en="The turn came with New York’s 1982 Daylight Evaluation: a vantage 250 ft from the street centre, the upturned sky projected on a grid, the blocked and open cells counted into a score; pass it and the angular limit does not apply. Japan’s 2002 sky factor likewise exempts the limit by the share of sky remaining at a point. Fixing where the pedestrian stands, counting what is seen there, and judging by that value, all three in one clause, is rare, and the direct precedent for how this project sets viewpoints and treats the field on a grid.">전환점은 1982년 뉴욕의 Daylight Evaluation이다. 가로 중심에서 250피트 떨어진 지점에 평가 시점을 두고, 그 지점에서 올려다본 하늘을 격자로 투영해 건물이 가린 칸과 남은 칸을 세어 점수를 매긴다. 기준을 넘으면 사선을 적용하지 않는다. 2002년 일본의 천공률도 측정점에서 하늘이 남은 비율로 사선제한을 면제한다. 보행자가 서는 자리를 정하고, 그 자리에서 보이는 것을 세며, 그 값으로 적부를 가리는 세 가지가 한 조항에 모두 들어 있는 드문 사례다. 본 연구가 조망점을 정하고 시야를 격자로 다루는 방식의 직접적인 선례이기도 하다.</p>
+      </section>
+    `
+  },
+
+  "r-gap": {
+    titleKo: "제도의 공백",
+    titleEn: "The Regulatory Gap",
+    body: `
+      <p class="lead reveal" data-ko="국외 제도는 1980년대에서 2000년대에 걸쳐 사양 규제에서 성능 규제로 옮겨 가며, 측정의 시점과 범위를 조항 안으로 들였다. 한국은 같은 시기 반대 방향으로 움직였다. 도로사선제한과 입면차폐도를 폐지했으나 이를 성능 기준으로 번역하지 않았고, 그 자리를 정성적 심의와 인센티브가 채웠다." data-en="Abroad, rules moved from prescription to performance across the 1980s–2000s, bringing the point and range of measurement into the clause. Korea moved the other way: it repealed the angular limit and facade obstruction but never translated them into performance, and qualitative review and incentives took their place.">국외 제도는 1980년대에서 2000년대에 걸쳐 사양 규제에서 성능 규제로 옮겨 가며, 측정의 시점과 범위를 조항 안으로 들였다. 한국은 같은 시기 반대 방향으로 움직였다. 도로사선제한과 입면차폐도를 폐지했으나 이를 성능 기준으로 번역하지 않았고, 그 자리를 정성적 심의와 인센티브가 채웠다.</p>
+
+      <section class="section" id="gap-three">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="세 가지를 함께 갖춘 조항이 없다" data-en="No Clause Holds All Three">세 가지를 함께 갖춘 조항이 없다</h2></div>
+        <p class="measure muted reveal" data-ko="성능 규제로 간 제도들의 공통점은 세 가지다. 보행자가 서는 지점을 정하고, 그 지점에서 보이는 것을 측정하며, 그 값으로 적부를 가린다. 국내 제도를 이 세 조건에 비추면 각각이 어디에서 걸리는지가 드러난다." data-en="The rules that went to performance share three traits: they fix where the pedestrian stands, measure what is seen there, and judge by that value. Held against these three, each Korean rule reveals where it falls short.">성능 규제로 간 제도들의 공통점은 세 가지다. 보행자가 서는 지점을 정하고, 그 지점에서 보이는 것을 측정하며, 그 값으로 적부를 가린다. 국내 제도를 이 세 조건에 비추면 각각이 어디에서 걸리는지가 드러난다.</p>
+        <div class="tbl-wrap reveal" data-d="1">
+          <table class="data">
+            <thead><tr><th data-ko="국내 제도" data-en="Korean rule">국내 제도</th><th data-ko="걸리는 지점" data-en="Where it fails">걸리는 지점</th></tr></thead>
+            <tbody>
+              <tr><td data-ko="일조사선·인동간격" data-en="Angular limit · spacing">일조사선·인동간격</td><td data-ko="수치로 적부를 가리지만 지점을 정하지 않고 보이는 것을 측정하지 않는다" data-en="Judge by number but fix no point and measure nothing seen">수치로 적부를 가리지만 지점을 정하지 않고 보이는 것을 측정하지 않는다</td></tr>
+              <tr><td data-ko="가로구역별 최고높이·35층" data-en="Height caps · 35 storeys">가로구역별 최고높이·35층</td><td data-ko="높이의 상한만 정할 뿐 어디에서 본 높이인지를 묻지 않는다" data-en="Cap height only, never asking from where it is seen">높이의 상한만 정할 뿐 어디에서 본 높이인지를 묻지 않는다</td></tr>
+              <tr><td data-ko="통경축" data-en="View corridor">통경축</td><td data-ko="보이는 것을 다루지만 수치가 없어 적부를 가리지 못한다" data-en="Treats what is seen but has no number to judge by">보이는 것을 다루지만 수치가 없어 적부를 가리지 못한다</td></tr>
+              <tr><td data-ko="경관심의" data-en="Landscape review">경관심의</td><td data-ko="보이는 것을 가장 넓게 다루면서도 지점과 수치를 모두 갖지 않는다" data-en="Treats the look most broadly yet has neither point nor number">보이는 것을 가장 넓게 다루면서도 지점과 수치를 모두 갖지 않는다</td></tr>
+              <tr><td data-ko="입면차폐도 (폐지)" data-en="Facade obstruction (repealed)">입면차폐도 (폐지)</td><td data-ko="보이는 것을 수치로 다루었으나 보행자가 어디 서는지를 전제하지 않았고 그마저 사라졌다" data-en="Treated the look as number but assumed no pedestrian point, and is gone">보이는 것을 수치로 다루었으나 보행자가 어디 서는지를 전제하지 않았고 그마저 사라졌다</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="measure muted reveal" data-ko="본 연구가 구축하려는 지표 체계는 이 공백을 겨냥한다. 보행자가 서는 지점을 거리별로 정하고, 그 지점에서 시야에 들어오는 양을 측정하며, 선행연구가 제시한 임계값으로 적부를 가리는 것이 그 내용이다." data-en="The metric system this project builds aims at that gap: fix the pedestrian’s point by distance, measure what enters the field there, and judge by the thresholds prior research provides.">본 연구가 구축하려는 지표 체계는 이 공백을 겨냥한다. 보행자가 서는 지점을 거리별로 정하고, 그 지점에서 시야에 들어오는 양을 측정하며, 선행연구가 제시한 임계값으로 적부를 가리는 것이 그 내용이다.</p>
+      </section>
+    `
+  },
+
+  /* ==================== 1-3 범위와 흐름 ==================== */
+  "i-scope": {
+    titleKo: "연구의 범위와 흐름",
+    titleEn: "Scope and Flow",
+    body: `
+      <p class="lead reveal" data-ko="범위를 좁히는 것은 중요도가 낮아서가 아니라, 형태가 설명하는 몫을 먼저 분리해야 나머지 요소의 영향을 논할 수 있기 때문이다." data-en="Narrowing the scope is not a matter of lesser importance; the share that form explains must first be isolated before the other factors can be discussed.">범위를 좁히는 것은 중요도가 낮아서가 아니라, 형태가 설명하는 몫을 먼저 분리해야 나머지 요소의 영향을 논할 수 있기 때문이다.</p>
+      <section class="section" id="scope-three">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="세 가지 범위" data-en="Three Boundaries">세 가지 범위</h2></div>
+        <div class="tbl-wrap reveal" data-d="1">
+          <table class="data">
+            <thead><tr><th data-ko="범위" data-en="Boundary">범위</th><th data-ko="한정" data-en="Limit">한정</th></tr></thead>
+            <tbody>
+              <tr><td data-ko="공간" data-en="Spatial">공간</td><td data-ko="서울 제3종 일반주거지역의 공동주택, 상세 대상지는 잠실르엘" data-en="Housing in Seoul’s Class 3 general residential zone; the detailed site is Jamsil Le-el">서울 제3종 일반주거지역의 공동주택, 상세 대상지는 잠실르엘</td></tr>
+              <tr><td data-ko="관점" data-en="Viewpoint">관점</td><td data-ko="단지 외부를 걷는 보행자의 시지각. 단지 내부 보행과 세대 내부 일조는 제외" data-en="The perception of a pedestrian outside; inside walking and indoor sunlight are excluded">단지 외부를 걷는 보행자의 시지각. 단지 내부 보행과 세대 내부 일조는 제외</td></tr>
+              <tr><td data-ko="내용" data-en="Content">내용</td><td data-ko="배치와 매스의 단계에서 결정되는 형태. 외장재와 색채는 변인에서 제외" data-en="Form decided at the layout and massing stage; cladding and colour are excluded">배치와 매스의 단계에서 결정되는 형태. 외장재와 색채는 변인에서 제외</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="measure muted reveal" data-ko="연구는 다섯 단계로 흐른다. 국내외 제도를 검토해 보행자 시점의 기준이 있는지 확인하고, 위압감을 물리량으로 정량화한 선행연구에서 지표와 임계값을 가져오며, 눈높이와 시야·조망거리를 고정한 측정 전제 위에 지표 체계를 세운다. 그 위에서 용적률을 고정한 채 주동 유닛과 건폐율을 바꾼 배치안을 생성해 지표별로 평가하고, 마지막으로 그 결과에서 설계와 제도의 방향을 도출한다." data-en="The study flows in five steps: review regulation to see whether a pedestrian-view standard exists; take metric and threshold from prior research that quantified oppressiveness; build a metric system on a premise with fixed eye height, field, and distances; generate layouts varying unit and coverage at fixed floor area ratio and evaluate them by metric; and derive a direction for design and regulation from the result.">연구는 다섯 단계로 흐른다. 국내외 제도를 검토해 보행자 시점의 기준이 있는지 확인하고, 위압감을 물리량으로 정량화한 선행연구에서 지표와 임계값을 가져오며, 눈높이와 시야·조망거리를 고정한 측정 전제 위에 지표 체계를 세운다. 그 위에서 용적률을 고정한 채 주동 유닛과 건폐율을 바꾼 배치안을 생성해 지표별로 평가하고, 마지막으로 그 결과에서 설계와 제도의 방향을 도출한다.</p>
+      </section>
+    `
+  },
+
+  /* ==================== 4-5 소결 ==================== */
+  "p-sum": {
+    titleKo: "소결",
+    titleEn: "Summary",
+    body: `
+      <p class="lead reveal" data-ko="앞의 네 절을 지표와 임계값, 측정 방법으로 나누어 정리하면 본 연구가 무엇을 이어받고 무엇을 새로 세워야 하는지가 드러난다." data-en="Sorting the four preceding sections into metric, threshold, and method shows what this project inherits and what it must build anew.">앞의 네 절을 지표와 임계값, 측정 방법으로 나누어 정리하면 본 연구가 무엇을 이어받고 무엇을 새로 세워야 하는지가 드러난다.</p>
+      <section class="section" id="sum-gaps">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="이어받은 것과 남은 공백" data-en="What Is Inherited, What Remains">이어받은 것과 남은 공백</h2></div>
+        <p class="measure muted reveal" data-ko="거리의 눈금은 Gehl에서, 가로에 면하는 방식은 Alexander와 Speck에서, 필지 전면폭의 중요성은 Sevtsuk과 Sung에서 왔다. 입체각과 조망앙각은 위압감을 다룬 일본의 계보에서, 수평 개방률과 전면점유율은 홍콩·포틀랜드의 제도에서 왔다. 측정의 설정은 안새얀 외(2024)의 조망점 생성과 주변 제외에서 가져오되, 하나의 반경이 아니라 네 거리 띠로 나누어 둔다." data-en="The distance scale comes from Gehl, the way of facing the street from Alexander and Speck, the weight of plot frontage from Sevtsuk and Sung. Solid angle and view angle come from the Japanese lineage on oppressiveness; horizontal openness and frontage from Hong Kong and Portland rules. The measurement setup follows An et al. (2024) in generating viewpoints and excluding surroundings, but splits one radius into four distance bands.">거리의 눈금은 Gehl에서, 가로에 면하는 방식은 Alexander와 Speck에서, 필지 전면폭의 중요성은 Sevtsuk과 Sung에서 왔다. 입체각과 조망앙각은 위압감을 다룬 일본의 계보에서, 수평 개방률과 전면점유율은 홍콩·포틀랜드의 제도에서 왔다. 측정의 설정은 안새얀 외(2024)의 조망점 생성과 주변 제외에서 가져오되, 하나의 반경이 아니라 네 거리 띠로 나누어 둔다.</p>
+        <p class="measure muted reveal" data-ko="남은 공백은 네 가지다. 형태와 보행을 다룬 연구는 대상이 주로 상업가로였고, 공동주택 연구는 시점이 대체로 단지 내부나 조감이었다. 압박감을 물리량으로 정량화한 연구는 일본에 40년 넘게 축적되었으나 국내에는 대응 연구가 없다. 국내 차폐 연구는 2차원 지표에 머물렀다. 그리고 주동 사이의 이격은 일조와 법규 준수의 문제로만 다루어졌을 뿐, 보행자의 심리와 연결된 적이 없다. 본 연구는 이 네 공백을 함께 겨냥해 지표 체계를 별도로 구축한다." data-en="Four gaps remain. Studies of form and walking mostly took commercial streets; housing studies mostly viewed from inside or above. Quantifying pressure as a physical quantity has accumulated over forty years in Japan but has no domestic counterpart. Domestic obstruction studies stayed two-dimensional. And block spacing has been treated only as sunlight and compliance, never tied to the pedestrian’s psychology. This project aims at all four and builds its metric system anew.">남은 공백은 네 가지다. 형태와 보행을 다룬 연구는 대상이 주로 상업가로였고, 공동주택 연구는 시점이 대체로 단지 내부나 조감이었다. 압박감을 물리량으로 정량화한 연구는 일본에 40년 넘게 축적되었으나 국내에는 대응 연구가 없다. 국내 차폐 연구는 2차원 지표에 머물렀다. 그리고 주동 사이의 이격은 일조와 법규 준수의 문제로만 다루어졌을 뿐, 보행자의 심리와 연결된 적이 없다. 본 연구는 이 네 공백을 함께 겨냥해 지표 체계를 별도로 구축한다.</p>
+      </section>
+    `
+  },
+
+  /* ==================== 7 지표별 분석 — 논문 7.1~7.4 (진행 중) ==================== */
+  "a-front": {
+    titleKo: "전면점유율",
+    titleEn: "Frontage",
+    body: `
+      <p class="lead reveal" data-ko="7미터 띠의 조망점에서 시선이 경계를 지나 주동에 닿는 깊이가 6.1미터 이내인 비율을, 깊이에 따라 늘어놓아 통과깊이를 구한다. 새 지표 기준의 측정은 진행 중이다." data-en="From the 7 m ring, the share of viewpoints where the line of sight reaches a block within 6.1 m of crossing the boundary is laid out by depth to find the pass-through depth. Measurement under the new metric is in progress.">7미터 띠의 조망점에서 시선이 경계를 지나 주동에 닿는 깊이가 6.1미터 이내인 비율을, 깊이에 따라 늘어놓아 통과깊이를 구한다. 새 지표 기준의 측정은 진행 중이다.</p>
+      <section class="section" id="wip"><div class="section__head reveal"><h2 class="section__title" data-ko="분석 진행 중" data-en="In Progress">분석 진행 중</h2></div>
+        <p class="measure muted reveal" data-ko="재측정이 끝나면 깊이에 따른 접한 비율의 곡선, 통과깊이와 점수, 그리고 주동 유닛과 건폐율에 따른 변화를 이 자리에 싣는다. 이전 분석에서 전면점유율은 네 지표 가운데 가장 채워지지 않는 지표였다. 아파트 단지가 도시 가로에 접하는 방식이 얼마나 빈약한지를 보여 주는 대목이다." data-en="Once re-measured, the curve of contact by depth, the pass-through depth and score, and the change by unit type and coverage will appear here. In the earlier analysis frontage was the least-met of the four metrics, a measure of how thinly the estate touches the city street.">재측정이 끝나면 깊이에 따른 접한 비율의 곡선, 통과깊이와 점수, 그리고 주동 유닛과 건폐율에 따른 변화를 이 자리에 싣는다. 이전 분석에서 전면점유율은 네 지표 가운데 가장 채워지지 않는 지표였다. 아파트 단지가 도시 가로에 접하는 방식이 얼마나 빈약한지를 보여 주는 대목이다.</p>
+      </section>
+    `
+  },
+
+  "a-open": {
+    titleKo: "수평 개방률",
+    titleEn: "Horizontal Openness",
+    body: `
+      <p class="lead reveal" data-ko="단지가 차지하는 각폭 가운데 주동 사이로 하늘이 열린 틈의 비율을, 거리 띠별 20퍼센트 미만 조망점의 비율로 늘어놓아 통과거리를 구한다. 측정은 진행 중이다." data-en="The share of gaps where sky opens between blocks, within the angular width the estate occupies, is laid out as the share of viewpoints below 20% by distance band to find the pass-through distance. Measurement is in progress.">단지가 차지하는 각폭 가운데 주동 사이로 하늘이 열린 틈의 비율을, 거리 띠별 20퍼센트 미만 조망점의 비율로 늘어놓아 통과거리를 구한다. 측정은 진행 중이다.</p>
+      <section class="section" id="wip"><div class="section__head reveal"><h2 class="section__title" data-ko="분석 진행 중" data-en="In Progress">분석 진행 중</h2></div>
+        <p class="measure muted reveal" data-ko="재측정이 끝나면 거리 띠별 20퍼센트 미만 조망점의 비율, 통과거리와 점수, 주동 유닛과 건폐율에 따른 변화를 싣는다. 수평 개방률은 평면의 거리가 아니라 열려 보이는 정도를 재므로, 같은 간격이라도 비스듬히 보면 닫히고 뒤에 다른 동이 서 있으면 틈이 아니다." data-en="Once re-measured, the share of viewpoints below 20% by band, the pass-through distance and score, and the change by unit and coverage will appear here. Horizontal openness measures how open the view reads, not plan distance: the same spacing closes when seen obliquely, and is no gap if another block stands behind.">재측정이 끝나면 거리 띠별 20퍼센트 미만 조망점의 비율, 통과거리와 점수, 주동 유닛과 건폐율에 따른 변화를 싣는다. 수평 개방률은 평면의 거리가 아니라 열려 보이는 정도를 재므로, 같은 간격이라도 비스듬히 보면 닫히고 뒤에 다른 동이 서 있으면 틈이 아니다.</p>
+      </section>
+    `
+  },
+
+  "a-angle": {
+    titleKo: "조망앙각",
+    titleEn: "View Angle",
+    body: `
+      <p class="lead reveal" data-ko="조망점에서 주동의 최상부를 올려다본 각이 27도를 넘는 조망점의 비율을 거리에 따라 늘어놓아 통과거리를 구한다. 측정은 진행 중이다." data-en="The share of viewpoints where the angle up to a block’s top exceeds 27° is laid out by distance to find the pass-through distance. Measurement is in progress.">조망점에서 주동의 최상부를 올려다본 각이 27도를 넘는 조망점의 비율을 거리에 따라 늘어놓아 통과거리를 구한다. 측정은 진행 중이다.</p>
+      <section class="section" id="wip"><div class="section__head reveal"><h2 class="section__title" data-ko="분석 진행 중" data-en="In Progress">분석 진행 중</h2></div>
+        <p class="measure muted reveal" data-ko="재측정이 끝나면 거리 띠별 27도 초과 조망점의 비율, 통과거리와 점수, 주동 유닛과 건폐율에 따른 변화를 싣는다. 통과거리는 대체로 주동 높이의 두 배 지점에 놓인다." data-en="Once re-measured, the share of viewpoints above 27° by band, the pass-through distance and score, and the change by unit and coverage will appear here. The pass-through distance tends to fall at about twice the block height.">재측정이 끝나면 거리 띠별 27도 초과 조망점의 비율, 통과거리와 점수, 주동 유닛과 건폐율에 따른 변화를 싣는다. 통과거리는 대체로 주동 높이의 두 배 지점에 놓인다.</p>
+      </section>
+    `
+  },
+
+  "a-solid": {
+    titleKo: "입체각",
+    titleEn: "Solid Angle",
+    body: `
+      <p class="lead reveal" data-ko="건물군이 수평면 위에서 차지하는 점유율이 51.3퍼센트(0.93스테라디안)를 넘는 조망점의 비율을 거리에 따라 늘어놓아 통과거리를 구한다. 측정은 진행 중이다." data-en="The share of viewpoints where the building group’s above-horizon occupancy exceeds 51.3% (0.93 sr) is laid out by distance to find the pass-through distance. Measurement is in progress.">건물군이 수평면 위에서 차지하는 점유율이 51.3퍼센트(0.93스테라디안)를 넘는 조망점의 비율을 거리에 따라 늘어놓아 통과거리를 구한다. 측정은 진행 중이다.</p>
+      <section class="section" id="wip"><div class="section__head reveal"><h2 class="section__title" data-ko="분석 진행 중" data-en="In Progress">분석 진행 중</h2></div>
+        <p class="measure muted reveal" data-ko="재측정이 끝나면 거리 띠별 0.93스테라디안 초과 조망점의 비율, 통과거리와 점수, 유닛·건폐율에 따른 변화를 싣는다. 절대 입체각 기준과의 비교, 그리고 근거리에서 프레임이 상단을 잘라 입체각이 작게 측정되는 비율도 함께 제시한다." data-en="Once re-measured, the share above 0.93 sr by band, the pass-through distance and score, and the change by unit and coverage will appear here, with a comparison to the absolute solid-angle basis and the near-field clipping where the frame cuts the top.">재측정이 끝나면 거리 띠별 0.93스테라디안 초과 조망점의 비율, 통과거리와 점수, 유닛·건폐율에 따른 변화를 싣는다. 절대 입체각 기준과의 비교, 그리고 근거리에서 프레임이 상단을 잘라 입체각이 작게 측정되는 비율도 함께 제시한다.</p>
+      </section>
+    `
   }
 
 };
