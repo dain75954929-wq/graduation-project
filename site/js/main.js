@@ -18,24 +18,39 @@
   /* 세부 구분 20개 — 책자(booklet_구성안_및_도입텍스트.md)와 공유하는 공통 구조.
      1장·9장은 세부 구분 없음(하나의 흐름) → 대제목 클릭 시 바로 해당 페이지. */
   var MENU = [
-    { num: "01", id: "pedestrian", kr: "아파트와 도시 보행자", en: "Apartments and the Urban Pedestrian", sub: [] },
-    { num: "02", id: "regulation", kr: "아파트의 형태를 만들어온 법과 제도", en: "The Laws That Shaped the Form",
-      sub: [["형태를 규정하는 규정들","Form-Defining Regulations","2-1"], ["제도의 변천과 폐지된 규제","Change & Repealed Rules","2-2"]] },
-    { num: "03", id: "theory", kr: "위압감을 이해하기 위한 이론들", en: "Theories for Understanding Oppressiveness",
-      sub: [["보행자의 시지각","Pedestrian Perception","3-1"], ["아파트 주동의 유형화","Building Typology","3-2"], ["위압감의 측정 지표","Metrics of Oppressiveness","3-3"], ["컴퓨터 비전 선행연구","Computer Vision Research","3-4"]] },
-    { num: "04", id: "observation", kr: "서울 아파트 단지 21곳의 관찰", en: "Observing 21 Seoul Complexes",
-      sub: [["21곳의 기록","Records of 21 Complexes","4-1"], ["주관적 순위와 종합","Ranking & Synthesis","4-2"]] },
-    { num: "05", id: "measurement", kr: "느낌을 숫자로 옮기기", en: "Turning Feeling into Numbers",
-      sub: [["데이터 수집과 촬영 기준","Collection & Capture Protocol","5-1"], ["세그멘테이션과 시각 지표","Segmentation & Visual Indicators","5-2"], ["데이터 마이닝","Data Mining","5-3"]] },
-    { num: "06", id: "findings", kr: "위압감은 어디에서 오는가", en: "Where Oppressiveness Comes From",
-      sub: [["상관과 회귀의 결과","Correlation & Regression","6-1"], ["해석: 용적률·높이·분산","FAR · Height · Dispersion","6-2"], ["대상지 선정","Site Selection","6-3"]] },
-    { num: "07", id: "experiment", kr: "96개의 배치", en: "96 Layouts",
-      sub: [["실험 설계","Experiment Design","7-1"], ["16종 유닛과 세 시나리오","16 Units & Three Scenarios","7-2"], ["평가 방법","Evaluation Method","7-3"], ["자동 생성·평가","Automated Pipeline","7-4"], ["96개 배치안","The 96 Layouts","7-5"]] },
-    { num: "08", id: "balance", kr: "상충하는 지표와 균형점", en: "Conflicting Metrics, a Balance Point",
-      sub: [["건폐율에 따른 변화","Change by BCR","8-1"], ["지표별 상세","Metric Details","8-2"], ["매스 유형과 클러스터형","Mass Types & Clusters","8-3"]] },
-    { num: "09", id: "conclusion", kr: "공공을 배려한 아파트 단지를 향하여", en: "Toward Publicly Considerate Housing", sub: [] },
+    { num: "01", id: "intro", kr: "서론", en: "Introduction",
+      sub: [["연구의 배경","Background","i-bg"], ["연구의 목적과 질문","Aim & Questions","i-aim"]] },
+    { num: "02", id: "concepts", kr: "개념과 이론", en: "Concepts and Theory",
+      sub: [["위압감·개방감·위요감","Oppressiveness · Openness · Enclosure","c-opp"], ["휴먼스케일과 시각 지표","Human Scale & Visual Metrics","c-scale"], ["가로의 시지각을 다룬 이론","Theories of Street Perception","c-theory"]] },
+    { num: "03", id: "regulation", kr: "제도", en: "Regulation",
+      sub: [["형태를 규정하는 규정들","Form-Defining Rules","2-1"], ["국내외 제도와 공백","Rules at Home & Abroad, and the Gap","2-2"]] },
+    { num: "04", id: "prior", kr: "선행연구", en: "Prior Research",
+      sub: [["국내 제도의 한계","Limits of Domestic Rules","p-kr"], ["형태와 가로의 관계","Form & the Street","p-form"], ["위압감의 정량화","Quantifying Oppressiveness","p-quant"], ["연구방법론","Methodology Precedents","p-method"]] },
+    { num: "05", id: "method", kr: "연구 방법 및 대상", en: "Method and Subject",
+      sub: [["연구 방법과 변인","Method & Variables","7-1"], ["연구 범위","Scope","m-scope"], ["측정 전제와 평가 범위","Measurement Premise","3-1"], ["분석 대상과 유닛","Subject & Units","7-2"], ["자동 생성·평가","Automated Pipeline","7-4"]] },
+    { num: "06", id: "metrics", kr: "지표 체계의 구축", en: "Building the Metric System",
+      sub: [["지표의 선정 기준","Selection Criteria","x-select"], ["지표의 정의와 산출","Definition & Computation","3-3"], ["산출 절차와 임계값 변환","Computation & Threshold","7-3"]] },
+    { num: "07", id: "analysis", kr: "지표별 분석", en: "Analysis by Metric",
+      sub: [["전면점유율","Frontage","8-1"], ["수평 개방률","Horizontal Openness","8-2"], ["조망앙각과 입체각","View & Solid Angle","8-3"], ["96개 배치안","The 96 Layouts","7-5"], ["지표 간 상충과 종합","Conflict & Synthesis","a-conflict"]] },
+    { num: "08", id: "direction", kr: "방향 도출", en: "Toward a Direction",
+      sub: [["밀도와 매스의 조건","Density & Mass","d-mass"], ["배치의 원칙","Layout Principles","d-layout"], ["제도적 시사점","Policy Implications","d-policy"]] },
+    { num: "09", id: "conclusion", kr: "결론", en: "Conclusion", sub: [] },
     { num: "10", id: "appendix", kr: "부록", en: "Appendix",
-      sub: [["데이터","Data","10-1"], ["용어 정리","Glossary","10-2"], ["참고문헌","References","10-3"], ["이미지 크레딧","Image Credits","10-4"]] }
+      sub: [
+        ["입체각 임계값 변환의 세부","Solid-Angle Transformation","ap-remap","A"],
+        ["사전 관찰 · 서울 21곳의 기록","Pre-analysis · 21 Complexes","4-1","B1"],
+        ["사전 관찰 · 주관 순위와 종합","Pre-analysis · Ranking","4-2","B2"],
+        ["사전 관찰 · 데이터 수집과 촬영","Pre-analysis · Capture","5-1","B3"],
+        ["사전 관찰 · 세그멘테이션","Pre-analysis · Segmentation","5-2","B4"],
+        ["사전 관찰 · 데이터 마이닝","Pre-analysis · Data Mining","5-3","B5"],
+        ["사전 관찰 · 상관과 회귀","Pre-analysis · Regression","6-1","B6"],
+        ["사전 관찰 · 용적률·높이·분산","Pre-analysis · FAR·Height","6-2","B7"],
+        ["사전 관찰 · 대상지 선정","Pre-analysis · Site Selection","6-3","B8"],
+        ["데이터","Data","10-1","C1"],
+        ["용어 정리","Glossary","10-2","C2"],
+        ["참고문헌","References","10-3","C3"],
+        ["이미지 크레딧","Image Credits","10-4","C4"]
+      ] }
   ];
   var gnb = document.getElementById("gnb");
   var menu = document.getElementById("menu");
@@ -104,14 +119,15 @@
     // 장 본문 조립 (소제목 = 스크롤 섹션)
     var subs = chapContent(chap), parts = [];
     if (subs) {
-      subs.forEach(function (s) {
+      subs.forEach(function (s, j) {
         var d = window.CONTENT && window.CONTENT[s[2]];
         if (!d) return;
-        var st = lg === "en" ? (d.titleEn || s[1]) : (d.titleKo || s[0]);
+        var st = lg === "en" ? (s[1] || d.titleEn) : (s[0] || d.titleKo);
+        var idx = s[3] || (parseInt(chap.num, 10) + "." + (j + 1));
         parts.push(
           '<section class="chsec" id="' + s[2] + '">' +
             '<div class="chsec__rail reveal">' +
-              '<span class="chsec__idx">' + s[2] + "</span>" +
+              '<span class="chsec__idx">' + idx + "</span>" +
               '<h2 class="chsec__title">' + st + "</h2>" +
             "</div>" +
             '<div class="chsec__main">' + d.body + "</div>" +

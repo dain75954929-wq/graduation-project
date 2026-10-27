@@ -586,3 +586,24 @@ site/
 - 이미지 폴더(`assets/img/0X/`)는 장 번호와 무관하게 경로 유지.
 - 신규 집필(4장 선행연구 등)은 '핵심 요약' 수준(각주 없이 공개용 톤).
 - 라우트 키 변경 → 레거시 링크 폴백(main.js)이 소유 장을 찾아 스크롤하므로 깨지지 않음.
+
+### 17.4 구현 반영 (최종 MENU)
+
+논문 9장 그대로 본문 구성, 선행연구(4장) 유지. 기존 콘텐츠 블록을 물리 이동 없이 MENU 재배치로 재그룹. `renderDoc` 수정: 섹션 제목은 MENU의 `s[0]` 우선(재사용 블록 재제목 불필요), 섹션 번호는 `장번호.소절` 자동 계산 또는 `s[3]` 명시값(부록 A/B/C).
+
+| 장 | content 키 (MENU sub) |
+|---|---|
+| 1 서론 `intro` | i-bg · i-aim |
+| 2 개념과 이론 `concepts` | c-opp · c-scale · c-theory |
+| 3 제도 `regulation` | 2-1 · 2-2 |
+| 4 선행연구 `prior` | p-kr · p-form · p-quant · p-method (신규) |
+| 5 연구 방법 및 대상 `method` | 7-1 · m-scope · 3-1 · 7-2 · 7-4 |
+| 6 지표 체계의 구축 `metrics` | x-select · 3-3 · 7-3 |
+| 7 지표별 분석 `analysis` | 8-1 · 8-2 · 8-3 · 7-5 · a-conflict |
+| 8 방향 도출 `direction` | d-mass · d-layout · d-policy |
+| 9 결론 `conclusion` | (단일, content["conclusion"]) |
+| 부록 `appendix` | A: ap-remap / B1–B8: 4-1·4-2·5-1·5-2·5-3·6-1·6-2·6-3 (사전 관찰) / C1–C4: 10-1~10-4 |
+
+- 신규 블록(16개): i-bg·i-aim·c-opp·c-scale·c-theory·p-kr·p-form·p-quant·p-method·m-scope·x-select·a-conflict·d-mass·d-layout·d-policy·ap-remap.
+- orphan(content.js 유지, MENU 미연결): pedestrian·3-2·3-4. 레거시 `?id=` 링크는 MENU[0](서론)로 폴백.
+- 표지 CTA `?id=pedestrian` → `?id=intro`.

@@ -1363,7 +1363,195 @@ window.CONTENT = {
             </tbody>
           </table>
         </div>
-        <p class="measure muted reveal" data-ko="네 논의가 공통으로 지목하는 것은 눈높이와 보이는 범위, 거리다. 그러나 이들은 규범이지 척도가 아니다. 어느 거리에서 보아야 하는지는 제시하지만 그 거리에서 무엇을 얼마나 측정해야 하는지는 정하지 않았다. 이 공백을 제도와 선행연구가 어떻게 다뤄 왔는지를 다음 두 장에서 본다." data-en="All point to eye height, the range seen, and distance, but they are norms, not rulers: they say from what distance to look, not what or how much to measure there. The next two chapters examine how regulation and prior research have treated that gap.">네 논의가 공통으로 지목하는 것은 눈높이와 보이는 범위, 거리다. 그러나 이들은 규범이지 척도가 아니다. 어느 거리에서 보아야 하는지는 제시하지만 그 거리에서 무엇을 얼마나 측정해야 하는지는 정하지 않았다. 이 공백을 제도와 선행연구가 어떻게 다뤄 왔는지를 다음 두 장에서 본다.</p>
+        <p class="measure muted reveal" data-ko="네 논의가 공통으로 지목하는 것은 눈높이와 보이는 범위, 거리다. 그러나 이들은 규범이지 척도가 아니다. 어느 거리에서 보아야 하는지는 제시하지만 그 거리에서 무엇을 얼마나 측정해야 하는지는 정하지 않았다. 이 공백을 제도가 어떻게 다뤄 왔는지를 다음 장에서 본다." data-en="All point to eye height, the range seen, and distance, but they are norms, not rulers: they say from what distance to look, not what or how much to measure there. The next chapter examines how regulation has treated that gap.">네 논의가 공통으로 지목하는 것은 눈높이와 보이는 범위, 거리다. 그러나 이들은 규범이지 척도가 아니다. 어느 거리에서 보아야 하는지는 제시하지만 그 거리에서 무엇을 얼마나 측정해야 하는지는 정하지 않았다. 이 공백을 제도가 어떻게 다뤄 왔는지를 다음 장에서 본다.</p>
+      </section>
+    `
+  },
+
+  /* ==================== 4 연구 방법 및 대상 — 신규 소절 ==================== */
+  "m-scope": {
+    titleKo: "연구 범위",
+    titleEn: "Scope",
+    body: `
+      <p class="lead reveal" data-ko="본 연구는 배치와 매스의 단계에서 결정되는 형태만을 다룬다. 나머지를 제외하는 것은 중요도가 낮아서가 아니라, 형태가 설명하는 몫을 먼저 분리해야 나머지 요소의 영향을 논할 수 있기 때문이다." data-en="This study treats only the form decided at the layout and massing stage. The rest is excluded not because it matters less, but because the share form explains must first be separated before the others can be discussed.">본 연구는 배치와 매스의 단계에서 결정되는 형태만을 다룬다. 나머지를 제외하는 것은 중요도가 낮아서가 아니라, 형태가 설명하는 몫을 먼저 분리해야 나머지 요소의 영향을 논할 수 있기 때문이다.</p>
+      <section class="section" id="excluded">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="무엇을 덜어냈는가" data-en="What Is Set Aside">무엇을 덜어냈는가</h2></div>
+        <div class="tbl-wrap reveal" data-d="1">
+          <table class="data">
+            <thead><tr><th data-ko="제외" data-en="Excluded">제외</th><th data-ko="이유" data-en="Why">이유</th></tr></thead>
+            <tbody>
+              <tr><td data-ko="외벽 색채·재료" data-en="Colour · material">외벽 색채·재료</td><td data-ko="형태의 크기가 지배적이고 외장재의 효과는 보정 수준에 그친다(崔峰云 외 2021)" data-en="Form size dominates; cladding is only a correction (Hen et al. 2021)">형태의 크기가 지배적이고 외장재의 효과는 보정 수준에 그친다(崔峰云 외 2021)</td></tr>
+              <tr><td data-ko="창·발코니·입면 디테일" data-en="Windows · detail">창·발코니·입면 디테일</td><td data-ko="100m 밖에서는 세부가 사라지고, 배치 단계에 아직 존재하지 않는 정보다" data-en="Detail vanishes beyond 100 m and does not yet exist at the layout stage">100m 밖에서는 세부가 사라지고, 배치 단계에 아직 존재하지 않는 정보다</td></tr>
+              <tr><td data-ko="조경·수목" data-en="Vegetation">조경·수목</td><td data-ko="형태가 만든 문제의 크기에 비례해 작동하는 보완책이므로 매스 값을 먼저 분리한다" data-en="A remedy scaling with the problem form creates; mass values are isolated first">형태가 만든 문제의 크기에 비례해 작동하는 보완책이므로 매스 값을 먼저 분리한다</td></tr>
+              <tr><td data-ko="사람·차량·간판·그림자" data-en="People · cars · signs">사람·차량·간판·그림자</td><td data-ko="시점마다 달라져 재현 가능성을 충족하지 못한다" data-en="They vary by viewpoint and fail reproducibility">시점마다 달라져 재현 가능성을 충족하지 못한다</td></tr>
+              <tr><td data-ko="주변 시가지" data-en="Surroundings">주변 시가지</td><td data-ko="단지 자체의 성능을 분리해 보기 위한 통제다" data-en="A control to isolate the estate’s own performance">단지 자체의 성능을 분리해 보기 위한 통제다</td></tr>
+              <tr><td data-ko="세대 내부 성능" data-en="Indoor performance">세대 내부 성능</td><td data-ko="일조·채광·통풍은 밖에서 볼 수 없다. 단, 주동 이격은 가로의 틈을 결정하므로 생성 제약으로 적용한다" data-en="Sunlight/daylight/ventilation are unseen from outside; spacing, which sets the street gap, is kept as a generation constraint">일조·채광·통풍은 밖에서 볼 수 없다. 단, 주동 이격은 가로의 틈을 결정하므로 생성 제약으로 적용한다</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    `
+  },
+
+  /* ==================== 5 지표 체계의 구축 — 신규 소절 ==================== */
+  "x-select": {
+    titleKo: "지표의 선정 기준",
+    titleEn: "Selection Criteria",
+    body: `
+      <p class="lead reveal" data-ko="제도와 이론에서 모인 여러 후보 지표를 여섯 가지 기준으로 걸러 네 개의 핵심 지표를 남겼다." data-en="Many candidate metrics drawn from regulation and theory were filtered by six criteria, leaving four core metrics.">제도와 이론에서 모인 여러 후보 지표를 여섯 가지 기준으로 걸러 네 개의 핵심 지표를 남겼다.</p>
+      <section class="section" id="six-criteria">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="여섯 기준" data-en="Six Criteria">여섯 기준</h2></div>
+        <div class="tbl-wrap reveal" data-d="1">
+          <table class="data">
+            <thead><tr><th data-ko="기준" data-en="Criterion">기준</th><th data-ko="내용" data-en="Requirement">내용</th></tr></thead>
+            <tbody>
+              <tr><td data-ko="외부 가시성" data-en="External visibility">외부 가시성</td><td data-ko="단지 밖을 걷는 사람이 볼 수 있어야 한다" data-en="Visible to a pedestrian outside">단지 밖을 걷는 사람이 볼 수 있어야 한다</td></tr>
+              <tr><td data-ko="평가 거리" data-en="Evaluation distance">평가 거리</td><td data-ko="7~200m 사이에서 값이 달라져야 한다" data-en="Must vary between 7 and 200 m">7~200m 사이에서 값이 달라져야 한다</td></tr>
+              <tr><td data-ko="배치 단계 조작성" data-en="Operability">배치 단계 조작성</td><td data-ko="건폐율·매스·배치를 바꾸면 값이 달라져야 한다" data-en="Must change with coverage, mass, layout">건폐율·매스·배치를 바꾸면 값이 달라져야 한다</td></tr>
+              <tr><td data-ko="재현 가능성" data-en="Reproducibility">재현 가능성</td><td data-ko="같은 조건이면 누구나 같은 값을 얻어야 한다" data-en="Same conditions, same value for anyone">같은 조건이면 누구나 같은 값을 얻어야 한다</td></tr>
+              <tr><td data-ko="근거" data-en="Grounding">근거</td><td data-ko="법규나 선행연구에 임계값·산정의 선례가 있어야 한다" data-en="A threshold or precedent in law or prior work">법규나 선행연구에 임계값·산정의 선례가 있어야 한다</td></tr>
+              <tr><td data-ko="비중복성" data-en="Non-redundancy">비중복성</td><td data-ko="다른 지표와 다른 차원을 재야 한다" data-en="Must measure a different dimension">다른 지표와 다른 차원을 재야 한다</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="measure muted reveal" data-ko="여섯 기준을 모두 충족한 것이 전면점유율·수평 개방률·조망앙각·입체각이다. 천공률은 수평면 위 입체각 점유율의 여집합이라 비중복성에서, 스카이라인 변화도는 배치안 안에서 주동 높이가 거의 같아 조작성에서 걸러졌다. 네 지표는 각각 경계·수평·수직·입체의 네 차원을 하나씩 맡는다." data-en="The four that met all six are frontage, horizontal openness, view angle, and solid angle. Sky factor was dropped for redundancy (it is the complement of above-horizon solid-angle occupancy); skyline variation, for operability (block heights are nearly equal within a layout). The four each take one of four dimensions: boundary, horizontal, vertical, volume.">여섯 기준을 모두 충족한 것이 전면점유율·수평 개방률·조망앙각·입체각이다. 천공률은 수평면 위 입체각 점유율의 여집합이라 비중복성에서, 스카이라인 변화도는 배치안 안에서 주동 높이가 거의 같아 조작성에서 걸러졌다. 네 지표는 각각 경계·수평·수직·입체의 네 차원을 하나씩 맡는다.</p>
+      </section>
+    `
+  },
+
+  /* ==================== 6 지표별 분석 — 종합 소절 ==================== */
+  "a-conflict": {
+    titleKo: "지표 간 상충과 종합",
+    titleEn: "Conflict and Synthesis",
+    body: `
+      <p class="lead reveal" data-ko="네 지표는 한 방향으로 움직이지 않는다. 종합 결과는 재측정 뒤 채운다." data-en="The four metrics do not move together. The synthesis is to be filled after re-measurement.">네 지표는 한 방향으로 움직이지 않는다. 종합 결과는 재측정 뒤 채운다.</p>
+      <section class="section" id="wip">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="분석 진행 중" data-en="Analysis in Progress">분석 진행 중</h2></div>
+        <p class="measure muted reveal" data-ko="전면점유율을 올려 주동을 경계에 붙이면 주동 사이가 좁아져 수평 개방률이 떨어지고, 건폐율을 낮춰 층을 올리면 조망앙각과 입체각이 커진다. 어느 배치안도 네 지표를 동시에 만족하지 못하는 까닭이다. 새 지표 기준으로 96개 배치안을 다시 측정한 뒤, 지표 간 상충이 교차하는 지점과 종합 순위를 이 자리에 싣는다." data-en="Pushing frontage up by pressing blocks to the boundary narrows the gaps and lowers horizontal openness; lowering coverage to add floors raises view and solid angle. No layout satisfies all four at once. Once the 96 layouts are re-measured under the new metrics, the crossing points and the overall ranking will appear here.">전면점유율을 올려 주동을 경계에 붙이면 주동 사이가 좁아져 수평 개방률이 떨어지고, 건폐율을 낮춰 층을 올리면 조망앙각과 입체각이 커진다. 어느 배치안도 네 지표를 동시에 만족하지 못하는 까닭이다. 새 지표 기준으로 96개 배치안을 다시 측정한 뒤, 지표 간 상충이 교차하는 지점과 종합 순위를 이 자리에 싣는다.</p>
+      </section>
+    `
+  },
+
+  /* ==================== 7 방향 도출 ==================== */
+  "d-mass": {
+    titleKo: "밀도와 매스의 조건",
+    titleEn: "Density and Mass",
+    body: `
+      <p class="lead reveal" data-ko="같은 용적률에서 임계를 넘지 않는 매스의 범위를 찾는 것이 방향 도출의 출발점이다. 구체적 수치는 재측정 뒤 확정한다." data-en="Deriving a direction begins with the range of mass that stays below threshold at the same floor area ratio. Exact figures follow re-measurement.">같은 용적률에서 임계를 넘지 않는 매스의 범위를 찾는 것이 방향 도출의 출발점이다. 구체적 수치는 재측정 뒤 확정한다.</p>
+      <section class="section" id="wip">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="분석 진행 중" data-en="In Progress">분석 진행 중</h2></div>
+        <p class="measure muted reveal" data-ko="용적률을 고정한 채 건폐율을 움직이면 층수와 동수, 인동간격이 함께 변한다. 저건폐 초고층은 조망앙각과 입체각의 위압이 크고, 고건폐 저층은 인동이 무너진다. 두 힘이 교차하는 중간 건폐율의 범위와 그에 대응하는 층수의 조합을 재측정 뒤 제시한다." data-en="Holding the floor area ratio and moving coverage shifts floors, building count, and spacing together. Sparse high-rise presses hard on view and solid angle; dense low-rise collapses spacing. The middle-coverage band where the two cross, and the floor combinations it implies, will be given after re-measurement.">용적률을 고정한 채 건폐율을 움직이면 층수와 동수, 인동간격이 함께 변한다. 저건폐 초고층은 조망앙각과 입체각의 위압이 크고, 고건폐 저층은 인동이 무너진다. 두 힘이 교차하는 중간 건폐율의 범위와 그에 대응하는 층수의 조합을 재측정 뒤 제시한다.</p>
+      </section>
+    `
+  },
+
+  "d-layout": {
+    titleKo: "배치의 원칙",
+    titleEn: "Layout Principles",
+    body: `
+      <p class="lead reveal" data-ko="주동 유닛의 조합과 틈의 배분, 그리고 거리 띠별로 달라지는 처방이 배치의 원칙을 이룬다." data-en="The combination of unit types, the distribution of gaps, and prescriptions that differ by distance band form the layout principles.">주동 유닛의 조합과 틈의 배분, 그리고 거리 띠별로 달라지는 처방이 배치의 원칙을 이룬다.</p>
+      <section class="section" id="wip">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="분석 진행 중" data-en="In Progress">분석 진행 중</h2></div>
+        <p class="measure muted reveal" data-ko="인동간격은 마주 보는 주동 사이의 문제이므로, 여러 동을 하나로 묶는 결합형 매스는 마주 보는 쌍을 줄여 규제가 걸리는 지점을 낮춘다. 보행 근경에서는 전면 접지와 저층부가, 중경에서는 주동 사이의 틈이, 원경에서는 매스의 군집이 처방의 대상이 된다. 유닛 조합과 틈 배분의 원칙은 재측정 결과 위에서 정리한다." data-en="Spacing is a problem between facing blocks, so a combined mass that ties several into one cuts the facing pairs and lowers where the rule bites. In the near band, frontage and the base; in the middle, gaps between blocks; in the far band, the clustering of mass. The principles of unit combination and gap distribution will be set on the re-measured results.">인동간격은 마주 보는 주동 사이의 문제이므로, 여러 동을 하나로 묶는 결합형 매스는 마주 보는 쌍을 줄여 규제가 걸리는 지점을 낮춘다. 보행 근경에서는 전면 접지와 저층부가, 중경에서는 주동 사이의 틈이, 원경에서는 매스의 군집이 처방의 대상이 된다. 유닛 조합과 틈 배분의 원칙은 재측정 결과 위에서 정리한다.</p>
+      </section>
+    `
+  },
+
+  "d-policy": {
+    titleKo: "제도적 시사점",
+    titleEn: "Policy Implications",
+    body: `
+      <p class="lead reveal" data-ko="네 지표는 보행자 시점의 성능 기준을 제도에 적을 수 있는 도구다. 1,294개 조망점에서 자동으로 산출되므로 심의 단계에서 배치안을 비교하는 데 쓸 수 있다." data-en="The four metrics are tools for writing a pedestrian-view performance standard into regulation. Computed automatically from 1,294 viewpoints, they can compare layouts at review stage.">네 지표는 보행자 시점의 성능 기준을 제도에 적을 수 있는 도구다. 1,294개 조망점에서 자동으로 산출되므로 심의 단계에서 배치안을 비교하는 데 쓸 수 있다.</p>
+      <section class="section" id="policy">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="폐지된 입면차폐도가 하지 못한 일" data-en="What the Repealed Rule Could Not Do">폐지된 입면차폐도가 하지 못한 일</h2></div>
+        <p class="measure muted reveal" data-ko="성능 규제로 간 해외 제도들의 공통점은 세 가지다. 보행자가 서는 지점을 정하고, 그 지점에서 보이는 것을 측정하며, 그 값으로 적부를 가린다. 국내 제도에는 이 셋을 함께 갖춘 조항이 없다. 2008년 폐지된 입면차폐도는 투영 면적을 단지 길이로 나눌 뿐 보행자가 어디에서 보는지를 묻지 않았다. 이 프로젝트의 지표 체계는 바로 그 자리를 겨냥한다. 완성된 제도는 아니지만, 보행자의 시선을 기준으로 삼는 일을 시작할 수는 있다." data-en="The foreign rules that went to performance share three traits: they fix where the pedestrian stands, measure what is seen there, and judge by that value. No Korean rule holds all three. The facade-obstruction rule repealed in 2008 divided projected area by site length but never asked where the pedestrian stood. This metric system aims at exactly that place: not a finished instrument, but a start at taking the pedestrian’s line of sight as the measure.">성능 규제로 간 해외 제도들의 공통점은 세 가지다. 보행자가 서는 지점을 정하고, 그 지점에서 보이는 것을 측정하며, 그 값으로 적부를 가린다. 국내 제도에는 이 셋을 함께 갖춘 조항이 없다. 2008년 폐지된 입면차폐도는 투영 면적을 단지 길이로 나눌 뿐 보행자가 어디에서 보는지를 묻지 않았다. 이 프로젝트의 지표 체계는 바로 그 자리를 겨냥한다. 완성된 제도는 아니지만, 보행자의 시선을 기준으로 삼는 일을 시작할 수는 있다.</p>
+      </section>
+    `
+  },
+
+  /* ==================== 부록 A. 입체각 임계값 변환의 세부 ==================== */
+  "ap-remap": {
+    titleKo: "부록 A · 입체각 임계값 변환의 세부",
+    titleEn: "Appendix A · Solid-Angle Threshold Transformation",
+    body: `
+      <p class="lead reveal" data-ko="邉敬花 외(2013)의 압박감 기준값을 본 연구의 시야로 옮기는 계산의 내역이다." data-en="The detail of transferring the oppressiveness threshold of Hen et al. (2013) into this study’s field of view.">邉敬花 외(2013)의 압박감 기준값을 본 연구의 시야로 옮기는 계산의 내역이다.</p>
+      <section class="section" id="remap-detail">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="수평면 위 점유율의 보존" data-en="Preserving Above-Horizon Occupancy">수평면 위 점유율의 보존</h2></div>
+        <p class="measure muted reveal" data-ko="입체각비는 분모가 조건마다 다르다. 邉敬花 외의 고정 시선 자료는 수평 100도·연직 90도의 수평면 위 1.79스테라디안을 분모로 삼으며, 건물군의 압박감 경계 0.92스테라디안은 그 51.3퍼센트다. 본 연구의 시야에서 수평면 위 입체각은 1.81스테라디안이므로 같은 점유율은 0.93스테라디안이 된다. 절대량 0.92를 그대로 쓰는 해석과 1.3퍼센트 차이로 수렴하며, 두 기준이 만난다는 사실 자체가 변환의 타당성을 보인다." data-en="The solid-angle ratio has a denominator that varies by condition. Hen et al.’s fixed-gaze data take 1.79 sr above the horizon (100° horizontal, 90° vertical) as the denominator; the group pressure threshold of 0.92 sr is 51.3% of it. In this study’s field the above-horizon solid angle is 1.81 sr, so the same occupancy gives 0.93 sr, converging within 1.3% of using the absolute 0.92 sr. That the two meet is itself evidence of the transformation’s validity.">입체각비는 분모가 조건마다 다르다. 邉敬花 외의 고정 시선 자료는 수평 100도·연직 90도의 수평면 위 1.79스테라디안을 분모로 삼으며, 건물군의 압박감 경계 0.92스테라디안은 그 51.3퍼센트다. 본 연구의 시야에서 수평면 위 입체각은 1.81스테라디안이므로 같은 점유율은 0.93스테라디안이 된다. 절대량 0.92를 그대로 쓰는 해석과 1.3퍼센트 차이로 수렴하며, 두 기준이 만난다는 사실 자체가 변환의 타당성을 보인다.</p>
+        <div class="tbl-wrap reveal" data-d="1">
+          <table class="data">
+            <thead><tr><th data-ko="수평면 위 점유율" data-en="Above-horizon occupancy">수평면 위 점유율</th><th data-ko="본 연구 입체각" data-en="Solid angle">본 연구 입체각</th><th data-ko="판정" data-en="Reading">판정</th></tr></thead>
+            <tbody>
+              <tr><td>44.0 %</td><td>0.80 sr</td><td data-ko="미만이면 압박감 없음" data-en="below: no pressure">미만이면 압박감 없음</td></tr>
+              <tr><td>51.3 %</td><td>0.93 sr</td><td data-ko="이상이면 압박감 있음 (임계)" data-en="above: pressure (threshold)">이상이면 압박감 있음 (임계)</td></tr>
+              <tr><td>63.2 %</td><td>1.15 sr</td><td data-ko="이상이면 압박감에 불만" data-en="above: complaint">이상이면 압박감에 불만</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="readout reveal"><span data-ko="근거리(7·25m)에서는 프레임이 상단을 일부 잘라 입체각이 작게 측정되므로, 그 구간은 임계값 대조보다 배치안 사이의 상대 비교에 쓴다. 고층 아파트 단지는 원 선행연구의 적용 범위 밖에 놓이는 경우가 있어, 변환값은 절대적 합격선이 아니라 배치안 비교 기준으로 쓴다." data-en="Near the site (7·25 m) the frame clips the top and solid angle reads low, so those bands serve relative comparison rather than threshold checks. High-rise estates can fall outside the original study’s range, so the transformed value is a basis for comparing layouts, not an absolute pass line.">근거리(7·25m)에서는 프레임이 상단을 일부 잘라 입체각이 작게 측정되므로, 그 구간은 임계값 대조보다 배치안 사이의 상대 비교에 쓴다. 고층 아파트 단지는 원 선행연구의 적용 범위 밖에 놓이는 경우가 있어, 변환값은 절대적 합격선이 아니라 배치안 비교 기준으로 쓴다.</span></p>
+      </section>
+    `
+  },
+
+  /* ==================== 4 선행연구 ==================== */
+  "p-kr": {
+    titleKo: "국내 제도의 한계",
+    titleEn: "Limits of Domestic Rules",
+    body: `
+      <p class="lead reveal" data-ko="보행자 시점의 기준이 제도에 없다는 것은 국내 연구들도 지적해 왔다. 제도가 측정하는 대상이 보행자가 지각하는 대상과 어긋나 있으며, 이를 바로잡으려면 측정의 시점과 범위를 다시 정해야 한다는 것이다." data-en="Domestic studies have also noted the absence of a pedestrian-view standard: what regulation measures is out of step with what the pedestrian perceives, and fixing it means redefining the point and range of measurement.">보행자 시점의 기준이 제도에 없다는 것은 국내 연구들도 지적해 왔다. 제도가 측정하는 대상이 보행자가 지각하는 대상과 어긋나 있으며, 이를 바로잡으려면 측정의 시점과 범위를 다시 정해야 한다는 것이다.</p>
+      <section class="section" id="prior-kr">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="입면차폐도를 3D로 다시 쓰다" data-en="Rewriting Facade Obstruction in 3D">입면차폐도를 3D로 다시 쓰다</h2></div>
+        <p class="measure muted reveal" data-ko="안새얀 외(2024)는 폐지된 입면차폐도를 3차원으로 되살렸다. 지표면 1.8미터 보행자 시선을 기준으로, 단지경계에서 100미터를 더한 값의 절반을 반지름으로 하는 360도 경로 위에 1,000개 이상의 조망점을 두고, 각 지점에서 시야가 가려지는 면적을 백분율로 산출한다. 서울 9곳의 평균 차폐율은 판상 57.0, 탑상 60.4, 혼합 60.3퍼센트로 유형 차이가 작았고, 개방성을 제도로 관리해 온 캐나다 사례(46.7퍼센트)만 뚜렷이 낮았다. 본 연구는 이 도구를 쓰되 기준을 사람의 시야 자체로 두고, 하나의 반경이 아니라 네 거리 띠로 나누며, 눈높이를 1.8이 아니라 1.6미터로 둔다." data-en="An et al. (2024) revived the repealed facade-obstruction rule in three dimensions: a 1.8 m pedestrian eye, over a thousand viewpoints on a 360° path at a radius of half the site boundary plus 100 m, and the share of the blocked field at each. Across nine Seoul estates the average obstruction was 57.0% (slab), 60.4% (tower), 60.3% (mixed), with little difference by type; only a Canadian case managing openness by rule (46.7%) stood clearly lower. This project uses that tool but takes the human field of view itself as the basis, splits distance into four bands rather than one radius, and sets the eye at 1.6 m, not 1.8 m.">안새얀 외(2024)는 폐지된 입면차폐도를 3차원으로 되살렸다. 지표면 1.8미터 보행자 시선을 기준으로, 단지경계에서 100미터를 더한 값의 절반을 반지름으로 하는 360도 경로 위에 1,000개 이상의 조망점을 두고, 각 지점에서 시야가 가려지는 면적을 백분율로 산출한다. 서울 9곳의 평균 차폐율은 판상 57.0, 탑상 60.4, 혼합 60.3퍼센트로 유형 차이가 작았고, 개방성을 제도로 관리해 온 캐나다 사례(46.7퍼센트)만 뚜렷이 낮았다. 본 연구는 이 도구를 쓰되 기준을 사람의 시야 자체로 두고, 하나의 반경이 아니라 네 거리 띠로 나누며, 눈높이를 1.8이 아니라 1.6미터로 둔다.</p>
+        <p class="measure muted reveal" data-ko="최성경 외(2023)는 광주의 공동주택 경관심의를 분석해, 위압경관을 비롯해 밖에서 보이는 문제가 의견의 문언으로만 다뤄질 뿐 수치로 재어지지 않는다는 것을 보였다. 황세원(2022)은 입면차폐도 폐지 이후의 공백을 겨냥해 300개 단지 3,761개 동을 유형화하고 아홉 단지의 보행경관을 정량 분석했는데, 중경에서 열려 보이던 배치가 보행자가 실제로 서는 근경에서는 오히려 닫혀 보이는 역전을 발견했다. 거리를 나누지 않으면 단지를 하나의 값으로 평가할 수 없다는 뜻이다." data-en="Choi et al. (2023), analysing Gwangju’s apartment landscape review, showed that oppression and other visible problems are handled only in the wording of opinions, never measured. Hwang (2022), aiming at the gap left by the repealed rule, typologised 3,761 buildings across 300 estates and quantified the street view of nine, finding a reversal: layouts that read as open in the middle band read as closed in the near band where the pedestrian actually stands. Without splitting distance, an estate cannot be judged by a single value.">최성경 외(2023)는 광주의 공동주택 경관심의를 분석해, 위압경관을 비롯해 밖에서 보이는 문제가 의견의 문언으로만 다뤄질 뿐 수치로 재어지지 않는다는 것을 보였다. 황세원(2022)은 입면차폐도 폐지 이후의 공백을 겨냥해 300개 단지 3,761개 동을 유형화하고 아홉 단지의 보행경관을 정량 분석했는데, 중경에서 열려 보이던 배치가 보행자가 실제로 서는 근경에서는 오히려 닫혀 보이는 역전을 발견했다. 거리를 나누지 않으면 단지를 하나의 값으로 평가할 수 없다는 뜻이다.</p>
+      </section>
+    `
+  },
+
+  "p-form": {
+    titleKo: "형태와 가로의 관계",
+    titleEn: "Form and the Street",
+    body: `
+      <p class="lead reveal" data-ko="건물과 블록의 형태가 가로의 보행에 작용하고 대규모 단지가 바깥 가로에 부정적으로 작용한다는 것은 국내외에서 반복해 실증되어 왔다. 설명 변수는 한결같이 필지와 블록, 건물군의 규모였다." data-en="That the form of buildings and blocks acts on street walking, and that large estates act negatively on the street outside, has been shown repeatedly at home and abroad. The explanatory variable was always the scale of plot, block, and building group.">건물과 블록의 형태가 가로의 보행에 작용하고 대규모 단지가 바깥 가로에 부정적으로 작용한다는 것은 국내외에서 반복해 실증되어 왔다. 설명 변수는 한결같이 필지와 블록, 건물군의 규모였다.</p>
+      <section class="section" id="prior-form">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="보행을 가르는 것은 밀도가 아니다" data-en="Not Density, but Form">보행을 가르는 것은 밀도가 아니다</h2></div>
+        <p class="measure muted reveal" data-ko="Sevtsuk 외(2016)는 격자 가로에서 필지 전면폭이 보행 접근성에 가장 크게 작용하며, 전면폭이 좁을수록 접근성이 높아진다는 것을 보였다. Sung 외(2015)는 서울에서 대규모 건물군의 비율이 모든 시간대에 보행 선택과 음의 상관을 보였고 인구밀도는 유의하지 않았다고 보고했다. 보행을 가르는 것은 밀도가 아니라 형태이며, 두 연구가 지목한 필지 전면폭과 대규모 건물군이 곧 아파트 단지가 가로에 면하는 길이와 그 규모다." data-en="Sevtsuk et al. (2016) found plot frontage the strongest factor in pedestrian accessibility, with narrower frontage raising access; Sung et al. (2015) found the share of large building groups negatively correlated with walking choice across all hours, while population density was not significant. What divides walking is not density but form, and the frontage and large groups they name are exactly the length and scale of an apartment estate facing the street.">Sevtsuk 외(2016)는 격자 가로에서 필지 전면폭이 보행 접근성에 가장 크게 작용하며, 전면폭이 좁을수록 접근성이 높아진다는 것을 보였다. Sung 외(2015)는 서울에서 대규모 건물군의 비율이 모든 시간대에 보행 선택과 음의 상관을 보였고 인구밀도는 유의하지 않았다고 보고했다. 보행을 가르는 것은 밀도가 아니라 형태이며, 두 연구가 지목한 필지 전면폭과 대규모 건물군이 곧 아파트 단지가 가로에 면하는 길이와 그 규모다.</p>
+        <p class="measure muted reveal" data-ko="주상민·김지엽(2019·2024)은 아파트 슈퍼블록이 복합도·삼투성·활력도·투과성에서 저층 주거지보다 낮고, 강남의 블록이 포틀랜드·맨해튼보다 디자인 축에서 취약함을 보였다. 다만 이 연구들이 측정한 것은 접근성·보행 선택·가로활력으로, 사람이 얼마나 다니는가이지 눈에 보이는 모습은 아니다. 단지가 보행자에게 어떻게 보이는지를 측정한 연구는 아직 없다. 본 연구의 필요성이 여기에서 나온다." data-en="Ju and Kim (2019, 2024) showed apartment superblocks lower than low-rise districts in complexity, permeability, vitality, and porosity, and Gangnam’s blocks weaker than Portland and Manhattan on design. But these measured accessibility, walking choice, and vitality, how many people move, not how the estate looks. No study has measured how an estate appears to the pedestrian. That is where this project is needed.">주상민·김지엽(2019·2024)은 아파트 슈퍼블록이 복합도·삼투성·활력도·투과성에서 저층 주거지보다 낮고, 강남의 블록이 포틀랜드·맨해튼보다 디자인 축에서 취약함을 보였다. 다만 이 연구들이 측정한 것은 접근성·보행 선택·가로활력으로, 사람이 얼마나 다니는가이지 눈에 보이는 모습은 아니다. 단지가 보행자에게 어떻게 보이는지를 측정한 연구는 아직 없다. 본 연구의 필요성이 여기에서 나온다.</p>
+      </section>
+    `
+  },
+
+  "p-quant": {
+    titleKo: "위압감의 정량화",
+    titleEn: "Quantifying Oppressiveness",
+    body: `
+      <p class="lead reveal" data-ko="위압감을 물리량으로 옮기려는 시도는 일본건축학회에서 반세기에 걸쳐 축적되며 지표와 임계값을 차례로 구체화해 왔다. 국내에는 대응 연구가 확인되지 않는다." data-en="Attempts to translate oppressiveness into a physical quantity have accumulated for half a century at the Architectural Institute of Japan, successively refining metric and threshold. No domestic counterpart is found.">위압감을 물리량으로 옮기려는 시도는 일본건축학회에서 반세기에 걸쳐 축적되며 지표와 임계값을 차례로 구체화해 왔다. 국내에는 대응 연구가 확인되지 않는다.</p>
+      <section class="section" id="prior-quant">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="입체각이 선택되기까지" data-en="How Solid Angle Was Chosen">입체각이 선택되기까지</h2></div>
+        <div class="tbl-wrap reveal" data-d="1">
+          <table class="data">
+            <thead><tr><th data-ko="연구" data-en="Study">연구</th><th data-ko="기여" data-en="Contribution">기여</th></tr></thead>
+            <tbody>
+              <tr><td data-ko="武井·大原 (1977)" data-en="Takei·Oohara (1977)">武井·大原 (1977)</td><td data-ko="압박감 정량화의 출발점. 형태율과 입체각률을 후보로 두고, 여러 동에는 입체각률의 일반성이 있다고 봄" data-en="The starting point; proposed shape factor and solid-angle ratio, finding the latter more general for multiple blocks">압박감 정량화의 출발점. 형태율과 입체각률을 후보로 두고, 여러 동에는 입체각률의 일반성이 있다고 봄</td></tr>
+              <tr><td data-ko="黄泰然 외 (2007)" data-en="Huang et al. (2007)">黄泰然 외 (2007)</td><td data-ko="천공률이 압박감과 음의 상관. 시야에서 건물이 차지하는 양을 지표로 삼는 근거" data-en="Sky factor negatively correlated with pressure, grounding a metric of how much building fills the view">천공률이 압박감과 음의 상관. 시야에서 건물이 차지하는 양을 지표로 삼는 근거</td></tr>
+              <tr><td data-ko="邉敬花 외 (2011·2013)" data-en="Hen et al. (2011·2013)">邉敬花 외 (2011·2013)</td><td data-ko="세 지표를 겨뤄 입체각을 선택하고, 입체각비로 압박감의 기준값을 도출" data-en="Chose solid angle over rivals and derived pressure thresholds as a solid-angle ratio">세 지표를 겨뤄 입체각을 선택하고, 입체각비로 압박감의 기준값을 도출</td></tr>
+              <tr><td data-ko="Asgarzadeh 외 (2012)" data-en="Asgarzadeh et al. (2012)">Asgarzadeh 외 (2012)</td><td data-ko="입체각이 위압감과 강한 양의 상관, 단일 지표로도 설명력 충분. 수목의 완화 효과 확인" data-en="Solid angle strongly correlated with oppressiveness, sufficient alone; trees found to soften it">입체각이 위압감과 강한 양의 상관, 단일 지표로도 설명력 충분. 수목의 완화 효과 확인</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="measure muted reveal" data-ko="본 연구가 입체각을 핵심 지표로 삼는 직접 근거가 이 계보다. 평가 대상이 단지라는 건물군이므로 조건도 같다. 다만 선행연구들이 거리를 추정식 안의 변수로 넣은 것과 달리, 본 연구는 거리를 식에 넣지 않고 측정의 조건으로 분리한다. 그래야 어느 거리에서 임계를 넘는지를 지목할 수 있기 때문이다. 임계값은 武井·大原(1981)의 형태율 8퍼센트가 아니라, 邉敬花 외(2013)가 입체각으로 정량화한 값을 본 연구의 시야로 변환해 쓴다. 崔峰云 외(2021)가 VR로 제시한 65퍼센트가 독립적으로 같은 수준에 닿아 신뢰를 더한다." data-en="This lineage is the direct ground for making solid angle the core metric; the subject is a building group, as there. Unlike prior work that put distance inside an estimation formula, this project separates distance as a condition of measurement, so that the band where threshold is crossed can be named. The threshold is not the 8% shape factor of Takei·Oohara (1981) but the solid-angle value of Hen et al. (2013), transformed into this study’s field; Hen (2021)’s VR figure of 65% independently reaches the same level, adding confidence.">본 연구가 입체각을 핵심 지표로 삼는 직접 근거가 이 계보다. 평가 대상이 단지라는 건물군이므로 조건도 같다. 다만 선행연구들이 거리를 추정식 안의 변수로 넣은 것과 달리, 본 연구는 거리를 식에 넣지 않고 측정의 조건으로 분리한다. 그래야 어느 거리에서 임계를 넘는지를 지목할 수 있기 때문이다. 임계값은 武井·大原(1981)의 형태율 8퍼센트가 아니라, 邉敬花 외(2013)가 입체각으로 정량화한 값을 본 연구의 시야로 변환해 쓴다. 崔峰云 외(2021)가 VR로 제시한 65퍼센트가 독립적으로 같은 수준에 닿아 신뢰를 더한다.</p>
+      </section>
+    `
+  },
+
+  "p-method": {
+    titleKo: "연구방법론",
+    titleEn: "Methodology Precedents",
+    body: `
+      <p class="lead reveal" data-ko="주관적 감정을 점수로 바꾸고 그것을 형태 변수로 설명하며, 그에 앞서 제시할 장면을 생성하는 절차는 환경심리에서 비교적 정형화되어 있다. 본 연구의 측정 전제는 이 축적 위에 선다." data-en="Turning a subjective feeling into a score, explaining it by form variables, and generating the scene to be shown are fairly standardised in environmental psychology. This study’s measurement premise stands on that body of work.">주관적 감정을 점수로 바꾸고 그것을 형태 변수로 설명하며, 그에 앞서 제시할 장면을 생성하는 절차는 환경심리에서 비교적 정형화되어 있다. 본 연구의 측정 전제는 이 축적 위에 선다.</p>
+      <section class="section" id="prior-method">
+        <div class="section__head reveal"><h2 class="section__title" data-ko="형태만으로 설명한다" data-en="Explaining by Form Alone">형태만으로 설명한다</h2></div>
+        <p class="measure muted reveal" data-ko="Harvey 외(2015)는 색채도 재료도 간판도 빼고 가로의 기하 변수 일곱 개만으로 안전감 분산의 상당 부분을 설명했다. 보행자가 느끼는 것의 상당 부분이 색이나 재료가 아니라 건물이 놓인 형태에서 온다는 뜻이며, 본 연구가 매스만으로 배치안을 평가하는 근거다. Lindal & Hartig(2013)은 한 변수만 바꾸고 나머지를 고정한 컴퓨터 생성 장면을 평가하게 했는데, 이 원칙이 본 연구의 배치안 생성과 같다. Joye & Dewitte(2016)는 건물 높이와 보는 거리를 교차시켜, 같은 대상을 여러 거리에서 보게 하는 조작의 선례를 남겼다." data-en="Harvey et al. (2015) explained much of the variance in perceived safety with seven street-geometry variables alone, excluding colour, material, and signage, meaning much of what a pedestrian feels comes from form, not surface, and grounding this project’s evaluation by mass alone. Lindal and Hartig (2013) had people rate computer-generated scenes with one variable changed and the rest fixed, the same principle as this project’s layout generation. Joye and Dewitte (2016) crossed building height with viewing distance, a precedent for showing one object at several distances.">Harvey 외(2015)는 색채도 재료도 간판도 빼고 가로의 기하 변수 일곱 개만으로 안전감 분산의 상당 부분을 설명했다. 보행자가 느끼는 것의 상당 부분이 색이나 재료가 아니라 건물이 놓인 형태에서 온다는 뜻이며, 본 연구가 매스만으로 배치안을 평가하는 근거다. Lindal & Hartig(2013)은 한 변수만 바꾸고 나머지를 고정한 컴퓨터 생성 장면을 평가하게 했는데, 이 원칙이 본 연구의 배치안 생성과 같다. Joye & Dewitte(2016)는 건물 높이와 보는 거리를 교차시켜, 같은 대상을 여러 거리에서 보게 하는 조작의 선례를 남겼다.</p>
+        <p class="measure muted reveal" data-ko="선행연구들은 장면을 생성하면서도 화각을 대부분 장치의 편의로 정했고 조망거리를 체계적으로 나눈 경우는 드물었다. 본 연구는 눈높이를 1.6미터, 화각을 사람의 양안 시야인 수평 120도·수직 130도로 고정하고, 조망거리를 네 띠로 나눈다. 장면은 등장방형으로 출력한 뒤 등입체각 사영으로 재투영해 화소의 면적으로 입체각을 센다. 선행연구가 통제하지 않은 화각과 조망거리를 바로잡은 것이 본 연구의 측정 전제다." data-en="Prior work mostly set the angle of view by the convenience of the apparatus and rarely split viewing distance systematically. This project fixes the eye at 1.6 m, the angle at the binocular field of 120° horizontal and 130° vertical, and splits distance into four bands; scenes are output as equirectangular, re-projected equal-solid-angle, and solid angle counted by pixel area. Correcting the angle and distance that prior work left uncontrolled is this project’s measurement premise.">선행연구들은 장면을 생성하면서도 화각을 대부분 장치의 편의로 정했고 조망거리를 체계적으로 나눈 경우는 드물었다. 본 연구는 눈높이를 1.6미터, 화각을 사람의 양안 시야인 수평 120도·수직 130도로 고정하고, 조망거리를 네 띠로 나눈다. 장면은 등장방형으로 출력한 뒤 등입체각 사영으로 재투영해 화소의 면적으로 입체각을 센다. 선행연구가 통제하지 않은 화각과 조망거리를 바로잡은 것이 본 연구의 측정 전제다.</p>
       </section>
     `
   }
