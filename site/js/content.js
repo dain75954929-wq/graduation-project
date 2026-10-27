@@ -42,7 +42,13 @@ window.CONTENT = {
           <h2 class="section__title" data-ko="대상지 잠실르엘" data-en="The site, Jamsil Le-el">대상지 잠실르엘</h2>
         </div>
         <div class="cols cols--text-fig">
-          <p class="measure muted reveal" data-ko="송파구 올림픽로에 면한 약 72,695제곱미터의 대지로, 석촌호수와 올림픽공원, 지하철역을 이웃한 일반주거지역이다. 일반주거지역 단지 가운데 위압감이 가장 높게 나타나, 저건폐·초고층이 만들어 내는 가로 문제를 가장 선명하게 담고 있는 실험 조건이다." data-en="A roughly 72,695 ㎡ site on Olympic-ro in Songpa-gu, a residential zone neighboring Seokchon Lake, Olympic Park, and a subway station. It scored highest for oppressiveness among residential-zone complexes, the clearest case of the street problems that sparse-coverage high-rise produces.">송파구 올림픽로에 면한 약 72,695제곱미터의 대지로, 석촌호수와 올림픽공원, 지하철역을 이웃한 일반주거지역이다. 일반주거지역 단지 가운데 위압감이 가장 높게 나타나, 저건폐·초고층이 만들어 내는 가로 문제를 가장 선명하게 담고 있는 실험 조건이다.</p>
+          <p class="measure muted reveal" data-ko="송파구 올림픽로에 면한 약 72,695제곱미터의 대지로, 석촌호수와 올림픽공원, 지하철역을 이웃한 일반주거지역이다. 일반주거지역 단지 가운데 위압감이 가장 높게 나타나, 저건폐·초고층이 만들어 내는 가로 문제를 가장 선명하게 담고 있는 실험 조건이다. 미성아파트와 크로바아파트를 통합 재건축해 2025년 12월에 준공했다." data-en="A roughly 72,695 ㎡ site on Olympic-ro in Songpa-gu, a residential zone neighboring Seokchon Lake, Olympic Park, and a subway station. It scored highest for oppressiveness among residential-zone complexes, the clearest case of the street problems that sparse-coverage high-rise produces. Completed December 2025, a combined redevelopment of the Miseong and Clover apartments.">송파구 올림픽로에 면한 약 72,695제곱미터의 대지로, 석촌호수와 올림픽공원, 지하철역을 이웃한 일반주거지역이다. 일반주거지역 단지 가운데 위압감이 가장 높게 나타나, 저건폐·초고층이 만들어 내는 가로 문제를 가장 선명하게 담고 있는 실험 조건이다. 미성아파트와 크로바아파트를 통합 재건축해 2025년 12월에 준공했다.</p>
+          <dl class="kv reveal" data-d="1">
+            <div><dt data-ko="대지면적" data-en="Site area">대지면적</dt><dd>72,695 ㎡</dd></div>
+            <div><dt data-ko="세대 · 동수" data-en="Units · buildings">세대 · 동수</dt><dd data-ko="1,865세대 · 13개 동" data-en="1,865 units · 13 buildings">1,865세대 · 13개 동</dd></div>
+            <div><dt data-ko="층수 (현황)" data-en="Floors (as built)">층수 (현황)</dt><dd data-ko="15–35층" data-en="15–35">15–35층</dd></div>
+            <div><dt data-ko="건폐율 · 용적률 (현황)" data-en="BCR · FAR (as built)">건폐율 · 용적률 (현황)</dt><dd>17 % · 299 %</dd></div>
+          </dl>
           <figure class="figure figure--wide reveal" data-d="1">
             <div class="figure__ph">
               <img data-fig src="assets/img/07/site-map.svg" alt="잠실르엘과 주변 용도지역" loading="lazy">
@@ -375,7 +381,7 @@ window.CONTENT = {
               <tr><td data-ko="시야" data-en="Field of view">시야</td><td data-ko="수평 120°, 앙각 60° · 부각 70°" data-en="120° horizontal, 60° up · 70° down">수평 120°, 앙각 60° · 부각 70°</td></tr>
               <tr><td data-ko="수평면 위 입체각" data-en="Solid angle above horizon">수평면 위 입체각</td><td data-ko="1.81 sr (입체각 지표의 분모)" data-en="1.81 sr (denominator of the solid-angle metric)">1.81 sr (입체각 지표의 분모)</td></tr>
               <tr><td data-ko="렌더링 화각" data-en="Rendering angle">렌더링 화각</td><td data-ko="50 mm 표준 렌즈" data-en="50 mm standard lens">50 mm 표준 렌즈</td></tr>
-              <tr><td data-ko="조망점" data-en="Viewpoints">조망점</td><td data-ko="1,294 개" data-en="1,294">1,294 개</td></tr>
+              <tr><td data-ko="조망점" data-en="Viewpoints">조망점</td><td data-ko="1,294 개 (7m 223 · 25m 247 · 100m 346 · 200m 478)" data-en="1,294 (7m 223 · 25m 247 · 100m 346 · 200m 478)">1,294 개 (7m 223 · 25m 247 · 100m 346 · 200m 478)</td></tr>
               <tr><td data-ko="조망거리" data-en="View distances">조망거리</td><td data-ko="대지경계선 바깥 7 / 25 / 100 / 200 m, 5 m 간격" data-en="7 / 25 / 100 / 200 m outside the site boundary, 5 m spacing">대지경계선 바깥 7 / 25 / 100 / 200 m, 5 m 간격</td></tr>
             </tbody>
           </table>
@@ -689,6 +695,7 @@ window.CONTENT = {
         </div>
         <p class="measure muted reveal" data-ko="도시경관 분야에서 아파트 단지가 오래도록 지적받아온 문제는 네 가지로 정리된다. 획일경관, 차폐경관, 위압경관, 돌출경관. 이 가운데 위압경관은 가장 자주 언급되면서도 가장 측정되지 않은 항목이다. 느낌이기 때문이다." data-en="Four problems have long been named of apartment estates in the urban landscape: uniformity, obstruction, oppression, and protrusion. Of these, oppression is the most often cited and the least measured, because it is a feeling.">도시경관 분야에서 아파트 단지가 오래도록 지적받아온 문제는 네 가지로 정리된다. 획일경관, 차폐경관, 위압경관, 돌출경관. 이 가운데 위압경관은 가장 자주 언급되면서도 가장 측정되지 않은 항목이다. 느낌이기 때문이다.</p>
         <p class="measure muted reveal" data-ko="그러나 느낌이라고 해서 측정할 수 없는 것은 아니다. 신경미학 연구는 복잡하거나 비대칭적인 건축 형태 앞에서 인간의 편도체가 활성화되어 경계심과 불안이 유발된다고 보고한다. 사람들은 그런 공간에 오래 머물기를 꺼리고 빠르게 떠난다. 위압감은 미학적 취향이 아니라 생리적 방어 반응에 가깝다. 그렇다면 그것을 재는 방법도 있을 것이다." data-en="But a feeling is not therefore unmeasurable. Neuroaesthetic research reports that before complex or asymmetric architectural form the amygdala activates, raising vigilance and anxiety; people are reluctant to linger in such spaces and leave them quickly. Oppressiveness is less an aesthetic taste than a physiological defence. If so, there must be a way to measure it.">그러나 느낌이라고 해서 측정할 수 없는 것은 아니다. 신경미학 연구는 복잡하거나 비대칭적인 건축 형태 앞에서 인간의 편도체가 활성화되어 경계심과 불안이 유발된다고 보고한다. 사람들은 그런 공간에 오래 머물기를 꺼리고 빠르게 떠난다. 위압감은 미학적 취향이 아니라 생리적 방어 반응에 가깝다. 그렇다면 그것을 재는 방법도 있을 것이다.</p>
+        <p class="measure muted reveal" data-ko="위압감은 개방감, 위요감과 함께 논의되어 왔지만 셋은 같지 않다. 개방감은 시야가 하늘과 원경으로 열려 있다고 느끼는 정도이고, 위요감은 가로가 건물에 둘러싸인 상태다. 위압감과 개방감은 반대 방향을 향하되 서로의 역수가 아니어서, 압박감의 허용한계 65퍼센트와 개방감의 확보한계 73퍼센트를 더해도 100이 되지 않는다. 그래서 이 프로젝트는 위압감을 개방감의 역수로 구하지 않고 별도의 지표로 측정하며, D/H로 표현되는 위요감은 기존 논의와 대조하는 참조 기준으로만 둔다." data-en="Oppressiveness has long been discussed alongside openness and enclosure, but the three are not one. Openness is the sense that the view runs out to sky and distance; enclosure is the state of a street ringed by buildings. Oppressiveness and openness point in opposite directions yet are not each other’s inverse: a 65% pressure limit and a 73% openness limit do not sum to 100. So this project does not derive oppressiveness as the inverse of openness but measures it as its own metric, keeping enclosure (expressed as D/H) only as a reference for comparison.">위압감은 개방감, 위요감과 함께 논의되어 왔지만 셋은 같지 않다. 개방감은 시야가 하늘과 원경으로 열려 있다고 느끼는 정도이고, 위요감은 가로가 건물에 둘러싸인 상태다. 위압감과 개방감은 반대 방향을 향하되 서로의 역수가 아니어서, 압박감의 허용한계 65퍼센트와 개방감의 확보한계 73퍼센트를 더해도 100이 되지 않는다. 그래서 이 프로젝트는 위압감을 개방감의 역수로 구하지 않고 별도의 지표로 측정하며, D/H로 표현되는 위요감은 기존 논의와 대조하는 참조 기준으로만 둔다.</p>
       </section>
 
       <section class="section" id="questions">
@@ -698,18 +705,18 @@ window.CONTENT = {
         <div class="stepper stepper--3 reveal" data-d="1">
           <div class="step">
             <span class="step__n">01</span>
-            <h3 class="step__t" data-ko="측정의 기준이 있는가" data-en="Is there a standard">측정의 기준이 있는가</h3>
-            <p class="step__d" data-ko="단지 밖 보행자가 지각하는 것을 재는 기준이 제도와 연구에 있는가. 2·3·4장" data-en="Does a standard for measuring what the pedestrian outside perceives exist in regulation and research? Chapters 2–4">단지 밖 보행자가 지각하는 것을 재는 기준이 제도와 연구에 있는가. 2·3·4장</p>
+            <h3 class="step__t" data-ko="어떻게 다뤄 왔는가" data-en="How has it been treated">어떻게 다뤄 왔는가</h3>
+            <p class="step__d" data-ko="보행자가 지각하는 대상과 그로 인한 심리적 반응을 제도와 선행연구는 어떤 지표로 다뤄 왔는가. 2·3장" data-en="By what metrics have regulation and prior research treated what the pedestrian perceives, and the response it provokes? Chapters 2–3">보행자가 지각하는 대상과 그로 인한 심리적 반응을 제도와 선행연구는 어떤 지표로 다뤄 왔는가. 2·3장</p>
           </div>
           <div class="step">
             <span class="step__n">02</span>
-            <h3 class="step__t" data-ko="어떻게 잴 것인가" data-en="How to measure it">어떻게 잴 것인가</h3>
-            <p class="step__d" data-ko="있다면 어떠한 지표로, 어떠한 임계값으로 측정할 수 있는가. 3·5장" data-en="If so, with which metrics and which thresholds can it be measured? Chapters 3, 5">있다면 어떠한 지표로, 어떠한 임계값으로 측정할 수 있는가. 3·5장</p>
+            <h3 class="step__t" data-ko="어떻게 수치로 만드는가" data-en="How to turn it into a number">어떻게 수치로 만드는가</h3>
+            <p class="step__d" data-ko="보행자가 체감하는 위압감을 어떻게 재현 가능한 수치로 만들 것인가. 5·7장" data-en="How can the oppressiveness a pedestrian feels be turned into a reproducible number? Chapters 5, 7">보행자가 체감하는 위압감을 어떻게 재현 가능한 수치로 만들 것인가. 5·7장</p>
           </div>
           <div class="step">
             <span class="step__n">03</span>
-            <h3 class="step__t" data-ko="무엇이 달라지는가" data-en="What changes">무엇이 달라지는가</h3>
-            <p class="step__d" data-ko="같은 용적률에서 배치와 매스를 바꾸면 그 값은 어떻게 달라지는가. 7·8장" data-en="At the same floor area ratio, how do the values change as layout and massing change? Chapters 7–8">같은 용적률에서 배치와 매스를 바꾸면 그 값은 어떻게 달라지는가. 7·8장</p>
+            <h3 class="step__t" data-ko="무엇이 좌우하는가" data-en="What governs it">무엇이 좌우하는가</h3>
+            <p class="step__d" data-ko="서울 아파트 단지의 어떤 물리적 속성이 위압감을 강화하거나 완화하는가. 6·8장" data-en="Which physical properties of Seoul’s apartment estates intensify or relieve it? Chapters 6, 8">서울 아파트 단지의 어떤 물리적 속성이 위압감을 강화하거나 완화하는가. 6·8장</p>
           </div>
         </div>
       </section>
